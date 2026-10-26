@@ -4,14 +4,18 @@
 \chapter{CE0141 - Mapa del Ecosistema de Sistemas de Información de la Organización}
 
 \section{Alcance del mapa}
+\subsection{Procedimiento de Operación y Control de Cocción (S5-P02)}
+\subsection{Actores y áreas involucradas}
 
 \section{Inventario de sistemas}
-\subsection{Sistemas de información existentes (SICO)}
-\subsection{Registros manuales (papel y hojas sueltas)}
+\subsection{SICO ERP/Móvil}
+\subsection{Formato físico de inspección de calidad}
+\subsection{Registros manuales y hojas de cálculo}
 \subsection{Roles organizacionales: propietarios y usuarios}
 \subsection{Matriz sistema - proceso}
 
 \section{Diagrama del ecosistema actual}
+\subsection{Arquitectura de datos AS-IS}
 \subsection{Arquitectura de aplicación AS-IS}
 \subsection{Arquitectura tecnológica AS-IS}
 \subsection{Relaciones e interdependencias entre sistemas}
@@ -25,15 +29,17 @@
 \chapter{CE0142 - Arquitectura Conceptual del Sistema de Información Propuesto}
 
 \section{Objetivos que guían el diseño}
-\subsection{Alineación con los objetivos organizacionales}
+\subsection{Visión de arquitectura y vista motivacional}
+\subsection{Alineación con los objetivos estratégicos}
 \subsection{Principios de arquitectura}
 \subsection{Requisitos de calidad y seguridad}
 
 \section{Diagrama por capas}
 \subsection{Componentes del sistema propuesto}
-\subsection{Arquitectura de software TO-BE}
-\subsection{Modelo de datos TO-BE}
-\subsection{Infraestructura tecnológica TO-BE}
+\subsection{Arquitectura de aplicación TO-BE}
+\subsection{Arquitectura de datos TO-BE}
+\subsection{Arquitectura tecnológica TO-BE}
+\subsection{Matriz de transición AS-IS - TO-BE}
 
 \section{Tecnologías y su justificación}
 \subsection{Soluciones candidatas}
@@ -45,13 +51,15 @@
 \section{Diagrama de comunicación}
 
 \section{Tabla de interfaces}
-\subsection{Flujo sensores IoT - backend}
-\subsection{Flujo backend - base de datos}
+\subsection{Freidora (sensores y actuador) - servicio de integración IoT}
+\subsection{Servicio de integración IoT - monitoreo y alertas}
+\subsection{Visión artificial - registro del lote}
+\subsection{Base de datos - plataforma BI}
 \subsection{Catálogo de interfaces}
 
 \section{Flujo del proceso principal}
-\subsection{Proceso TO-BE de cocción}
-\subsection{Secuencia de integración en el proceso}
+\subsection{Proceso TO-BE de Operación y Control de Cocción}
+\subsection{Secuencia de integración por lote}
 
 \section{Coherencia técnica y seguridad de la integración}
 
