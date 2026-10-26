@@ -5,7 +5,7 @@ Evalúa: CE014 – Gestión de Sistemas de Información · Etapa CDIO: Operate
 Rol: Arquitecto de Soluciones / Analista de SI
 Estándares dominantes: TOGAF – ISO 27001 – ITIL 4 – ISO/IEC 25010
 
-Notas de apoyo para llenar cada sección de `indice_entregable4.tex`.
+Notas de apoyo para llenar cada sección de `indice_entregable4.tex`. El índice usa títulos genéricos; aquí se indica qué contenido específico de Franco's va en cada uno.
 - **Insumo:** de qué sección del *Informe de Arquitectura Empresarial* (AE), fase TOGAF o entregable previo sale el contenido.
 - **Rúbrica:** qué exige el nivel Excelente (18–20 pts.).
 - **PENDIENTE:** contenido que aún falta definir.
@@ -42,16 +42,15 @@ Cada capítulo del E4 debe usar estos mismos nombres para que el documento guard
 
 | Sección | Insumo / nota |
 |---|---|
-| 1.1.1 Procedimiento S5-P02 | AE 5.1.1 (alcance) y AE 5.3.1 (diagrama AS-IS de Fase B). Referenciar procesos de E3, no copiarlos. |
+| 1.1.1 Proceso de negocio en estudio | AE 5.1.1 (alcance) y AE 5.3.1 (diagrama AS-IS de Fase B). Referenciar procesos de E3, no copiarlos. |
 | 1.1.2 Actores y áreas | AE 5.1.3: Producción, Calidad, Infraestructura/Software, Gestión de TI, Gerencia General, Cliente. |
-| 1.2.1 SICO ERP/Móvil | AE 4.3: solo emite comprobantes; no tiene módulo de control de proceso. |
-| 1.2.2 Formato físico de inspección | AE 4.3: lo usa Control de Calidad para evaluar el producto terminado (sabor, textura, apariencia). |
-| 1.2.3 Registros manuales | Papel y Excel usados en otros procesos (inventario, pedidos: AE 3.5.1). En cocción no existe ningún registro. |
-| 1.2.4 Roles organizacionales | Propietario y usuarios de cada sistema según el organigrama (AE 4.1). Exigido por la rúbrica. |
-| 1.2.5 Matriz sistema – proceso | Cruce de sistemas con los procesos del mapa (Obtención de insumos, Producción, Almacenaje, Despacho). |
+| 1.2.1 Sistemas de información existentes | AE 4.3: solo emite comprobantes; no tiene módulo de control de proceso. |
+| 1.2.2 Registros manuales y herramientas ofimáticas | Formato físico de inspección de Control de Calidad (AE 4.3) y papel/Excel de otros procesos (AE 3.5.1). En cocción no existe ningún registro. |
+| 1.2.3 Roles organizacionales | Propietario y usuarios de cada sistema según el organigrama (AE 4.1). Exigido por la rúbrica. |
+| 1.2.4 Matriz sistema – proceso | Cruce de sistemas con los procesos del mapa (Obtención de insumos, Producción, Almacenaje, Despacho). |
 | 1.3.1 a 1.3.3 Diagramas AS-IS | AE 5.4.1.1 (datos), AE 5.4 aplicación AS-IS y AE 5.5.1 (tecnología). **PENDIENTE en el informe AE:** datos AS-IS y tecnología AS-IS están vacíos. |
 | 1.3.4 Relaciones e interdependencias | Exigido por la rúbrica: mostrar que hoy no hay integración entre SICO, el formato de calidad y producción. |
-| 1.4 Hallazgos | Brechas de aplicación (AE 5.4 GAP: 7 prácticas manuales → 6 módulos), datos (AE 4.2) y tecnología (AE 4.4). |
+| 1.4 Hallazgos | GAP-A, GAP-D y GAP-T. Brechas de aplicación (AE 5.4 GAP: 7 prácticas manuales → 6 módulos), datos (AE 4.2) y tecnología (AE 4.4). |
 
 ---
 
@@ -80,11 +79,10 @@ Cada capítulo del E4 debe usar estos mismos nombres para que el documento guard
 |---|---|
 | 3.1 Diagrama de comunicación | Conexiones entre los seis componentes (Fase C). |
 | 3.2 Tabla de interfaces | Por construir. Columnas sugeridas: ID, origen, destino, dato, protocolo, formato, frecuencia, seguridad. |
-| 3.2.1 Freidora – IoT | Lecturas de temperatura y tiempo; orden al actuador. |
-| 3.2.2 IoT – monitoreo y alertas | Comparación con ficha técnica y notificación de desviación. |
-| 3.2.3 Visión artificial – lote | Resultado de conformidad y descarte. |
-| 3.2.4 Base de datos – BI | Indicadores por lote, turno y familia. |
-| 3.3 Flujo del proceso principal | AE 5.3.2 (TO-BE de Fase B): 11 actividades, 6 modificadas y 1 nueva ("Notificar desviación de proceso térmico"). |
+| 3.2.1 Interfaces de captura de datos | Freidora (sensores y actuador) → servicio IoT: lecturas de temperatura y tiempo; orden al actuador. |
+| 3.2.2 Interfaces entre componentes | IoT → monitoreo y alertas (comparación con ficha técnica, notificación); visión artificial → registro del lote (conformidad y descarte). |
+| 3.2.3 Interfaces de almacenamiento y explotación | Base de datos → BI: indicadores por lote, turno y familia. |
+| 3.3 Flujo del proceso principal | Proceso TO-BE de cocción, AE 5.3.2 (TO-BE de Fase B): 11 actividades, 6 modificadas y 1 nueva ("Notificar desviación de proceso térmico"). |
 | 3.4 Coherencia técnica y seguridad | Validación cruzada: cada interfaz ↔ componente ↔ actividad del proceso TO-BE. |
 
 ---
@@ -97,11 +95,11 @@ Cada capítulo del E4 debe usar estos mismos nombres para que el documento guard
 |---|---|
 | 4.1.1 Paquetes de trabajo | Fase E (AE 5.6). |
 | 4.1.2 Hoja de ruta | Fase E y CE0114 Roadmap Tecnológico (E1). |
-| 4.1.3 Cronograma de 14 meses | Fase F (AE 5.7). Debe coincidir con CE0123 (E2). |
+| 4.1.3 Cronograma de implementación | 14 meses. Fase F (AE 5.7). Debe coincidir con CE0123 (E2). |
 | 4.1.4 Matriz RACI | Actores de AE 5.1.3. Exigido por la rúbrica. |
 | 4.1.5 Recursos y presupuesto | CE0122 y CE0124 (E2). |
-| 4.2 Despliegue y reversión | Fase F: transiciones A y B, piloto (sugerido: una familia de producto antes de las ocho). **PENDIENTE:** plan de reversión. |
-| 4.3.1 Riesgos R-01 a R-20 | Fase F y CE0125 (E2). **PENDIENTE:** R-20. |
+| 4.2 Despliegue y reversión | Fase F: arquitecturas de transición A y B, piloto (sugerido: una familia de producto antes de las ocho). **PENDIENTE:** plan de reversión. |
+| 4.3.1 Riesgos y mitigaciones | R-01 a R-20. Fase F y CE0125 (E2). **PENDIENTE:** R-20. |
 | 4.3.2 Gobernanza | Fase G (AE 5.8). |
 | 4.3.3 Gestión del cambio | Fase H. |
 | 4.3.4 Capacitación y adopción | Operarios por turno; vincular con objetivo estratégico E1 (capacitación en monitoreo). |
