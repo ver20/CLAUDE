@@ -1,39 +1,17 @@
-% =====================================================================
-%  ESTRUCTURA DEL ÍNDICE - Entregable 4: Diseño e Integración de
-%  Sistemas de Información (Evalúa: CE014 - Gestión de Sistemas de
-%  Información). Etapa CDIO: Operate.
-%  Estándares dominantes: TOGAF - ISO 27001 - ITIL 4 - ISO/IEC 25010
-%
-%  Pegar en el cuerpo del documento de Prism, después de \tableofcontents.
-%  "% Insumo:"   -> de qué fase TOGAF o entregable previo sale el contenido
-%  "% Rúbrica:"  -> qué exige el nivel Excelente (18-20) en ese criterio
-% =====================================================================
-
-% ---------------------------------------------------------------------
 \chapter*{Introducción}
 \addcontentsline{toc}{chapter}{Introducción}
-% Resumir el contexto ya fijado en E1-E3 (no repetirlo): organización,
-% problema, objetivo del proyecto y procesos rediseñados en el TO-BE.
-% ---------------------------------------------------------------------
 
-% ---------------------------------------------------------------------
 \chapter{CE0141 - Mapa del Ecosistema de Sistemas de Información de la Organización}
-% Rúbrica: todos los sistemas existentes, sus relaciones,
-% interdependencias y roles organizacionales claramente identificados.
-% ---------------------------------------------------------------------
 
 \section{Alcance del mapa}
-% Insumo: procesos de CE0131/CE0132 (E3); solo referenciarlos
 
 \section{Inventario de sistemas}
-% Insumo: Fase C - AS-IS de aplicación
 \subsection{Sistemas de información existentes (SICO)}
 \subsection{Registros manuales (papel y hojas sueltas)}
 \subsection{Roles organizacionales: propietarios y usuarios}
 \subsection{Matriz sistema - proceso}
 
 \section{Diagrama del ecosistema actual}
-% Insumo: Fase C y Fase D - AS-IS de aplicación y de tecnología
 \subsection{Arquitectura de aplicación AS-IS}
 \subsection{Arquitectura tecnológica AS-IS}
 \subsection{Relaciones e interdependencias entre sistemas}
@@ -44,111 +22,79 @@
 \subsection{Brechas tecnológicas (GAP-T)}
 \subsection{Síntesis de hallazgos}
 
-% ---------------------------------------------------------------------
 \chapter{CE0142 - Arquitectura Conceptual del Sistema de Información Propuesto}
-% Rúbrica: completa, justificada y alineada a los objetivos
-% organizacionales, con componentes, capas y tecnologías definidos.
-% ---------------------------------------------------------------------
 
 \section{Objetivos que guían el diseño}
-\subsection{Alineación con los objetivos organizacionales}  % Insumo: Fase A y CE0112 (E1)
-\subsection{Principios de arquitectura}                     % Insumo: Fase Preliminar
-\subsection{Requisitos de calidad y seguridad}              % ISO/IEC 25010 e ISO 27001
+\subsection{Alineación con los objetivos organizacionales}
+\subsection{Principios de arquitectura}
+\subsection{Requisitos de calidad y seguridad}
 
 \section{Diagrama por capas}
-% Insumo: Fase C y Fase D - TO-BE
 \subsection{Componentes del sistema propuesto}
 \subsection{Arquitectura de software TO-BE}
 \subsection{Modelo de datos TO-BE}
 \subsection{Infraestructura tecnológica TO-BE}
 
 \section{Tecnologías y su justificación}
-% Insumo: Fase E, paso 3
 \subsection{Soluciones candidatas}
 \subsection{Matriz de selección tecnológica}
 \subsection{Decisiones transversales}
 
-% ---------------------------------------------------------------------
 \chapter{CE0143 - Modelo de Integración de Sistemas y Flujos de Información}
-% Rúbrica: flujos de información documentados, interfaces definidas
-% y coherencia técnica entre sistemas.
-% ---------------------------------------------------------------------
 
 \section{Diagrama de comunicación}
-% Insumo: Fase C - conexiones del diagrama de software
 
 \section{Tabla de interfaces}
-% Insumo: Fase C y Fase D (por construir)
-% Columnas sugeridas: ID, origen, destino, dato, protocolo, formato,
-% frecuencia, seguridad
 \subsection{Flujo sensores IoT - backend}
 \subsection{Flujo backend - base de datos}
 \subsection{Catálogo de interfaces}
 
 \section{Flujo del proceso principal}
-% Insumo: Fase B y CE0133 (E3) - proceso TO-BE de cocción
 \subsection{Proceso TO-BE de cocción}
 \subsection{Secuencia de integración en el proceso}
 
 \section{Coherencia técnica y seguridad de la integración}
-% Validación cruzada: cada interfaz <-> componente TO-BE <-> proceso
 
-% ---------------------------------------------------------------------
 \chapter{CE0144 - Plan de Implementación y Gestión del Sistema de Información}
-% Rúbrica: fases, recursos, tiempos, responsables, estrategia de
-% despliegue y gestión del cambio claramente definidos.
-% ---------------------------------------------------------------------
 
 \section{Fases, responsables y recursos}
-\subsection{Paquetes de trabajo}                % Insumo: Fase E
-\subsection{Hoja de ruta (roadmap)}             % Insumo: Fase E y CE0114 (E1)
-\subsection{Cronograma de 14 meses}             % Insumo: Fase F; debe coincidir con CE0123 (E2)
+\subsection{Paquetes de trabajo}
+\subsection{Hoja de ruta (roadmap)}
+\subsection{Cronograma de 14 meses}
 \subsection{Matriz de responsabilidades (RACI)}
-\subsection{Recursos y presupuesto}             % Insumo: CE0122 / CE0124 (E2)
+\subsection{Recursos y presupuesto}
 
 \section{Despliegue y reversión}
-% Insumo: Fase F
 \subsection{Arquitecturas de transición A y B}
 \subsection{Plan piloto}
-\subsection{Plan de reversión}                  % PENDIENTE
+\subsection{Plan de reversión}
 
 \section{Gestión del cambio y soporte}
-\subsection{Riesgos y mitigaciones (R-01 a R-20)}   % Insumo: Fase F y CE0125 (E2); R-20 pendiente
-\subsection{Gobernanza de la implementación}        % Insumo: Fase G
-\subsection{Gestión del cambio de arquitectura}     % Insumo: Fase H
+\subsection{Riesgos y mitigaciones (R-01 a R-20)}
+\subsection{Gobernanza de la implementación}
+\subsection{Gestión del cambio de arquitectura}
 \subsection{Capacitación y adopción de usuarios}
-\subsection{Soporte y operación del servicio}       % ITIL 4: mesa de ayuda, incidentes
+\subsection{Soporte y operación del servicio}
 
-% ---------------------------------------------------------------------
 \chapter{CE0145 - Indicadores de Uso, Valor y Mejora del Sistema de Información}
-% Rúbrica: indicadores de uso, valor generado y mejora continua con
-% métricas, línea base, metas y mecanismos de seguimiento.
-% ---------------------------------------------------------------------
 
 \section{Tabla de indicadores}
-% Insumo: Fase A (objetivos), Fase E (IOS5-P02, criterios de éxito)
 \subsection{Indicadores de uso}
 \subsection{Indicadores de valor}
 \subsection{Indicadores de mejora}
 
 \section{Fórmula, línea base, meta y frecuencia}
-% Línea base: tomar de CE0135 (E3) cuando exista
-% PENDIENTE: metas aún sin validar
 
 \section{Seguimiento}
 \subsection{Mecanismo de seguimiento (tablero de control)}
-\subsection{Responsables y periodicidad}        % Insumo: Fase G
-\subsection{Ciclo de mejora continua}           % Insumo: Fase H
+\subsection{Responsables y periodicidad}
+\subsection{Ciclo de mejora continua}
 
-% ---------------------------------------------------------------------
-%  Secciones finales (sin numerar, pero visibles en el índice)
-% ---------------------------------------------------------------------
 \chapter*{Conclusiones y recomendaciones}
 \addcontentsline{toc}{chapter}{Conclusiones y recomendaciones}
 
 \chapter*{Referencias}
 \addcontentsline{toc}{chapter}{Referencias}
-% Formato IEEE o APA 7.ª edición
 
 \chapter*{Anexos}
 \addcontentsline{toc}{chapter}{Anexos}
