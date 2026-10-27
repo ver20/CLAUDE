@@ -1,0 +1,63 @@
+\section{Inventario de sistemas}
+
+El inventario recoge los sistemas, registros y componentes tecnológicos con los que Franco's S.A.C. opera actualmente (AS-IS). Se identificó para cada elemento su función, los usuarios, el lugar donde se ejecuta y su relación con otros elementos del ecosistema.
+
+\subsection{Sistemas y registros}
+
+La operación de la empresa se apoya principalmente en registros manuales y herramientas ofimáticas de uso informal. El único sistema empresarial es SICO ERP, empleado solo para emitir comprobantes de pago; su aplicación complementaria, SICO Móvil, fue adquirida pero no se utiliza. La Tabla~\ref{tab:inventario-sistemas} resume los sistemas y registros identificados.
+
+\begin{table}[H]
+\centering
+\caption{Inventario de sistemas y registros (AS-IS)}
+\label{tab:inventario-sistemas}
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.3cm}|X|>{\raggedright\arraybackslash}p{2.4cm}|X|>{\raggedright\arraybackslash}p{2.2cm}|}
+\hline
+\textbf{Sistema} & \textbf{Función} & \textbf{Quién lo usa} & \textbf{Dónde corre} & \textbf{Se relaciona con} \\
+\hline
+Registros manuales / formatos físicos & Registro de distribución, ventas e inventario en papel, sin estandarizar. & Personal operativo (ventas, inventario, distribución) & Papel, en planta y tienda & Ninguno \\
+\hline
+SICO ERP & Emisión de comprobantes de pago (boletas y facturas). El resto de sus funciones no se usa. & Personal de ventas y facturación & Una sola PC con Windows en la red local, con instalación local, sin servidor, sin nube y sin respaldo & SICO Móvil \\
+\hline
+SICO Móvil & Aplicación móvil asociada a SICO ERP. Adquirida, sin uso actual. & Nadie & No aplica & SICO ERP \\
+\hline
+Excel & Herramienta ofimática de uso informal. & Personal de la empresa & PC con Windows local & Ninguno \\
+\hline
+Word & Herramienta ofimática de uso informal. & Personal de la empresa & PC con Windows local & Ninguno \\
+\hline
+Correo electrónico & Comunicación. & Personal de la empresa & Servicio en internet, vía ISP local & Internet \\
+\hline
+WhatsApp & Comunicación informal. & Personal de la empresa & Servicio en internet & Internet \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Infraestructura tecnológica}
+
+La empresa cuenta con una red local única y sin segmentación. No dispone de servidor propio, servicios en la nube ni sistema de monitoreo. La Tabla~\ref{tab:inventario-infraestructura} detalla los componentes identificados.
+
+\begin{table}[H]
+\centering
+\caption{Inventario de infraestructura tecnológica (AS-IS)}
+\label{tab:inventario-infraestructura}
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{2.5cm}|X|>{\centering\arraybackslash}p{1.4cm}|>{\raggedright\arraybackslash}p{2.2cm}|>{\raggedright\arraybackslash}p{2.6cm}|}
+\hline
+\textbf{Componente} & \textbf{Función} & \textbf{Cantidad} & \textbf{Ubicación} & \textbf{Se relaciona con} \\
+\hline
+PC con Windows & Equipos de trabajo. Solo una ejecuta SICO ERP. & 4 & Oficina / planta & Switch de red (LAN cableada) \\
+\hline
+Impresora & Impresión de documentos. & 1 & Oficina & Por confirmar \\
+\hline
+Switch de red & Conecta los equipos en la LAN cableada. & 1 & Oficina / planta & Router, PCs \\
+\hline
+Router (módem del ISP) & Da salida a internet a la red local. & 1 & Oficina / planta & Internet, switch \\
+\hline
+Internet (ISP local) & Conexión externa. & 1 & Proveedor externo & Router \\
+\hline
+\end{tabularx}
+\end{table}
+
+En síntesis, el inventario muestra un ecosistema de información mínimo y desarticulado: SICO ERP depende de una sola PC y no cuenta con respaldo de su base de datos; los datos operativos se encuentran en papel y en archivos sueltos de Excel y Word, sin una base de datos central; y ninguna de las herramientas está integrada con otra.
