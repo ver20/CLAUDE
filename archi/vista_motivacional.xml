@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd" identifier="id-model-francos-erp">
+  <name xml:lang="es">Franco's ERP - Arquitectura Conceptual</name>
+  <elements>
+    <element identifier="id-S1" xsi:type="Stakeholder"><name xml:lang="es">Gerencia General</name><documentation xml:lang="es">Supervisa la operación y toma decisiones estratégicas.</documentation></element>
+    <element identifier="id-S2" xsi:type="Stakeholder"><name xml:lang="es">Área de Ventas</name><documentation xml:lang="es">Gestiona cotizaciones, pedidos y comprobantes.</documentation></element>
+    <element identifier="id-S3" xsi:type="Stakeholder"><name xml:lang="es">Área de Inventario / Almacén</name><documentation xml:lang="es">Controla insumos, productos terminados y despachos.</documentation></element>
+    <element identifier="id-S4" xsi:type="Stakeholder"><name xml:lang="es">Cliente</name><documentation xml:lang="es">Realiza pedidos y espera atención oportuna.</documentation></element>
+    <element identifier="id-D1" xsi:type="Driver"><name xml:lang="es">Registros manuales desarticulados</name><documentation xml:lang="es">Operaciones de ventas, inventario y distribución registradas en papel y hojas de cálculo desarticuladas.</documentation></element>
+    <element identifier="id-D2" xsi:type="Driver"><name xml:lang="es">Quiebres de stock</name><documentation xml:lang="es">Quiebres de stock por falta de control y de alertas oportunas.</documentation></element>
+    <element identifier="id-D3" xsi:type="Driver"><name xml:lang="es">Pedidos sin visibilidad</name><documentation xml:lang="es">Pedidos atendidos de forma manual y sin visibilidad de su estado.</documentation></element>
+    <element identifier="id-D4" xsi:type="Driver"><name xml:lang="es">Decisiones sin indicadores</name><documentation xml:lang="es">Decisiones gerenciales tomadas sin indicadores ni información confiable.</documentation></element>
+    <element identifier="id-D5" xsi:type="Driver"><name xml:lang="es">Información sin seguridad</name><documentation xml:lang="es">Información sensible sin políticas de seguridad ni control de acceso.</documentation></element>
+    <element identifier="id-GN3" xsi:type="Goal"><name xml:lang="es">Negocio E3: Optimizar la gestión operativa</name><documentation xml:lang="es">Optimizar la gestión operativa y estratégica mediante el uso de tecnologías digitales e información.</documentation></element>
+    <element identifier="id-GN7" xsi:type="Goal"><name xml:lang="es">Negocio E7: Optimizar la gestión de pedidos</name><documentation xml:lang="es">Optimizar la gestión de pedidos para mejorar la eficiencia y satisfacción del cliente.</documentation></element>
+    <element identifier="id-GT3" xsi:type="Goal"><name xml:lang="es">TI E3: Soluciones empresariales integradas (ERP)</name><documentation xml:lang="es">Implementar soluciones empresariales integradas para la digitalización de procesos operativos y comerciales (ERP).</documentation></element>
+    <element identifier="id-GT4" xsi:type="Goal"><name xml:lang="es">TI E4: Inteligencia de negocios (BI)</name><documentation xml:lang="es">Implementar un sistema de inteligencia de negocios (BI) para el análisis y soporte a decisiones estratégicas.</documentation></element>
+    <element identifier="id-GT6" xsi:type="Goal"><name xml:lang="es">TI E6: Gobierno de TI</name><documentation xml:lang="es">Establecer un modelo de gobierno de TI alineado a los objetivos del negocio.</documentation></element>
+    <element identifier="id-GT7" xsi:type="Goal"><name xml:lang="es">TI E7: Plataforma digital de pedidos</name><documentation xml:lang="es">Implementación de plataforma digital de atención y gestión de pedidos orientada a la experiencia del cliente.</documentation></element>
+    <element identifier="id-GT9" xsi:type="Goal"><name xml:lang="es">TI E9: Automatización de procesos clave</name><documentation xml:lang="es">Incrementar la eficiencia operativa mediante la automatización inteligente de procesos clave del negocio.</documentation></element>
+    <element identifier="id-R1" xsi:type="Outcome"><name xml:lang="es">Sistema web centralizado</name><documentation xml:lang="es">Registros manuales reemplazados por un sistema web centralizado.</documentation></element>
+    <element identifier="id-R2" xsi:type="Outcome"><name xml:lang="es">Inventario trazable con alertas</name><documentation xml:lang="es">Inventario con trazabilidad de movimientos y alertas de stock mínimo.</documentation></element>
+    <element identifier="id-R3" xsi:type="Outcome"><name xml:lang="es">Ciclo de venta digital</name><documentation xml:lang="es">Ciclo de venta digital, con seguimiento de pedidos por parte del cliente.</documentation></element>
+    <element identifier="id-R4" xsi:type="Outcome"><name xml:lang="es">Reportes y tablero BSC</name><documentation xml:lang="es">Reportes en tiempo real y tablero BSC con KPIs estratégicos.</documentation></element>
+    <element identifier="id-R5" xsi:type="Outcome"><name xml:lang="es">Acceso seguro por roles</name><documentation xml:lang="es">Acceso controlado por roles y comunicaciones cifradas.</documentation></element>
+    <element identifier="id-OD1" xsi:type="Requirement"><name xml:lang="es">OD-01 Centralizar la información</name><documentation xml:lang="es">Centralizar la información operativa en una base de datos única, eliminando la duplicidad entre registros físicos y digitales. Iniciativas: IM-02, IM-05.</documentation></element>
+    <element identifier="id-OD2" xsi:type="Requirement"><name xml:lang="es">OD-02 Integrar procesos</name><documentation xml:lang="es">Integrar los procesos de ventas, inventario y despacho, de modo que cada operación actualice automáticamente la información relacionada. Iniciativas: IM-01, IM-06.</documentation></element>
+    <element identifier="id-OD3" xsi:type="Requirement"><name xml:lang="es">OD-03 Asegurar la trazabilidad</name><documentation xml:lang="es">Asegurar la trazabilidad de pedidos, lotes y movimientos de inventario desde su registro hasta su cierre. Iniciativas: IM-04, IM-05.</documentation></element>
+    <element identifier="id-OD4" xsi:type="Requirement"><name xml:lang="es">OD-04 Información para decidir</name><documentation xml:lang="es">Proveer información oportuna para la toma de decisiones mediante reportes e indicadores estratégicos. Iniciativa: gestión estratégica.</documentation></element>
+    <element identifier="id-OD5" xsi:type="Requirement"><name xml:lang="es">OD-05 Acceso seguro por rol</name><documentation xml:lang="es">Garantizar el acceso seguro a la información según el rol de cada usuario. Transversal.</documentation></element>
+    <element identifier="id-OD6" xsi:type="Requirement"><name xml:lang="es">OD-06 Disponibilidad y crecimiento</name><documentation xml:lang="es">Asegurar la disponibilidad del sistema durante el horario operativo y su capacidad de crecer junto con la empresa. Transversal.</documentation></element>
+    <element identifier="id-P1" xsi:type="Principle"><name xml:lang="es">Alineamiento estratégico</name><documentation xml:lang="es">Toda funcionalidad del sistema debe responder a un objetivo estratégico de la organización.</documentation></element>
+    <element identifier="id-P2" xsi:type="Principle"><name xml:lang="es">Procesos soportados por el sistema</name><documentation xml:lang="es">Los procesos rediseñados deben ejecutarse dentro del sistema y no fuera de él.</documentation></element>
+    <element identifier="id-P3" xsi:type="Principle"><name xml:lang="es">Dato único y compartido</name><documentation xml:lang="es">Cada dato se registra una sola vez y es consultado por todas las áreas que lo requieren.</documentation></element>
+    <element identifier="id-P4" xsi:type="Principle"><name xml:lang="es">Trazabilidad</name><documentation xml:lang="es">Toda operación debe quedar registrada con su responsable y fecha.</documentation></element>
+    <element identifier="id-P5" xsi:type="Principle"><name xml:lang="es">Modularidad</name><documentation xml:lang="es">El sistema se organiza en módulos independientes por dominio de negocio.</documentation></element>
+    <element identifier="id-P6" xsi:type="Principle"><name xml:lang="es">Acceso según rol</name><documentation xml:lang="es">Cada usuario accede únicamente a las funciones que requiere su rol.</documentation></element>
+    <element identifier="id-P7" xsi:type="Principle"><name xml:lang="es">Disponibilidad y continuidad</name><documentation xml:lang="es">La plataforma debe mantenerse operativa durante el horario de trabajo y recuperarse ante fallas.</documentation></element>
+    <element identifier="id-P8" xsi:type="Principle"><name xml:lang="es">Seguridad desde el diseño</name><documentation xml:lang="es">La protección de la información se incorpora desde la concepción del sistema.</documentation></element>
+  </elements>
+  <relationships>
+    <relationship identifier="id-rel1" source="id-S1" target="id-D4" xsi:type="Association"/>
+    <relationship identifier="id-rel2" source="id-S1" target="id-D5" xsi:type="Association"/>
+    <relationship identifier="id-rel3" source="id-S2" target="id-D1" xsi:type="Association"/>
+    <relationship identifier="id-rel4" source="id-S2" target="id-D3" xsi:type="Association"/>
+    <relationship identifier="id-rel5" source="id-S3" target="id-D1" xsi:type="Association"/>
+    <relationship identifier="id-rel6" source="id-S3" target="id-D2" xsi:type="Association"/>
+    <relationship identifier="id-rel7" source="id-S4" target="id-D3" xsi:type="Association"/>
+    <relationship identifier="id-rel8" source="id-D1" target="id-GN3" xsi:type="Influence"/>
+    <relationship identifier="id-rel9" source="id-D1" target="id-GT3" xsi:type="Influence"/>
+    <relationship identifier="id-rel10" source="id-D2" target="id-GT3" xsi:type="Influence"/>
+    <relationship identifier="id-rel11" source="id-D2" target="id-GT9" xsi:type="Influence"/>
+    <relationship identifier="id-rel12" source="id-D3" target="id-GN7" xsi:type="Influence"/>
+    <relationship identifier="id-rel13" source="id-D3" target="id-GT7" xsi:type="Influence"/>
+    <relationship identifier="id-rel14" source="id-D4" target="id-GT4" xsi:type="Influence"/>
+    <relationship identifier="id-rel15" source="id-D4" target="id-GT6" xsi:type="Influence"/>
+    <relationship identifier="id-rel16" source="id-D5" target="id-GT6" xsi:type="Influence"/>
+    <relationship identifier="id-rel17" source="id-R1" target="id-GN3" xsi:type="Realization"/>
+    <relationship identifier="id-rel18" source="id-R1" target="id-GT3" xsi:type="Realization"/>
+    <relationship identifier="id-rel19" source="id-R2" target="id-GT9" xsi:type="Realization"/>
+    <relationship identifier="id-rel20" source="id-R3" target="id-GN7" xsi:type="Realization"/>
+    <relationship identifier="id-rel21" source="id-R3" target="id-GT7" xsi:type="Realization"/>
+    <relationship identifier="id-rel22" source="id-R4" target="id-GT4" xsi:type="Realization"/>
+    <relationship identifier="id-rel23" source="id-R4" target="id-GT6" xsi:type="Realization"/>
+    <relationship identifier="id-rel24" source="id-R5" target="id-GT6" xsi:type="Realization"/>
+    <relationship identifier="id-rel25" source="id-OD1" target="id-R1" xsi:type="Realization"/>
+    <relationship identifier="id-rel26" source="id-OD2" target="id-R1" xsi:type="Realization"/>
+    <relationship identifier="id-rel27" source="id-OD2" target="id-R3" xsi:type="Realization"/>
+    <relationship identifier="id-rel28" source="id-OD3" target="id-R2" xsi:type="Realization"/>
+    <relationship identifier="id-rel29" source="id-OD4" target="id-R4" xsi:type="Realization"/>
+    <relationship identifier="id-rel30" source="id-OD5" target="id-R5" xsi:type="Realization"/>
+    <relationship identifier="id-rel31" source="id-OD6" target="id-R1" xsi:type="Realization"/>
+    <relationship identifier="id-rel32" source="id-OD4" target="id-P1" xsi:type="Realization"/>
+    <relationship identifier="id-rel33" source="id-OD2" target="id-P2" xsi:type="Realization"/>
+    <relationship identifier="id-rel34" source="id-OD1" target="id-P3" xsi:type="Realization"/>
+    <relationship identifier="id-rel35" source="id-OD3" target="id-P4" xsi:type="Realization"/>
+    <relationship identifier="id-rel36" source="id-OD2" target="id-P5" xsi:type="Realization"/>
+    <relationship identifier="id-rel37" source="id-OD5" target="id-P6" xsi:type="Realization"/>
+    <relationship identifier="id-rel38" source="id-OD6" target="id-P7" xsi:type="Realization"/>
+    <relationship identifier="id-rel39" source="id-OD5" target="id-P8" xsi:type="Realization"/>
+  </relationships>
+  <views><diagrams>
+    <view identifier="id-view-motivacional" xsi:type="Diagram"><name xml:lang="es">Vista motivacional</name>
+      <node identifier="id-n-S1" elementRef="id-S1" xsi:type="Element" x="364" y="24" w="150" h="65"/>
+      <node identifier="id-n-S2" elementRef="id-S2" xsi:type="Element" x="534" y="24" w="150" h="65"/>
+      <node identifier="id-n-S3" elementRef="id-S3" xsi:type="Element" x="704" y="24" w="150" h="65"/>
+      <node identifier="id-n-S4" elementRef="id-S4" xsi:type="Element" x="874" y="24" w="150" h="65"/>
+      <node identifier="id-n-D1" elementRef="id-D1" xsi:type="Element" x="279" y="179" w="150" h="65"/>
+      <node identifier="id-n-D2" elementRef="id-D2" xsi:type="Element" x="449" y="179" w="150" h="65"/>
+      <node identifier="id-n-D3" elementRef="id-D3" xsi:type="Element" x="619" y="179" w="150" h="65"/>
+      <node identifier="id-n-D4" elementRef="id-D4" xsi:type="Element" x="789" y="179" w="150" h="65"/>
+      <node identifier="id-n-D5" elementRef="id-D5" xsi:type="Element" x="959" y="179" w="150" h="65"/>
+      <node identifier="id-n-GN3" elementRef="id-GN3" xsi:type="Element" x="109" y="334" w="150" h="65"/>
+      <node identifier="id-n-GN7" elementRef="id-GN7" xsi:type="Element" x="279" y="334" w="150" h="65"/>
+      <node identifier="id-n-GT3" elementRef="id-GT3" xsi:type="Element" x="449" y="334" w="150" h="65"/>
+      <node identifier="id-n-GT4" elementRef="id-GT4" xsi:type="Element" x="619" y="334" w="150" h="65"/>
+      <node identifier="id-n-GT6" elementRef="id-GT6" xsi:type="Element" x="789" y="334" w="150" h="65"/>
+      <node identifier="id-n-GT7" elementRef="id-GT7" xsi:type="Element" x="959" y="334" w="150" h="65"/>
+      <node identifier="id-n-GT9" elementRef="id-GT9" xsi:type="Element" x="1129" y="334" w="150" h="65"/>
+      <node identifier="id-n-R1" elementRef="id-R1" xsi:type="Element" x="279" y="489" w="150" h="65"/>
+      <node identifier="id-n-R2" elementRef="id-R2" xsi:type="Element" x="449" y="489" w="150" h="65"/>
+      <node identifier="id-n-R3" elementRef="id-R3" xsi:type="Element" x="619" y="489" w="150" h="65"/>
+      <node identifier="id-n-R4" elementRef="id-R4" xsi:type="Element" x="789" y="489" w="150" h="65"/>
+      <node identifier="id-n-R5" elementRef="id-R5" xsi:type="Element" x="959" y="489" w="150" h="65"/>
+      <node identifier="id-n-OD1" elementRef="id-OD1" xsi:type="Element" x="194" y="644" w="150" h="65"/>
+      <node identifier="id-n-OD2" elementRef="id-OD2" xsi:type="Element" x="364" y="644" w="150" h="65"/>
+      <node identifier="id-n-OD3" elementRef="id-OD3" xsi:type="Element" x="534" y="644" w="150" h="65"/>
+      <node identifier="id-n-OD4" elementRef="id-OD4" xsi:type="Element" x="704" y="644" w="150" h="65"/>
+      <node identifier="id-n-OD5" elementRef="id-OD5" xsi:type="Element" x="874" y="644" w="150" h="65"/>
+      <node identifier="id-n-OD6" elementRef="id-OD6" xsi:type="Element" x="1044" y="644" w="150" h="65"/>
+      <node identifier="id-n-P1" elementRef="id-P1" xsi:type="Element" x="24" y="799" w="150" h="65"/>
+      <node identifier="id-n-P2" elementRef="id-P2" xsi:type="Element" x="194" y="799" w="150" h="65"/>
+      <node identifier="id-n-P3" elementRef="id-P3" xsi:type="Element" x="364" y="799" w="150" h="65"/>
+      <node identifier="id-n-P4" elementRef="id-P4" xsi:type="Element" x="534" y="799" w="150" h="65"/>
+      <node identifier="id-n-P5" elementRef="id-P5" xsi:type="Element" x="704" y="799" w="150" h="65"/>
+      <node identifier="id-n-P6" elementRef="id-P6" xsi:type="Element" x="874" y="799" w="150" h="65"/>
+      <node identifier="id-n-P7" elementRef="id-P7" xsi:type="Element" x="1044" y="799" w="150" h="65"/>
+      <node identifier="id-n-P8" elementRef="id-P8" xsi:type="Element" x="1214" y="799" w="150" h="65"/>
+      <connection identifier="id-c1" relationshipRef="id-rel1" xsi:type="Relationship" source="id-n-S1" target="id-n-D4"/>
+      <connection identifier="id-c2" relationshipRef="id-rel2" xsi:type="Relationship" source="id-n-S1" target="id-n-D5"/>
+      <connection identifier="id-c3" relationshipRef="id-rel3" xsi:type="Relationship" source="id-n-S2" target="id-n-D1"/>
+      <connection identifier="id-c4" relationshipRef="id-rel4" xsi:type="Relationship" source="id-n-S2" target="id-n-D3"/>
+      <connection identifier="id-c5" relationshipRef="id-rel5" xsi:type="Relationship" source="id-n-S3" target="id-n-D1"/>
+      <connection identifier="id-c6" relationshipRef="id-rel6" xsi:type="Relationship" source="id-n-S3" target="id-n-D2"/>
+      <connection identifier="id-c7" relationshipRef="id-rel7" xsi:type="Relationship" source="id-n-S4" target="id-n-D3"/>
+      <connection identifier="id-c8" relationshipRef="id-rel8" xsi:type="Relationship" source="id-n-D1" target="id-n-GN3"/>
+      <connection identifier="id-c9" relationshipRef="id-rel9" xsi:type="Relationship" source="id-n-D1" target="id-n-GT3"/>
+      <connection identifier="id-c10" relationshipRef="id-rel10" xsi:type="Relationship" source="id-n-D2" target="id-n-GT3"/>
+      <connection identifier="id-c11" relationshipRef="id-rel11" xsi:type="Relationship" source="id-n-D2" target="id-n-GT9"/>
+      <connection identifier="id-c12" relationshipRef="id-rel12" xsi:type="Relationship" source="id-n-D3" target="id-n-GN7"/>
+      <connection identifier="id-c13" relationshipRef="id-rel13" xsi:type="Relationship" source="id-n-D3" target="id-n-GT7"/>
+      <connection identifier="id-c14" relationshipRef="id-rel14" xsi:type="Relationship" source="id-n-D4" target="id-n-GT4"/>
+      <connection identifier="id-c15" relationshipRef="id-rel15" xsi:type="Relationship" source="id-n-D4" target="id-n-GT6"/>
+      <connection identifier="id-c16" relationshipRef="id-rel16" xsi:type="Relationship" source="id-n-D5" target="id-n-GT6"/>
+      <connection identifier="id-c17" relationshipRef="id-rel17" xsi:type="Relationship" source="id-n-R1" target="id-n-GN3"/>
+      <connection identifier="id-c18" relationshipRef="id-rel18" xsi:type="Relationship" source="id-n-R1" target="id-n-GT3"/>
+      <connection identifier="id-c19" relationshipRef="id-rel19" xsi:type="Relationship" source="id-n-R2" target="id-n-GT9"/>
+      <connection identifier="id-c20" relationshipRef="id-rel20" xsi:type="Relationship" source="id-n-R3" target="id-n-GN7"/>
+      <connection identifier="id-c21" relationshipRef="id-rel21" xsi:type="Relationship" source="id-n-R3" target="id-n-GT7"/>
+      <connection identifier="id-c22" relationshipRef="id-rel22" xsi:type="Relationship" source="id-n-R4" target="id-n-GT4"/>
+      <connection identifier="id-c23" relationshipRef="id-rel23" xsi:type="Relationship" source="id-n-R4" target="id-n-GT6"/>
+      <connection identifier="id-c24" relationshipRef="id-rel24" xsi:type="Relationship" source="id-n-R5" target="id-n-GT6"/>
+      <connection identifier="id-c25" relationshipRef="id-rel25" xsi:type="Relationship" source="id-n-OD1" target="id-n-R1"/>
+      <connection identifier="id-c26" relationshipRef="id-rel26" xsi:type="Relationship" source="id-n-OD2" target="id-n-R1"/>
+      <connection identifier="id-c27" relationshipRef="id-rel27" xsi:type="Relationship" source="id-n-OD2" target="id-n-R3"/>
+      <connection identifier="id-c28" relationshipRef="id-rel28" xsi:type="Relationship" source="id-n-OD3" target="id-n-R2"/>
+      <connection identifier="id-c29" relationshipRef="id-rel29" xsi:type="Relationship" source="id-n-OD4" target="id-n-R4"/>
+      <connection identifier="id-c30" relationshipRef="id-rel30" xsi:type="Relationship" source="id-n-OD5" target="id-n-R5"/>
+      <connection identifier="id-c31" relationshipRef="id-rel31" xsi:type="Relationship" source="id-n-OD6" target="id-n-R1"/>
+      <connection identifier="id-c32" relationshipRef="id-rel32" xsi:type="Relationship" source="id-n-OD4" target="id-n-P1"/>
+      <connection identifier="id-c33" relationshipRef="id-rel33" xsi:type="Relationship" source="id-n-OD2" target="id-n-P2"/>
+      <connection identifier="id-c34" relationshipRef="id-rel34" xsi:type="Relationship" source="id-n-OD1" target="id-n-P3"/>
+      <connection identifier="id-c35" relationshipRef="id-rel35" xsi:type="Relationship" source="id-n-OD3" target="id-n-P4"/>
+      <connection identifier="id-c36" relationshipRef="id-rel36" xsi:type="Relationship" source="id-n-OD2" target="id-n-P5"/>
+      <connection identifier="id-c37" relationshipRef="id-rel37" xsi:type="Relationship" source="id-n-OD5" target="id-n-P6"/>
+      <connection identifier="id-c38" relationshipRef="id-rel38" xsi:type="Relationship" source="id-n-OD6" target="id-n-P7"/>
+      <connection identifier="id-c39" relationshipRef="id-rel39" xsi:type="Relationship" source="id-n-OD5" target="id-n-P8"/>
+    </view>
+  </diagrams></views>
+</model>
