@@ -136,73 +136,73 @@
   </relationships>
   <views><diagrams>
     <view identifier="id-view-motivacional" xsi:type="Diagram"><name xml:lang="es">Vista motivacional - Franco's ERP</name>
-      <node identifier="id-n-GD" elementRef="id-GD" xsi:type="Element" x="20" y="20" w="250" h="560">
-        <node identifier="id-n-D1" elementRef="id-D1" xsi:type="Element" x="40" y="60" w="210" h="70"/>
-        <node identifier="id-n-D2" elementRef="id-D2" xsi:type="Element" x="40" y="160" w="210" h="70"/>
-        <node identifier="id-n-D3" elementRef="id-D3" xsi:type="Element" x="40" y="260" w="210" h="70"/>
-        <node identifier="id-n-D4" elementRef="id-D4" xsi:type="Element" x="40" y="360" w="210" h="70"/>
-        <node identifier="id-n-D5" elementRef="id-D5" xsi:type="Element" x="40" y="460" w="210" h="70"/>
+      <node identifier="id-n-GD" elementRef="id-GD" xsi:type="Element" x="20" y="20" w="250" h="560"><style><fillColor r="242" g="242" b="242"/><lineColor r="92" g="92" b="92"/></style>
+        <node identifier="id-n-D1" elementRef="id-D1" xsi:type="Element" x="40" y="60" w="210" h="70"><style><fillColor r="248" g="203" b="173"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-D2" elementRef="id-D2" xsi:type="Element" x="40" y="160" w="210" h="70"><style><fillColor r="248" g="203" b="173"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-D3" elementRef="id-D3" xsi:type="Element" x="40" y="260" w="210" h="70"><style><fillColor r="248" g="203" b="173"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-D4" elementRef="id-D4" xsi:type="Element" x="40" y="360" w="210" h="70"><style><fillColor r="248" g="203" b="173"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-D5" elementRef="id-D5" xsi:type="Element" x="40" y="460" w="210" h="70"><style><fillColor r="248" g="203" b="173"/><lineColor r="92" g="92" b="92"/></style></node>
       </node>
-      <node identifier="id-n-GS" elementRef="id-GS" xsi:type="Element" x="280" y="20" w="1225" h="120">
-        <node identifier="id-n-S1" elementRef="id-S1" xsi:type="Element" x="300" y="55" w="225" h="60"/>
-        <node identifier="id-n-S2" elementRef="id-S2" xsi:type="Element" x="540" y="55" w="225" h="60"/>
-        <node identifier="id-n-S3" elementRef="id-S3" xsi:type="Element" x="780" y="55" w="225" h="60"/>
-        <node identifier="id-n-S4" elementRef="id-S4" xsi:type="Element" x="1020" y="55" w="225" h="60"/>
-        <node identifier="id-n-S5" elementRef="id-S5" xsi:type="Element" x="1260" y="55" w="225" h="60"/>
+      <node identifier="id-n-GS" elementRef="id-GS" xsi:type="Element" x="280" y="20" w="1225" h="120"><style><fillColor r="242" g="242" b="242"/><lineColor r="92" g="92" b="92"/></style>
+        <node identifier="id-n-S1" elementRef="id-S1" xsi:type="Element" x="300" y="55" w="225" h="60"><style><fillColor r="198" g="217" b="241"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-S2" elementRef="id-S2" xsi:type="Element" x="540" y="55" w="225" h="60"><style><fillColor r="198" g="217" b="241"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-S3" elementRef="id-S3" xsi:type="Element" x="780" y="55" w="225" h="60"><style><fillColor r="198" g="217" b="241"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-S4" elementRef="id-S4" xsi:type="Element" x="1020" y="55" w="225" h="60"><style><fillColor r="198" g="217" b="241"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-S5" elementRef="id-S5" xsi:type="Element" x="1260" y="55" w="225" h="60"><style><fillColor r="198" g="217" b="241"/><lineColor r="92" g="92" b="92"/></style></node>
       </node>
-      <node identifier="id-n-GP" elementRef="id-GP" xsi:type="Element" x="280" y="730" w="1225" h="200">
-        <node identifier="id-n-P1" elementRef="id-P1" xsi:type="Element" x="290" y="765" w="128" h="65"/>
-        <node identifier="id-n-P2" elementRef="id-P2" xsi:type="Element" x="424" y="765" w="128" h="65"/>
-        <node identifier="id-n-P3" elementRef="id-P3" xsi:type="Element" x="558" y="765" w="128" h="65"/>
-        <node identifier="id-n-P4" elementRef="id-P4" xsi:type="Element" x="692" y="765" w="128" h="65"/>
-        <node identifier="id-n-P5" elementRef="id-P5" xsi:type="Element" x="826" y="765" w="128" h="65"/>
-        <node identifier="id-n-P6" elementRef="id-P6" xsi:type="Element" x="960" y="765" w="128" h="65"/>
-        <node identifier="id-n-P7" elementRef="id-P7" xsi:type="Element" x="1094" y="765" w="128" h="65"/>
-        <node identifier="id-n-P8" elementRef="id-P8" xsi:type="Element" x="1228" y="765" w="128" h="65"/>
-        <node identifier="id-n-P9" elementRef="id-P9" xsi:type="Element" x="1362" y="765" w="128" h="65"/>
-        <node identifier="id-n-P10" elementRef="id-P10" xsi:type="Element" x="290" y="845" w="128" h="65"/>
-        <node identifier="id-n-P11" elementRef="id-P11" xsi:type="Element" x="424" y="845" w="128" h="65"/>
-        <node identifier="id-n-P12" elementRef="id-P12" xsi:type="Element" x="558" y="845" w="128" h="65"/>
-        <node identifier="id-n-P13" elementRef="id-P13" xsi:type="Element" x="692" y="845" w="128" h="65"/>
-        <node identifier="id-n-P14" elementRef="id-P14" xsi:type="Element" x="826" y="845" w="128" h="65"/>
-        <node identifier="id-n-P15" elementRef="id-P15" xsi:type="Element" x="960" y="845" w="128" h="65"/>
-        <node identifier="id-n-P16" elementRef="id-P16" xsi:type="Element" x="1094" y="845" w="128" h="65"/>
-        <node identifier="id-n-P17" elementRef="id-P17" xsi:type="Element" x="1228" y="845" w="128" h="65"/>
-        <node identifier="id-n-P18" elementRef="id-P18" xsi:type="Element" x="1362" y="845" w="128" h="65"/>
+      <node identifier="id-n-GP" elementRef="id-GP" xsi:type="Element" x="280" y="730" w="1225" h="200"><style><fillColor r="242" g="242" b="242"/><lineColor r="92" g="92" b="92"/></style>
+        <node identifier="id-n-P1" elementRef="id-P1" xsi:type="Element" x="290" y="765" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-P2" elementRef="id-P2" xsi:type="Element" x="424" y="765" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-P3" elementRef="id-P3" xsi:type="Element" x="558" y="765" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-P4" elementRef="id-P4" xsi:type="Element" x="692" y="765" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-P5" elementRef="id-P5" xsi:type="Element" x="826" y="765" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-P6" elementRef="id-P6" xsi:type="Element" x="960" y="765" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-P7" elementRef="id-P7" xsi:type="Element" x="1094" y="765" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-P8" elementRef="id-P8" xsi:type="Element" x="1228" y="765" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-P9" elementRef="id-P9" xsi:type="Element" x="1362" y="765" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-P10" elementRef="id-P10" xsi:type="Element" x="290" y="845" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-P11" elementRef="id-P11" xsi:type="Element" x="424" y="845" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-P12" elementRef="id-P12" xsi:type="Element" x="558" y="845" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-P13" elementRef="id-P13" xsi:type="Element" x="692" y="845" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-P14" elementRef="id-P14" xsi:type="Element" x="826" y="845" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-P15" elementRef="id-P15" xsi:type="Element" x="960" y="845" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-P16" elementRef="id-P16" xsi:type="Element" x="1094" y="845" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-P17" elementRef="id-P17" xsi:type="Element" x="1228" y="845" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
+        <node identifier="id-n-P18" elementRef="id-P18" xsi:type="Element" x="1362" y="845" w="128" h="65"><style><fillColor r="244" g="182" b="194"/><lineColor r="92" g="92" b="92"/></style></node>
       </node>
-      <node identifier="id-n-A1" elementRef="id-A1" xsi:type="Element" x="300" y="180" w="185" h="70"/>
-      <node identifier="id-n-A2" elementRef="id-A2" xsi:type="Element" x="500" y="180" w="185" h="70"/>
-      <node identifier="id-n-A3" elementRef="id-A3" xsi:type="Element" x="700" y="180" w="185" h="70"/>
-      <node identifier="id-n-A4" elementRef="id-A4" xsi:type="Element" x="900" y="180" w="185" h="70"/>
-      <node identifier="id-n-A5" elementRef="id-A5" xsi:type="Element" x="1100" y="180" w="185" h="70"/>
-      <node identifier="id-n-A6" elementRef="id-A6" xsi:type="Element" x="1300" y="180" w="185" h="70"/>
-      <node identifier="id-n-G0" elementRef="id-G0" xsi:type="Element" x="300" y="290" w="1185" h="60"/>
-      <node identifier="id-n-G1" elementRef="id-G1" xsi:type="Element" x="300" y="400" w="185" h="70"/>
-      <node identifier="id-n-G2" elementRef="id-G2" xsi:type="Element" x="500" y="400" w="185" h="70"/>
-      <node identifier="id-n-G3" elementRef="id-G3" xsi:type="Element" x="700" y="400" w="185" h="70"/>
-      <node identifier="id-n-G4" elementRef="id-G4" xsi:type="Element" x="900" y="400" w="185" h="70"/>
-      <node identifier="id-n-G5" elementRef="id-G5" xsi:type="Element" x="1100" y="400" w="185" h="70"/>
-      <node identifier="id-n-G6" elementRef="id-G6" xsi:type="Element" x="1300" y="400" w="185" h="70"/>
-      <node identifier="id-n-O1" elementRef="id-O1" xsi:type="Element" x="300" y="510" w="185" h="70"/>
-      <node identifier="id-n-O2" elementRef="id-O2" xsi:type="Element" x="500" y="510" w="185" h="70"/>
-      <node identifier="id-n-O3" elementRef="id-O3" xsi:type="Element" x="700" y="510" w="185" h="70"/>
-      <node identifier="id-n-O4" elementRef="id-O4" xsi:type="Element" x="900" y="510" w="185" h="70"/>
-      <node identifier="id-n-O5" elementRef="id-O5" xsi:type="Element" x="1100" y="510" w="185" h="70"/>
-      <node identifier="id-n-O6" elementRef="id-O6" xsi:type="Element" x="1300" y="510" w="185" h="70"/>
-      <node identifier="id-n-V1" elementRef="id-V1" xsi:type="Element" x="300" y="620" w="185" h="70"/>
-      <node identifier="id-n-V2" elementRef="id-V2" xsi:type="Element" x="500" y="620" w="185" h="70"/>
-      <node identifier="id-n-V3" elementRef="id-V3" xsi:type="Element" x="700" y="620" w="185" h="70"/>
-      <node identifier="id-n-V4" elementRef="id-V4" xsi:type="Element" x="900" y="620" w="185" h="70"/>
-      <node identifier="id-n-V5" elementRef="id-V5" xsi:type="Element" x="1100" y="620" w="185" h="70"/>
-      <node identifier="id-n-V6" elementRef="id-V6" xsi:type="Element" x="1300" y="620" w="185" h="70"/>
-      <node identifier="id-n-Q1" elementRef="id-Q1" xsi:type="Element" x="300" y="980" w="156" h="70"/>
-      <node identifier="id-n-Q2" elementRef="id-Q2" xsi:type="Element" x="471" y="980" w="156" h="70"/>
-      <node identifier="id-n-Q3" elementRef="id-Q3" xsi:type="Element" x="642" y="980" w="156" h="70"/>
-      <node identifier="id-n-Q4" elementRef="id-Q4" xsi:type="Element" x="813" y="980" w="156" h="70"/>
-      <node identifier="id-n-Q5" elementRef="id-Q5" xsi:type="Element" x="984" y="980" w="156" h="70"/>
-      <node identifier="id-n-Q6" elementRef="id-Q6" xsi:type="Element" x="1155" y="980" w="156" h="70"/>
-      <node identifier="id-n-Q7" elementRef="id-Q7" xsi:type="Element" x="1326" y="980" w="156" h="70"/>
-      <node identifier="id-n-AC" elementRef="id-AC" xsi:type="Element" x="752" y="1100" w="280" h="60"/>
+      <node identifier="id-n-A1" elementRef="id-A1" xsi:type="Element" x="300" y="180" w="185" h="70"><style><fillColor r="255" g="230" b="153"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-A2" elementRef="id-A2" xsi:type="Element" x="500" y="180" w="185" h="70"><style><fillColor r="255" g="230" b="153"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-A3" elementRef="id-A3" xsi:type="Element" x="700" y="180" w="185" h="70"><style><fillColor r="255" g="230" b="153"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-A4" elementRef="id-A4" xsi:type="Element" x="900" y="180" w="185" h="70"><style><fillColor r="255" g="230" b="153"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-A5" elementRef="id-A5" xsi:type="Element" x="1100" y="180" w="185" h="70"><style><fillColor r="255" g="230" b="153"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-A6" elementRef="id-A6" xsi:type="Element" x="1300" y="180" w="185" h="70"><style><fillColor r="255" g="230" b="153"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-G0" elementRef="id-G0" xsi:type="Element" x="300" y="290" w="1185" h="60"><style><fillColor r="169" g="208" b="142"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-G1" elementRef="id-G1" xsi:type="Element" x="300" y="400" w="185" h="70"><style><fillColor r="198" g="224" b="180"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-G2" elementRef="id-G2" xsi:type="Element" x="500" y="400" w="185" h="70"><style><fillColor r="198" g="224" b="180"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-G3" elementRef="id-G3" xsi:type="Element" x="700" y="400" w="185" h="70"><style><fillColor r="198" g="224" b="180"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-G4" elementRef="id-G4" xsi:type="Element" x="900" y="400" w="185" h="70"><style><fillColor r="198" g="224" b="180"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-G5" elementRef="id-G5" xsi:type="Element" x="1100" y="400" w="185" h="70"><style><fillColor r="198" g="224" b="180"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-G6" elementRef="id-G6" xsi:type="Element" x="1300" y="400" w="185" h="70"><style><fillColor r="198" g="224" b="180"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-O1" elementRef="id-O1" xsi:type="Element" x="300" y="510" w="185" h="70"><style><fillColor r="180" g="222" b="208"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-O2" elementRef="id-O2" xsi:type="Element" x="500" y="510" w="185" h="70"><style><fillColor r="180" g="222" b="208"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-O3" elementRef="id-O3" xsi:type="Element" x="700" y="510" w="185" h="70"><style><fillColor r="180" g="222" b="208"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-O4" elementRef="id-O4" xsi:type="Element" x="900" y="510" w="185" h="70"><style><fillColor r="180" g="222" b="208"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-O5" elementRef="id-O5" xsi:type="Element" x="1100" y="510" w="185" h="70"><style><fillColor r="180" g="222" b="208"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-O6" elementRef="id-O6" xsi:type="Element" x="1300" y="510" w="185" h="70"><style><fillColor r="180" g="222" b="208"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-V1" elementRef="id-V1" xsi:type="Element" x="300" y="620" w="185" h="70"><style><fillColor r="217" g="195" b="240"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-V2" elementRef="id-V2" xsi:type="Element" x="500" y="620" w="185" h="70"><style><fillColor r="217" g="195" b="240"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-V3" elementRef="id-V3" xsi:type="Element" x="700" y="620" w="185" h="70"><style><fillColor r="217" g="195" b="240"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-V4" elementRef="id-V4" xsi:type="Element" x="900" y="620" w="185" h="70"><style><fillColor r="217" g="195" b="240"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-V5" elementRef="id-V5" xsi:type="Element" x="1100" y="620" w="185" h="70"><style><fillColor r="217" g="195" b="240"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-V6" elementRef="id-V6" xsi:type="Element" x="1300" y="620" w="185" h="70"><style><fillColor r="217" g="195" b="240"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-Q1" elementRef="id-Q1" xsi:type="Element" x="300" y="980" w="156" h="70"><style><fillColor r="230" g="216" b="192"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-Q2" elementRef="id-Q2" xsi:type="Element" x="471" y="980" w="156" h="70"><style><fillColor r="230" g="216" b="192"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-Q3" elementRef="id-Q3" xsi:type="Element" x="642" y="980" w="156" h="70"><style><fillColor r="230" g="216" b="192"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-Q4" elementRef="id-Q4" xsi:type="Element" x="813" y="980" w="156" h="70"><style><fillColor r="230" g="216" b="192"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-Q5" elementRef="id-Q5" xsi:type="Element" x="984" y="980" w="156" h="70"><style><fillColor r="230" g="216" b="192"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-Q6" elementRef="id-Q6" xsi:type="Element" x="1155" y="980" w="156" h="70"><style><fillColor r="230" g="216" b="192"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-Q7" elementRef="id-Q7" xsi:type="Element" x="1326" y="980" w="156" h="70"><style><fillColor r="230" g="216" b="192"/><lineColor r="92" g="92" b="92"/></style></node>
+      <node identifier="id-n-AC" elementRef="id-AC" xsi:type="Element" x="752" y="1100" w="280" h="60"><style><fillColor r="255" g="242" b="204"/><lineColor r="92" g="92" b="92"/></style></node>
       <connection identifier="id-c1" relationshipRef="id-rel1" xsi:type="Relationship" source="id-n-GD" target="id-n-GS"/>
       <connection identifier="id-c2" relationshipRef="id-rel2" xsi:type="Relationship" source="id-n-A1" target="id-n-S2"/>
       <connection identifier="id-c3" relationshipRef="id-rel3" xsi:type="Relationship" source="id-n-A2" target="id-n-S3"/>
