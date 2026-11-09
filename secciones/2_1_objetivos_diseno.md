@@ -31,19 +31,29 @@ El diseño de la arquitectura conceptual de Franco's ERP no parte de una elecci�
 | OD-05 | Garantizar el acceso seguro a la información según el rol de cada usuario. | Transversal |
 | OD-06 | Asegurar la disponibilidad del sistema durante el horario operativo y su capacidad de crecer junto con la empresa. | Transversal |
 
-**Principios de arquitectura.** Finalmente, se establecen los principios que rigen las decisiones de diseño en cada dominio de la arquitectura. Estos principios recogen los lineamientos del proyecto definidos en el Entregable 2 y sirven como criterio para evaluar las alternativas tecnológicas descritas más adelante (Tabla 3).
+**Principios de arquitectura.** Finalmente, se establecen los principios que rigen las decisiones de diseño. Cada principio indica su propósito y su ámbito de aplicación: el software, la infraestructura o ambos. Estos principios sirven como criterio para evaluar las alternativas tecnológicas descritas más adelante (Tabla 3).
 
-**Tabla 3.** Principios de arquitectura por dominio
+**Tabla 3.** Principios de arquitectura
 
-| Dominio | Principio | Declaración | Implicancia |
+| # | Principio | Para qué sirve | Ámbito |
 |---|---|---|---|
-| Negocio | Alineamiento estratégico | Toda funcionalidad del sistema debe responder a un objetivo estratégico de la organización. | Los módulos se priorizan según su aporte a los objetivos del Entregable 1. |
-| Negocio | Procesos soportados por el sistema | Los procesos rediseñados deben ejecutarse dentro del sistema y no fuera de él. | Se eliminan los registros paralelos en papel y hojas de cálculo. |
-| Datos | Dato único y compartido | Cada dato se registra una sola vez y es consultado por todas las áreas que lo requieren. | Ventas, inventario y gerencia trabajan sobre la misma información. |
-| Datos | Trazabilidad | Toda operación debe quedar registrada con su responsable y fecha. | Es posible reconstruir el historial de cualquier pedido o movimiento. |
-| Aplicaciones | Modularidad | El sistema se organiza en módulos independientes por dominio de negocio. | Cada módulo puede desarrollarse, mantenerse y ampliarse sin afectar a los demás. |
-| Aplicaciones | Acceso según rol | Cada usuario accede únicamente a las funciones que requiere su rol. | Se definen perfiles diferenciados para el personal interno y los clientes. |
-| Tecnología | Disponibilidad y continuidad | La plataforma debe mantenerse operativa durante el horario de trabajo y recuperarse ante fallas. | Se requiere infraestructura con respaldo y mecanismos de recuperación. |
-| Tecnología | Seguridad desde el diseño | La protección de la información se incorpora desde la concepción del sistema. | Se aplican autenticación, cifrado de comunicaciones y protección de datos personales. |
+| P1 | Fuente única de datos | Que cada dato viva en un solo lugar y no en papel, Excel ni PC sueltas (H-01 a H-11). | Ambos |
+| P2 | Monolito modular | Un solo despliegue fácil de mantener, con módulos separados por dominio. | Software |
+| P3 | Separación por capas | Que la lógica de negocio no dependa de HTTP ni de la base de datos, para poder cambiarlos. | Software |
+| P4 | Inversión de dependencias | Que los casos de uso dependan de contratos (puertos), no de implementaciones concretas como SES o Prisma. | Software |
+| P5 | Denegar por defecto | Que una ruta nueva sea inaccesible hasta que se le asigne un permiso explícito. | Software |
+| P6 | Sesión revocable y tokens protegidos | Poder cerrar una sesión de inmediato y evitar que un script robe el token. | Software |
+| P7 | Mínimo privilegio | Que cada usuario tenga solo los permisos de su rol, mediante grupos ROL-*. | Ambos |
+| P8 | Segmentación y defensa en profundidad | Que un equipo comprometido no dé acceso al resto de la red (VLAN, WAF, honeypot, IDS). | Infraestructura |
+| P9 | Redundancia sin punto único de falla | Que la caída de un ISP, un firewall, un switch o la base primaria no detenga el servicio (H-12, H-16). | Infraestructura |
+| P10 | Recuperación ante desastres | Poder restaurar datos y servicio si se pierde el sitio principal (ISO 22301, H-15). | Infraestructura |
+| P11 | Almacenamiento privado | Que documentos y fotos no sean accesibles por URL pública directa. | Infraestructura |
+| P12 | Secretos fuera del código | Que contraseñas y claves no estén en el repositorio ni en variables visibles. | Ambos |
+| P13 | Credenciales temporales en despliegue | Que el pipeline no guarde claves de larga duración que, si se filtran, den acceso permanente a AWS. | Infraestructura |
+| P14 | Cifrado en tránsito | Que los datos viajen cifrados entre usuario, nube, sede y servicios (TLS 1.3, IPSec). | Infraestructura |
+| P15 | API versionada y documentada | Que los clientes (Portal A y B) puedan evolucionar sin romperse y que el contrato sea visible. | Software |
+| P16 | Observabilidad | Detectar fallas de la aplicación (health checks) y de la red o los equipos (CloudWatch, Wazuh) antes de que el usuario las note (H-21). | Ambos |
+| P17 | Cómputo elástico y de bajo costo | Pagar solo el cómputo que se usa, escalando entre 1 y 2 tareas, y encendiendo el entorno por ventanas. | Infraestructura |
+| P18 | Dato en sede, cómputo en la nube | Mantener la base de producción en la sede y usar AWS para la aplicación y los respaldos. | Infraestructura |
 
 En conjunto, la visión, los objetivos de diseño y los principios constituyen el marco de referencia de la arquitectura conceptual: los componentes, capas y tecnologías que se presentan en las secciones siguientes se justifican en función de su contribución a estos objetivos.
