@@ -1,0 +1,521 @@
+% ============================================================
+%  FASE F — Planificación de la migración
+%  Fragmento para la plantilla UPeU (XeLaTeX).
+%
+%  1) PREÁMBULO: agregar estas dos líneas antes de \begin{document}
+%     (por ejemplo, debajo de \usepackage{amsmath}):
+%
+%       \usepackage{tikz}
+%       \usetikzlibrary{positioning,arrows.meta}
+%
+%  2) CUERPO: pegar todo lo que sigue justo después de la
+%     subsección "Conclusiones" de la Fase E y antes del bloque
+%     "% ANEXOS".
+% ============================================================
+
+\newpage
+\section{Informe de Fase F - Planificación de la migración}
+
+La Fase F convierte las oportunidades de la Fase E en un plan que se puede ejecutar: qué se hace, en qué orden, cuándo, quién lo hace y qué podría salir mal. Su producto es un plan de implementación y migración de 14 meses para pasar de la cocción manual a la cocción monitoreada y controlada con IoT, con 5 proyectos, 8 hitos de control y 22 riesgos con su tratamiento. Todo el plan responde al mismo objetivo de la Fase E: \textit{monitorear y controlar las variables críticas de la Operación y Control de Cocción para reducir la variabilidad entre lotes y fortalecer la trazabilidad}.
+
+El plan se construye en cinco pasos, cada uno con una pregunta de trabajo y una evidencia, como resume la Tabla~\ref{tab:f_pasos}.
+
+% ── Tabla: Pasos de la Fase F ───────────────────────────────
+\begin{table}[H]
+  \centering
+  \setstretch{1.1}
+  \renewcommand{\arraystretch}{1.3}
+  \arrayrulecolor{upeu_dark}
+  \small
+  \begin{tabularx}{\textwidth}{|L{2.6cm}|L{3.4cm}|X|}
+    \hline
+    \rowcolor{upeu_dark}
+    {\color{white}\bfseries Paso} &
+    {\color{white}\bfseries Pregunta} &
+    {\color{white}\bfseries Resultado} \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{1. Identificar} & ¿Qué hay que cambiar? & 35 brechas consolidadas en 9, con una iniciativa cada una, agrupadas en 5 proyectos \\ \hline
+    \textbf{2. Priorizar} & ¿Qué genera valor y qué habilita? & Matriz de prioridades con decisión por iniciativa y 2 \textit{quick wins} \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{3. Secuenciar} & ¿Qué debe ocurrir antes? & P1 y P2 primero, luego P3, luego P4; P5 apenas existe la plataforma \\ \hline
+    \textbf{4. Calendarizar} & ¿Cuándo y quién ejecuta? & Cronograma de 14 meses, 8 hitos y 3 estados de transición \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{5. Controlar} & ¿Qué podría fallar? & 22 riesgos con mitigación, evaluación, responsable y contingencia \\ \hline
+  \end{tabularx}
+  \arrayrulecolor{black}
+  \caption{Pasos de la Fase F.}
+  \label{tab:f_pasos}
+\end{table}
+
+% ============================================================
+\subsection{Identificación de brechas e iniciativas}
+
+Este paso no vuelve a analizar las brechas: consolida lo que ya se resolvió en las fases B, C, D y E para que sea el punto de partida del plan de migración. Las 35 brechas originales (6 de negocio, 8 de aplicaciones, 11 de datos y 10 de tecnología) se agruparon en las nueve brechas consolidadas de la Tabla~\ref{tab:brechas_consolidadas}, y cada una dio origen a una iniciativa (Tabla~\ref{tab:iniciativas}). La Tabla~\ref{tab:f_trazabilidad} enlaza cada brecha con la iniciativa que la cierra, el paquete de trabajo que la ejecuta y el proyecto del portafolio al que pertenece.
+
+% ── Tabla: Brecha → iniciativa → paquete → proyecto ─────────
+\begin{table}[H]
+  \centering
+  \setstretch{1.1}
+  \renewcommand{\arraystretch}{1.3}
+  \setlength{\tabcolsep}{4pt}
+  \arrayrulecolor{upeu_dark}
+  \small
+  \begin{tabularx}{\textwidth}{|C{1.35cm}|>{\raggedright\arraybackslash}X|C{1.2cm}|>{\raggedright\arraybackslash}X|C{1.55cm}|L{2.8cm}|}
+    \hline
+    \rowcolor{upeu_dark}
+    {\color{white}\bfseries Brecha} &
+    {\color{white}\bfseries Qué falta} &
+    {\color{white}\bfseries N.º GAP} &
+    {\color{white}\bfseries Iniciativa (qué hacer)} &
+    {\color{white}\bfseries Paquete} &
+    {\color{white}\bfseries Proyecto} \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{BC-01} & No existe un estándar oficial de cocción & 4 & \textbf{IN-01} Estandarizar y centralizar las fichas técnicas de cocción (\textbf{QW-01}) & WP-01 & P1 Estandarización de la cocción \\ \hline
+    \textbf{BC-02} & No existe medición ni control automático del proceso térmico & 10 & \textbf{IN-02} Implementar el monitoreo y control automático de la cocción & WP-03 & P3 Cocción automatizada y alertas \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{BC-03} & No existe registro ni notificación de las desviaciones & 3 & \textbf{IN-03} Implementar la gestión de alertas y desviaciones & WP-03 & P3 Cocción automatizada y alertas \\ \hline
+    \textbf{BC-04} & No existe inspección objetiva ni control del producto no conforme & 6 & \textbf{IN-04} Implementar la inspección por visión artificial y el control del producto no conforme & WP-04 & P4 Calidad objetiva e indicadores \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{BC-05} & No existe capacidad de análisis ni indicadores oportunos & 2 & \textbf{IN-05} Implementar la plataforma de indicadores (BI) & WP-04 & P4 Calidad objetiva e indicadores \\ \hline
+    \textbf{BC-06} & No existe control de acceso ni trazabilidad de las acciones & 1 & \textbf{IN-06} Implementar el control de acceso por roles y la auditoría & WP-02 & P2 Plataforma digital de producción \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{BC-07} & No existe plataforma tecnológica para soportar el sistema & 4 & \textbf{IN-07} Implementar la plataforma tecnológica y el sistema base & WP-02 & P2 Plataforma digital de producción \\ \hline
+    \textbf{BC-08} & No existe conectividad segmentada ni de respaldo en planta & 2 & \textbf{IN-08} Modernizar la conectividad de la planta (\textbf{QW-02}) & WP-02 & P2 Plataforma digital de producción \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{BC-09} & No existe respaldo, monitoreo ni seguridad de la información & 3 & \textbf{IN-09} Implementar la continuidad y la seguridad de la información & WP-05 & P5 Continuidad y seguridad de la información \\ \hline
+  \end{tabularx}
+  \arrayrulecolor{black}
+  \caption{Brechas, iniciativas, paquetes y proyectos.}
+  \label{tab:f_trazabilidad}
+\end{table}
+
+La iniciativa IN-01 incluye el \textit{quick win} QW-01 (oficializar y publicar las fichas en papel); su carga en el sistema ocurre después, cuando existe el sistema base (IN-07). La Tabla~\ref{tab:f_cobertura} verifica que la cobertura es completa.
+
+% ── Tabla: Verificación de cobertura ────────────────────────
+\begin{table}[H]
+  \centering
+  \setstretch{1.1}
+  \renewcommand{\arraystretch}{1.3}
+  \arrayrulecolor{upeu_dark}
+  \small
+  \begin{tabular}{|C{1.8cm}|C{1.8cm}|L{3.4cm}|L{3.6cm}|C{2.6cm}|}
+    \hline
+    \rowcolor{upeu_dark}
+    {\color{white}\bfseries Proyecto} &
+    {\color{white}\bfseries Paquete} &
+    {\color{white}\bfseries Iniciativas} &
+    {\color{white}\bfseries Brechas consolidadas} &
+    {\color{white}\bfseries Brechas originales} \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{P1} & WP-01 & IN-01 & BC-01 & 4 \\ \hline
+    \textbf{P2} & WP-02 & IN-06, IN-07, IN-08 & BC-06, BC-07, BC-08 & 7 \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{P3} & WP-03 & IN-02, IN-03 & BC-02, BC-03 & 13 \\ \hline
+    \textbf{P4} & WP-04 & IN-04, IN-05 & BC-04, BC-05 & 8 \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{P5} & WP-05 & IN-09 & BC-09 & 3 \\ \hline
+    \textbf{Total} & \textbf{5} & \textbf{9} & \textbf{9} & \textbf{35} \\ \hline
+  \end{tabular}
+  \arrayrulecolor{black}
+  \caption{Verificación de cobertura de las brechas.}
+  \label{tab:f_cobertura}
+\end{table}
+
+Ninguna brecha queda sin iniciativa y ninguna iniciativa queda fuera de un proyecto.
+
+% ============================================================
+\subsection{Priorización}
+
+La priorización se realizó en la Fase E (Tabla~\ref{tab:priorizacion} y Figura~\ref{fig:priorizacion}) con tres criterios: valor de negocio, urgencia y complejidad, más las dependencias como criterio de desempate. Aquí se consolida y se agrega lo que pide la Fase F: qué requiere cada iniciativa, qué habilita y la \textbf{decisión} que se toma sobre ella.
+
+% ── Tabla: Matriz de prioridades con decisión ───────────────
+\begin{table}[H]
+  \centering
+  \setstretch{1.1}
+  \renewcommand{\arraystretch}{1.3}
+  \setlength{\tabcolsep}{4pt}
+  \arrayrulecolor{upeu_dark}
+  \small
+  \begin{tabularx}{\textwidth}{|C{0.8cm}|L{3.0cm}|C{1.2cm}|L{2.2cm}|L{2.6cm}|X|}
+    \hline
+    \rowcolor{upeu_dark}
+    {\color{white}\bfseries Pri.} &
+    {\color{white}\bfseries Iniciativa} &
+    {\color{white}\bfseries Punt.} &
+    {\color{white}\bfseries Requiere} &
+    {\color{white}\bfseries Habilita} &
+    {\color{white}\bfseries Decisión} \\ \hline
+    \rowcolor{upeu_light}
+    1 & \textbf{IN-01} Fichas técnicas & \textbf{9} & --- & IN-02 & Comenzar primero (QW-01) \\ \hline
+    2 & \textbf{IN-08} Conectividad & \textbf{9} & --- & IN-02 & Comenzar primero (QW-02) \\ \hline
+    \rowcolor{upeu_light}
+    3 & \textbf{IN-06} Control de acceso & \textbf{9} & IN-07 & Todos los módulos & Ejecutar sobre la plataforma \\ \hline
+    4 & \textbf{IN-09} Continuidad y seguridad & \textbf{8} & IN-07 & Operación con datos reales & Activar antes de registrar datos reales \\ \hline
+    \rowcolor{upeu_light}
+    5 & \textbf{IN-03} Alertas & \textbf{8} & IN-02 & --- & Integrar tras el control \\ \hline
+    6 & \textbf{IN-07} Plataforma y sistema base & \textbf{7} & --- & IN-02, IN-04, IN-05, IN-06, IN-09 & Planificar por fases; es la base \\ \hline
+    \rowcolor{upeu_light}
+    7 & \textbf{IN-02} Monitoreo y control & \textbf{7} & IN-01, IN-07, IN-08 & IN-03, IN-04 & Piloto en una freidora y luego extender \\ \hline
+    8 & \textbf{IN-04} Visión artificial & \textbf{6} & IN-02 & IN-05 & Habilitar tras tener tandas reales \\ \hline
+    \rowcolor{upeu_light}
+    9 & \textbf{IN-05} Indicadores (BI) & \textbf{6} & IN-04 & --- & Al final, con datos de inspección \\ \hline
+  \end{tabularx}
+  \arrayrulecolor{black}
+  \caption{Matriz de prioridades con decisión por iniciativa.}
+  \label{tab:f_prioridades}
+\end{table}
+
+Los \textit{quick wins} siguen siendo los dos de la Tabla~\ref{tab:quick_wins}: QW-01 (fichas oficiales) y QW-02 (red IoT con 4G de respaldo). IN-06, IN-09 e IN-03 son simples y valiosas, pero dependen de iniciativas que aún no existen (IN-07 e IN-02), por lo que se ejecutan pronto dentro de su paquete sin ser \textit{quick wins}.
+
+La prioridad indica qué conviene impulsar primero por valor y esfuerzo, pero no es el orden de ejecución: este también respeta las dependencias. IN-07 tiene prioridad 6, pero es la base de casi todo y se inicia en el mes 1. La Tabla~\ref{tab:f_prioridad_proyecto} muestra cómo se reparte la prioridad entre los proyectos.
+
+% ── Tabla: Prioridad por proyecto ───────────────────────────
+\begin{table}[H]
+  \centering
+  \setstretch{1.1}
+  \renewcommand{\arraystretch}{1.3}
+  \arrayrulecolor{upeu_dark}
+  \small
+  \begin{tabularx}{\textwidth}{|L{5.0cm}|X|L{4.0cm}|}
+    \hline
+    \rowcolor{upeu_dark}
+    {\color{white}\bfseries Proyecto} &
+    {\color{white}\bfseries Iniciativas (prioridad)} &
+    {\color{white}\bfseries Cuadrante predominante} \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{P1} Estandarización de la cocción & IN-01 (1) & Implementar primero \\ \hline
+    \textbf{P2} Plataforma digital de producción & IN-08 (2) · IN-06 (3) · IN-07 (6) & Implementar primero y planificar \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{P5} Continuidad y seguridad & IN-09 (4) & Implementar primero \\ \hline
+    \textbf{P3} Cocción automatizada y alertas & IN-03 (5) · IN-02 (7) & Planificar \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{P4} Calidad objetiva e indicadores & IN-04 (8) · IN-05 (9) & Planificar \\ \hline
+  \end{tabularx}
+  \arrayrulecolor{black}
+  \caption{Prioridad por proyecto.}
+  \label{tab:f_prioridad_proyecto}
+\end{table}
+
+% ============================================================
+\subsection{Secuenciación de dependencias}
+
+Las dependencias entre paquetes se identificaron en la Fase E (Figura~\ref{fig:dependencias}). En la Fase F se expresan a nivel de proyecto y se completan con sus supuestos, que son los que fijan el orden del cronograma (Figura~\ref{fig:f_dependencias}).
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+    node distance = 0.9cm and 1.5cm,
+    caja/.style = {draw=upeu_mid, very thick, rounded corners=3pt, fill=upeu_light,
+                   align=center, minimum width=3.6cm, minimum height=1.25cm,
+                   font=\small\setstretch{1.0}},
+    flecha/.style = {-{Stealth[length=2.6mm]}, very thick, upeu_dark},
+    indirecta/.style = {-{Stealth[length=2.6mm]}, thick, dashed, hint_gray}
+  ]
+    \node[caja] (P1) {\textbf{P1 / WP-01}\\Estandarización\\de la cocción};
+    \node[caja, below=of P1] (P2) {\textbf{P2 / WP-02}\\Plataforma digital\\de producción};
+    \node[caja, right=of P1, yshift=-1.1cm] (P3) {\textbf{P3 / WP-03}\\Cocción automatizada\\y alertas};
+    \node[caja, right=of P3] (P4) {\textbf{P4 / WP-04}\\Calidad objetiva\\e indicadores};
+    \node[caja, below=of P3, yshift=-0.6cm] (P5) {\textbf{P5 / WP-05}\\Continuidad\\y seguridad};
+
+    \draw[flecha] (P1.east) -- (P3);
+    \draw[flecha] (P2.east) -- (P3);
+    \draw[flecha] (P2.south east) -- (P5.west);
+    \draw[flecha] (P3) -- (P4);
+    \draw[indirecta] (P2.south) |- ++(0,-2.6) -| (P4.south);
+  \end{tikzpicture}
+  \caption{Mapa de dependencias entre proyectos (la línea punteada es una dependencia indirecta).}
+  \label{fig:f_dependencias}
+\end{figure}
+
+P1 y P2 no dependen de nadie y arrancan en paralelo. Con ambos listos se construye la cocción automatizada (P3), y con los datos de tandas reales que esta genera se montan la inspección y los indicadores (P4). P5 se configura apenas existe la plataforma y debe estar activo antes de que el sistema registre datos reales de producción. La línea punteada (P2 $\rightarrow$ P4) es una dependencia indirecta: P4 necesita la plataforma, pero ya la hereda a través de P3. La Tabla~\ref{tab:f_dependencias} detalla el porqué de cada dependencia.
+
+% ── Tabla: Detalle de dependencias ──────────────────────────
+\begingroup
+\setstretch{1.1}
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{4pt}
+\arrayrulecolor{upeu_dark}
+\small
+\begin{longtable}{|L{3.2cm}|C{1.8cm}|L{2.4cm}|L{6.6cm}|}
+  \hline
+  \rowcolor{upeu_dark}
+  {\color{white}\bfseries Proyecto} &
+  {\color{white}\bfseries Depende de} &
+  {\color{white}\bfseries Tipo} &
+  {\color{white}\bfseries Por qué} \\ \hline
+  \endfirsthead
+  \hline
+  \rowcolor{upeu_dark}
+  {\color{white}\bfseries Proyecto} &
+  {\color{white}\bfseries Depende de} &
+  {\color{white}\bfseries Tipo} &
+  {\color{white}\bfseries Por qué} \\ \hline
+  \endhead
+  \endfoot
+  \caption{Detalle de las dependencias entre proyectos.}
+  \label{tab:f_dependencias}
+  \endlastfoot
+  \rowcolor{upeu_light}
+  \textbf{P1} Estandarización de la cocción & --- & --- & Es trabajo organizacional: los rangos se acuerdan y aprueban sin necesidad del sistema \\ \hline
+  \textbf{P2} Plataforma digital de producción & --- & --- & Es la base: nube, red en planta y sistema base (backend, frontend, base de datos y control de acceso) \\ \hline
+  \rowcolor{upeu_light}
+  \textbf{P3} Cocción automatizada y alertas & P1 & Obligatoria · operativa & El control compara cada lectura y configura la freidora con los rangos de la ficha; sin fichas oficiales no hay contra qué controlar \\ \hline
+  \rowcolor{upeu_light}
+   & P2 & Obligatoria · técnica & El gateway necesita la red IoT y la conexión a IoT Core; el control se programa sobre el sistema base y las alertas, sobre los usuarios y roles \\ \hline
+  \textbf{P4} Calidad objetiva e indicadores & P3 & Obligatoria · de datos & La inspección se vincula a la tanda que crea el control, y el indicador IOS5-P02 se calcula con datos que no existen sin P3 \\ \hline
+   & P2 & Obligatoria · técnica & La cámara sube imágenes a la plataforma y Grafana corre en los servidores \\ \hline
+  \rowcolor{upeu_light}
+  \textbf{P5} Continuidad y seguridad & P2 & Obligatoria · técnica & No se puede respaldar, monitorear ni proteger una plataforma que no existe \\ \hline
+\end{longtable}
+\arrayrulecolor{black}
+\endgroup
+
+Dentro de cada proyecto también existe un orden, que se muestra en la Tabla~\ref{tab:f_dependencias_internas}.
+
+% ── Tabla: Dependencias internas ────────────────────────────
+\begin{table}[H]
+  \centering
+  \setstretch{1.1}
+  \renewcommand{\arraystretch}{1.3}
+  \arrayrulecolor{upeu_dark}
+  \small
+  \begin{tabularx}{\textwidth}{|C{1.5cm}|L{5.6cm}|X|}
+    \hline
+    \rowcolor{upeu_dark}
+    {\color{white}\bfseries Proyecto} &
+    {\color{white}\bfseries Orden interno} &
+    {\color{white}\bfseries Por qué} \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{P1} & QW-01 fichas oficiales en papel $\rightarrow$ carga de las fichas en el sistema & La carga necesita el sistema base (IN-07), por eso ocurre en el mes 6 \\ \hline
+    \textbf{P2} & IN-07 plataforma y sistema base $\rightarrow$ IN-06 control de acceso & La autenticación se integra en el sistema base, una vez desplegado \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{P2} & IN-08 conectividad, en paralelo con IN-07 & La red de planta y la nube se instalan por separado y se conectan al final \\ \hline
+    \textbf{P3} & IN-02 monitoreo y control $\rightarrow$ IN-03 alertas & Las alertas se disparan con las anomalías que detecta el monitoreo \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{P4} & IN-04 inspección $\rightarrow$ IN-05 indicadores & El indicador IOS5-P02 se calcula con los resultados de la inspección \\ \hline
+  \end{tabularx}
+  \arrayrulecolor{black}
+  \caption{Dependencias dentro de los proyectos.}
+  \label{tab:f_dependencias_internas}
+\end{table}
+
+Algunas dependencias no se cumplen solo con terminar un proyecto, sino con una condición concreta que se verifica en un hito (Tabla~\ref{tab:f_condiciones}).
+
+% ── Tabla: Condiciones ──────────────────────────────────────
+\begin{table}[H]
+  \centering
+  \setstretch{1.1}
+  \renewcommand{\arraystretch}{1.3}
+  \arrayrulecolor{upeu_dark}
+  \small
+  \begin{tabularx}{\textwidth}{|L{4.4cm}|L{4.4cm}|X|}
+    \hline
+    \rowcolor{upeu_dark}
+    {\color{white}\bfseries Condición} &
+    {\color{white}\bfseries Quién la necesita} &
+    {\color{white}\bfseries Cómo se cumple} \\ \hline
+    \rowcolor{upeu_light}
+    Fichas oficiales aprobadas & Integración de P3 & Hito H-02, fin del mes 2 \\ \hline
+    Plataforma y sistema base operativos & Integración de P3, P4 y P5 & Hito H-03, fin del mes 5 \\ \hline
+    \rowcolor{upeu_light}
+    Respaldos y seguridad activos & Registro de datos reales de P3 & Hito H-04, fin del mes 6, antes del piloto con datos reales \\ \hline
+    Piloto operativo en una freidora & Extensión de P3 a todas las freidoras & Hito H-05, mitad del mes 8 \\ \hline
+    \rowcolor{upeu_light}
+    Tandas reales registradas & Captura de fotos y calibración de P4 & Desde el piloto (mes 8) \\ \hline
+  \end{tabularx}
+  \arrayrulecolor{black}
+  \caption{Condiciones que habilitan a otros proyectos.}
+  \label{tab:f_condiciones}
+\end{table}
+
+La secuencia se apoya en los siguientes supuestos:
+
+\begin{enumerate}
+  \item Equipo pequeño: dos a tres desarrolladores, un técnico IoT / electrónico y un proveedor de TI / nube de apoyo.
+  \item Una sola planta; el control automático se prueba primero en una freidora piloto y luego se extiende.
+  \item El hardware IoT se compra en el corto plazo (mes 2) aunque se instale después, porque tarda en llegar.
+  \item El firmware del ESP32 y el gateway se desarrollan en paralelo con la plataforma, probando con un broker local. Solo la integración espera a que la plataforma esté lista; si todo P3 esperara, el proyecto se extendería a unos 17 meses.
+  \item Los plazos incluyen holgura para aprobaciones, compras y la curva de aprendizaje del equipo.
+\end{enumerate}
+
+La decisión clave de la secuencia es \textbf{no registrar datos reales de producción hasta tener los respaldos y la seguridad activos (P5), y no extender el control a todas las freidoras hasta validar el piloto en una}.
+
+% ============================================================
+\subsection{Calendarización}
+
+El cronograma parte del roadmap de la Fase E (Figura~\ref{fig:roadmap}) y lo desglosa en actividades por proyecto, con el responsable de cada una (Tabla~\ref{tab:f_cronograma}). Los meses 1 a 4 corresponden al corto plazo, del 5 al 9 al mediano plazo y del 10 al 14 al largo plazo.
+
+% ── Tabla: Cronograma de 14 meses ───────────────────────────
+\begin{table}[H]
+  \centering
+  \setstretch{1.0}
+  \renewcommand{\arraystretch}{1.25}
+  \setlength{\tabcolsep}{2pt}
+  \arrayrulecolor{upeu_dark}
+  \newcommand{\gmes}{\cellcolor{upeu_mid}}
+  \scriptsize
+  \begin{tabular}{|C{0.75cm}|L{4.3cm}|L{2.8cm}|*{14}{C{0.33cm}|}}
+    \hline
+    \rowcolor{upeu_dark}
+    {\color{white}\bfseries Proy.} &
+    {\color{white}\bfseries Actividad} &
+    {\color{white}\bfseries Responsable} &
+    {\color{white}\bfseries 1} & {\color{white}\bfseries 2} & {\color{white}\bfseries 3} &
+    {\color{white}\bfseries 4} & {\color{white}\bfseries 5} & {\color{white}\bfseries 6} &
+    {\color{white}\bfseries 7} & {\color{white}\bfseries 8} & {\color{white}\bfseries 9} &
+    {\color{white}\bfseries 10} & {\color{white}\bfseries 11} & {\color{white}\bfseries 12} &
+    {\color{white}\bfseries 13} & {\color{white}\bfseries 14} \\ \hline
+  \textbf{P1} & \textbf{QW-01} · Oficializar y publicar las fichas técnicas & Jefe de producción, con Control de Calidad & \gmes & \gmes &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+  \textbf{P1} & Cargar las fichas en el sistema & Jefe de producción, con el equipo de desarrollo &  &  &  &  &  & \gmes &  &  &  &  &  &  &  &  \\ \hline
+  \textbf{P2} & \textbf{QW-02} · Red IoT en planta y 4G de respaldo & Proveedor de TI / nube & \gmes &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+  \textbf{P2} & IN-07 · Infraestructura AWS de alta disponibilidad & Proveedor de TI / nube & \gmes & \gmes & \gmes &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+  \textbf{P2} & IN-07 · Sistema base (backend, frontend, base de datos) & Equipo de desarrollo &  & \gmes & \gmes & \gmes & \gmes &  &  &  &  &  &  &  &  &  \\ \hline
+  \textbf{P2} & IN-06 · Control de acceso por roles y auditoría & Equipo de desarrollo &  &  &  &  & \gmes &  &  &  &  &  &  &  &  &  \\ \hline
+  \textbf{P3} & IN-02 · Compra del hardware IoT & Equipo IoT / electrónico &  & \gmes & \gmes &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+  \textbf{P3} & IN-02 · Firmware ESP32 y gateway (broker local, en paralelo) & Equipo IoT / electrónico &  &  & \gmes & \gmes & \gmes &  &  &  &  &  &  &  &  &  \\ \hline
+  \textbf{P3} & IN-02 · Integración con la plataforma y piloto en una freidora & Equipo IoT, con el equipo de desarrollo &  &  &  &  &  & \gmes & \gmes & \gmes &  &  &  &  &  &  \\ \hline
+  \textbf{P3} & IN-02 · Extensión a todas las freidoras & Equipo IoT, con el equipo de desarrollo &  &  &  &  &  &  &  & \gmes & \gmes &  &  &  &  &  \\ \hline
+  \textbf{P3} & IN-03 · Alertas y registro de desviaciones & Equipo de desarrollo &  &  &  &  &  &  &  & \gmes & \gmes &  &  &  &  &  \\ \hline
+  \textbf{P4} & IN-04 · Captura de fotos reales de tandas & Control de Calidad &  &  &  &  &  &  &  & \gmes & \gmes &  &  &  &  &  \\ \hline
+  \textbf{P4} & IN-04 · Calibración y validación de OpenCV & Equipo de desarrollo, con Control de Calidad &  &  &  &  &  &  &  &  &  & \gmes & \gmes & \gmes & \gmes &  \\ \hline
+  \textbf{P4} & IN-05 · Dashboards e indicador IOS5-P02 en Grafana & Equipo de desarrollo &  &  &  &  &  &  &  &  &  &  &  &  & \gmes & \gmes \\ \hline
+  \textbf{P5} & IN-09 · Respaldos, monitoreo y seguridad & Proveedor de TI / nube &  &  &  &  &  & \gmes &  &  &  &  &  &  &  &  \\ \hline
+  \textbf{P5} & IN-09 · Pruebas de recuperación y estabilización & Proveedor de TI / nube &  &  &  &  &  &  &  &  &  &  &  &  &  & \gmes \\ \hline
+
+  \end{tabular}
+  \arrayrulecolor{black}
+  \caption{Cronograma de 14 meses por proyecto y actividad (columnas 1 a 14: meses del proyecto).}
+  \label{tab:f_cronograma}
+\end{table}
+
+Cuatro rasgos del cronograma merecen destacarse. IN-01 e IN-09 se ejecutan en dos momentos: las fichas se oficializan en papel (meses 1--2) y se cargan en el sistema cuando existe el sistema base (mes 6), y la continuidad se activa antes de registrar datos reales (mes 6) mientras que las pruebas de recuperación cierran el proyecto (mes 14). IN-02 es la actividad más larga (meses 2--9): el hardware se compra en el mes 2 y el firmware se desarrolla en paralelo con la plataforma, de modo que solo la integración espera al hito H-03. IN-04 abarca los meses 8 a 13, porque las fotos se capturan durante el piloto y la calibración toma cuatro meses más. Por último, el piloto en una sola freidora limita el efecto de cualquier falla: el resto de la planta sigue con el proceso manual hasta el mes 9.
+
+El avance se controla con los ocho hitos definidos en la Fase E (Tabla~\ref{tab:hitos}), a los que ahora se asigna un proyecto y un criterio de éxito verificable (Tabla~\ref{tab:f_hitos}).
+
+% ── Tabla: Hitos con criterio de éxito ──────────────────────
+\begin{table}[H]
+  \centering
+  \setstretch{1.1}
+  \renewcommand{\arraystretch}{1.3}
+  \setlength{\tabcolsep}{4pt}
+  \arrayrulecolor{upeu_dark}
+  \small
+  \begin{tabularx}{\textwidth}{|C{1.2cm}|L{2.1cm}|L{3.6cm}|C{1.3cm}|X|}
+    \hline
+    \rowcolor{upeu_dark}
+    {\color{white}\bfseries Hito} &
+    {\color{white}\bfseries Momento} &
+    {\color{white}\bfseries Descripción} &
+    {\color{white}\bfseries Proy.} &
+    {\color{white}\bfseries Criterio de éxito} \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{H-01} & Fin del mes 1 & Red IoT y 4G listos & P2 & Red IoT y 4G operativos \\ \hline
+    \textbf{H-02} & Fin del mes 2 & Fichas oficiales publicadas & P1 & 8 de 8 familias con ficha oficial aprobada y publicada en todas las freidoras \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{H-03} & Fin del mes 5 & Plataforma y sistema base operativos & P2 & Plataforma operativa, 4 roles configurados, disponibilidad del backend $\geq$ 99,9\,\% \\ \hline
+    \textbf{H-04} & Fin del mes 6 & Continuidad y seguridad activas & P5 & Respaldo diario activo; pérdida máxima de datos de 24~h; restauración en $\leq$ 4~h \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{H-05} & Mitad del mes 8 & Piloto operativo en una freidora & P3 & Lectura cada 2~s; cancelación ante anomalía en $\leq$ 5~s \\ \hline
+    \textbf{H-06} & Fin del mes 9 & Control automático en todas las freidoras & P3 & Alerta en $\leq$ 10~s; meta propuesta de $\geq$ 95\,\% de tandas dentro del rango de la ficha \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{H-07} & Mitad del mes 13 & Visión artificial validada & P4 & Meta propuesta de $\geq$ 90\,\% de coincidencia entre OpenCV y la evaluación de Calidad \\ \hline
+    \textbf{H-08} & Fin del mes 14 & Indicador IOS5-P02 en dashboard y cierre & P4, P5 & Indicador disponible; prueba de conmutación y restauración exitosa \\ \hline
+  \end{tabularx}
+  \arrayrulecolor{black}
+  \caption{Hitos de control con criterio de éxito.}
+  \label{tab:f_hitos}
+\end{table}
+
+Las metas marcadas como ``propuesta'' provienen del portafolio de la Fase E y deben ser validadas por Franco's.
+
+El proyecto no reemplaza todo a la vez: pasa por tres estados intermedios controlados, llamados arquitecturas de transición. Cada uno termina en una puerta de control que debe cumplirse antes de pasar al siguiente (Tabla~\ref{tab:f_transiciones}).
+
+% ── Tabla: Arquitecturas de transición ──────────────────────
+\begingroup
+\setstretch{1.1}
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{4pt}
+\arrayrulecolor{upeu_dark}
+\small
+\begin{longtable}{|L{2.4cm}|C{1.2cm}|L{4.2cm}|L{4.2cm}|L{1.9cm}|}
+  \hline
+  \rowcolor{upeu_dark}
+  {\color{white}\bfseries Estado} &
+  {\color{white}\bfseries Meses} &
+  {\color{white}\bfseries Qué existe al terminar} &
+  {\color{white}\bfseries Cómo opera la planta mientras tanto} &
+  {\color{white}\bfseries Puerta de control} \\ \hline
+  \endfirsthead
+  \hline
+  \rowcolor{upeu_dark}
+  {\color{white}\bfseries Estado} &
+  {\color{white}\bfseries Meses} &
+  {\color{white}\bfseries Qué existe al terminar} &
+  {\color{white}\bfseries Cómo opera la planta mientras tanto} &
+  {\color{white}\bfseries Puerta de control} \\ \hline
+  \endhead
+  \endfoot
+  \caption{Arquitecturas de transición.}
+  \label{tab:f_transiciones}
+  \endlastfoot
+  \rowcolor{upeu_light}
+  \textbf{Transición A}\newline Base y estándar & 1--5 & Fichas oficiales en papel en cada freidora, red IoT con 4G, plataforma en la nube y sistema base con acceso por roles & El proceso sigue siendo manual (temperatura a criterio del operario, aviso verbal, inspección en papel), pero ya con rangos oficiales & H-01, H-02 y H-03 \\ \hline
+  \textbf{Transición B}\newline Control automático & 6--9 & Fichas cargadas en el sistema, respaldos y seguridad activos, control automático con alertas en todas las freidoras (primero una, luego las demás) & Las freidoras migran de una en una; la inspección visual y el cálculo del indicador siguen en papel & H-04, H-05 y H-06 \\ \hline
+  \rowcolor{upeu_light}
+  \textbf{Estado objetivo}\newline Calidad e indicadores & 10--14 & Inspección por visión artificial, descarte marcado y cuantificado, indicador IOS5-P02 en Grafana y recuperación probada & El proceso completo opera con la arquitectura objetivo & H-07 y H-08 \\ \hline
+\end{longtable}
+\arrayrulecolor{black}
+\endgroup
+
+Las transiciones siguen los hitos y no los horizontes de la Fase E: la Transición A cierra en el mes 5 (fin del corto plazo ampliado) y la B en el mes 9 (fin del mediano plazo).
+
+% ============================================================
+\subsection{Control de riesgos}
+
+El plan se acompaña de un registro de 22 riesgos (9 altos y 13 medios), cada uno con su mitigación, evaluación, responsable y contingencia. La Tabla~\ref{tab:f_riesgos} presenta los nueve riesgos altos.
+
+% ── Tabla: Riesgos principales ──────────────────────────────
+\begin{table}[H]
+  \centering
+  \setstretch{1.1}
+  \renewcommand{\arraystretch}{1.3}
+  \arrayrulecolor{upeu_dark}
+  \small
+  \begin{tabularx}{\textwidth}{|C{1.3cm}|X|L{5.0cm}|}
+    \hline
+    \rowcolor{upeu_dark}
+    {\color{white}\bfseries ID} &
+    {\color{white}\bfseries Riesgo} &
+    {\color{white}\bfseries Responsable} \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{R-16} & Hardware y desarrollo sin cotizar (puntaje 9, el más alto) & Gerencia \\ \hline
+    \textbf{R-01} & Operarios con experiencia no aceptan las fichas oficiales & Jefe de producción \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{R-07} & La freidora actual no admite el controlador & Equipo IoT / electrónico \\ \hline
+    \textbf{R-08} & Alertas falsas por umbrales mal ajustados & Equipo de desarrollo \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{R-13} & Respaldos que nunca se prueban & Proveedor de TI / nube \\ \hline
+    \textbf{R-15} & Equipo muy reducido & Gerencia \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{R-17} & Falla del piloto en una freidora de producción & Equipo IoT, con el jefe de producción \\ \hline
+    \textbf{R-20} & Operarios sin formación en el sistema & Jefe de producción \\ \hline
+    \rowcolor{upeu_light}
+    \textbf{R-22} & Nadie a cargo de la plataforma al cerrar el proyecto & Gerencia \\ \hline
+  \end{tabularx}
+  \arrayrulecolor{black}
+  \caption{Riesgos principales del plan de migración.}
+  \label{tab:f_riesgos}
+\end{table}
+
+% ============================================================
+\subsection{Conclusiones}
+
+\begin{itemize}
+  \item Las 35 brechas de las fases B, C y D quedan cubiertas por nueve iniciativas, agrupadas en cinco proyectos; ninguna brecha queda sin iniciativa y ninguna iniciativa queda fuera de un proyecto.
+  \item Los dos \textit{quick wins}, las fichas oficiales y la red IoT con 4G, arrancan en el mes 1 porque no dependen de nada, y generan valor en los meses 1--2.
+  \item El hardware IoT se compra en el mes 2 y el firmware se desarrolla en paralelo con la plataforma, lo que evita extender el proyecto a unos 17 meses.
+  \item El control automático se prueba en una freidora antes de extenderlo a las demás, y no se registran datos reales de producción hasta tener los respaldos y la seguridad activos (H-04).
+  \item El plan dura 14 meses y pasa por tres estados de transición, controlados por ocho hitos con criterios de éxito verificables.
+  \item Quedan tres pendientes: decidir si la capacitación, la convivencia y la reversión durante el piloto (hoy mitigaciones de R-17 y R-20) se agregan como actividades con fecha; cotizar el hardware de planta y estimar el desarrollo y el dominio para cerrar el presupuesto (R-16); y validar con Franco's las metas propuestas de 95\,\% de tandas dentro del rango y 90\,\% de coincidencia de la visión artificial.
+  \item La siguiente fase, \textbf{Fase G --- Gobernanza de la implementación}, supervisará que la ejecución respete este plan: seguirá los hitos, controlará los riesgos del registro y aprobará los cambios al cronograma o al alcance.
+\end{itemize}
