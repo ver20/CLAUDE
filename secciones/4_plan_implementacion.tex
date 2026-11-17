@@ -43,9 +43,6 @@ Soporte & 01/12/2026 – 31/07/2027 & Corrección de incidencias y mejoras menor
 }
 
 
-{\footnotesize \textit{Fuente: E1, Tablas 11 y 12; E2, Tablas 7, 14, 32, 33, 36 y 38. Las actividades de TI-003 por fase se derivan de las responsabilidades del equipo ITI en E2 y de los requerimientos de infraestructura de la vista motivacional, pues E1 y E2 solo fijan sus fechas de inicio y fin.}}
-
-
 La fase de construcción se desarrolla bajo Scrum adaptado, en ocho sprints de dos semanas. Cada sprint entrega un incremento funcional vinculado a las iniciativas de mejora del Entregable 3, lo que permite que el sistema crezca en el mismo orden de prioridad con que se rediseñaron los procesos. La Tabla~\ref{tab:cap4-2} presenta la secuencia.
 
 
@@ -81,15 +78,12 @@ La fase de construcción se desarrolla bajo Scrum adaptado, en ocho sprints de d
 }
 
 
-{\footnotesize \textit{Fuente: E3, Tabla 4. Las fechas se obtienen de dividir la fase F-04 en sprints consecutivos de dos semanas.}}
-
-
 La secuencia prioriza primero el núcleo transaccional, porque sobre él se apoyan los demás módulos: no es posible tramitar solicitudes de producción ni medir indicadores sin ventas e inventario registrados en una sola base. Los módulos orientados al cliente se habilitan a partir del sprint 4, cuando el registro interno ya es estable, y los aspectos de seguridad de cuenta se consolidan al final, antes de las pruebas de aceptación.
 
 \section{Responsables y recursos}
 
 
-La implementación involucra a los diez integrantes del equipo del proyecto y a dos actores de Franco's S.A.C.: la Gerencia, como patrocinador, y los usuarios clave de ventas e inventario, que validan los requisitos y participan en las pruebas de aceptación. La Tabla~\ref{tab:cap4-3} asigna las responsabilidades de cada fase mediante una matriz RACI, en la que cada actividad tiene un único responsable de aprobación.
+La implementación involucra a los diez integrantes del equipo del proyecto y a dos actores de Franco's S.A.C.: la Gerencia, como patrocinador, y los usuarios clave de ventas e inventario, que validan los requisitos y participan en las pruebas de aceptación. La Tabla~\ref{tab:cap4-3} asigna las responsabilidades de cada fase mediante una matriz RACI, en la que R identifica a quien ejecuta la actividad, A a quien la aprueba y rinde cuentas, C a quien se consulta e I a quien se informa; cada actividad tiene un único responsable de aprobación.
 
 
 {\scriptsize
@@ -128,9 +122,6 @@ Control de cambios (transversal) & A & R & C & C & C & I & R & C & C & — \\
 }
 
 
-{\footnotesize \textit{R: responsable de ejecutar; A: aprueba y rinde cuentas; C: consultado; I: informado. Roles tomados de E2, Tablas 10 y 33.}}
-
-
 En cuanto a los recursos, el proyecto dispone del presupuesto aprobado en el Entregable 2 y de un conjunto de recursos tecnológicos con responsables definidos. Los integrantes del equipo constituyen el recurso humano del desarrollo; los costos de recursos humanos presupuestados corresponden a los especialistas de apoyo (cloud, desarrollo y base de datos). La Tabla~\ref{tab:cap4-4} resume los recursos y su control.
 
 
@@ -166,9 +157,6 @@ Gestión & GitHub, Jira y Figma & Desarrolladores, Director y Diseñadora & Cont
 }
 
 
-{\footnotesize \textit{Fuente: E2, Tablas 15 y 36. La reserva de contingencia de S/ 7,015.00 se gestiona aparte (E2, Tabla 46).}}
-
-
 \section{Despliegue y reversión}
 
 
@@ -195,9 +183,6 @@ C. Puesta en producción & 23/11 – 27/11 & Portal A completo (BSC, reportes, s
 \hline
 \end{longtable}
 }
-
-
-{\footnotesize \textit{Las condiciones de avance provienen de los criterios de éxito de E2 (Tabla 20). Los datos históricos en papel, Excel y Word no se migran; el sistema inicia con los datos maestros vigentes.}}
 
 
 La operación en paralelo durante el piloto es la decisión que hace viable la reversión: mientras el formato físico y SICO ERP siguen en uso, cualquier falla del sistema puede contenerse sin pérdida de ventas ni de comprobantes. La Tabla~\ref{tab:cap4-6} define cuándo se activa la reversión y cómo se ejecuta.
@@ -267,9 +252,6 @@ R-08 & Fallas en la infraestructura cloud (AWS) & 25 \% & Medio & Respaldos, mon
 }
 
 
-{\footnotesize \textit{Fuente: E2, Tablas 18 y 46.}}
-
-
 \textbf{Gobernanza de la implementación.} Ningún cambio en el alcance, el cronograma o el presupuesto se incorpora sin seguir el proceso formal del Entregable 2: solicitud, evaluación de impacto, aprobación del Director y del asesor, implementación y cierre con actualización de la línea base. El Director revisa semanalmente el avance de cada rol e informa al asesor académico de forma quincenal, y cada transición del despliegue funciona como una puerta de control que solo se supera al cumplir su condición de avance.
 
 \textbf{Adopción del sistema.} Para reducir la resistencia al cambio (R-05), la capacitación se organiza por rol y se realiza antes del piloto, de modo que cada usuario aprenda únicamente las funciones que utilizará. La Tabla~\ref{tab:cap4-8} resume el plan.
@@ -301,9 +283,6 @@ Cliente & Guía breve en el Portal B para registro, compra y seguimiento de pedi
 \hline
 \end{longtable}
 }
-
-
-{\footnotesize \textit{Roles tomados de E2, Tabla 12. El manual de usuario es un entregable del proyecto (E2, Tabla 8).}}
 
 
 Esta capacitación inicial cubre el uso del sistema en el arranque. La formación digital más amplia del personal queda a cargo del programa de transformación y capacitación digital (TI-005) previsto en el Roadmap Tecnológico del Entregable 1 para 2027.

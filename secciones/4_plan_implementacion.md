@@ -22,8 +22,6 @@ El trabajo se organiza en siete fases comunes a ambos proyectos y una fase trans
 | F-08 Monitoreo y control | 05/05 – 27/11/2026 | Seguimiento semanal del avance de los sprints. | Seguimiento de consumo, disponibilidad y costos de la infraestructura. | Informes semanales y reporte quincenal al asesor. |
 | Soporte | 01/12/2026 – 31/07/2027 | Corrección de incidencias y mejoras menores. | Mantenimiento, monitoreo y respaldos del ambiente. | Disponibilidad ≥ 95 % durante el soporte. |
 
-*Fuente: E1, Tablas 11 y 12; E2, Tablas 7, 14, 32, 33, 36 y 38. Las actividades de TI-003 por fase se derivan de las responsabilidades del equipo ITI en E2 y de los requerimientos de infraestructura de la vista motivacional, pues E1 y E2 solo fijan sus fechas de inicio y fin.*
-
 La fase de construcción se desarrolla bajo Scrum adaptado, en ocho sprints de dos semanas. Cada sprint entrega un incremento funcional vinculado a las iniciativas de mejora del Entregable 3, lo que permite que el sistema crezca en el mismo orden de prioridad con que se rediseñaron los procesos. La Tabla 2 presenta la secuencia.
 
 **Tabla 2.** Secuencia de sprints de la fase de construcción
@@ -39,13 +37,11 @@ La fase de construcción se desarrolla bajo Scrum adaptado, en ocho sprints de d
 | 7 | 28/09 – 09/10 | Configuración y backoffice: parámetros del sistema, usuarios internos y flujo pendiente de carrito y pedido del Portal B. | IM-04, IM-05 |
 | 8 | 12/10 – 23/10 | Perfil y seguridad de cuenta en ambos portales: datos personales, cambio de contraseña y recuperación de acceso. | Transversal |
 
-*Fuente: E3, Tabla 4. Las fechas se obtienen de dividir la fase F-04 en sprints consecutivos de dos semanas.*
-
 La secuencia prioriza primero el núcleo transaccional, porque sobre él se apoyan los demás módulos: no es posible tramitar solicitudes de producción ni medir indicadores sin ventas e inventario registrados en una sola base. Los módulos orientados al cliente se habilitan a partir del sprint 4, cuando el registro interno ya es estable, y los aspectos de seguridad de cuenta se consolidan al final, antes de las pruebas de aceptación.
 
 ## 4.2 Responsables y recursos
 
-La implementación involucra a los diez integrantes del equipo del proyecto y a dos actores de Franco's S.A.C.: la Gerencia, como patrocinador, y los usuarios clave de ventas e inventario, que validan los requisitos y participan en las pruebas de aceptación. La Tabla 3 asigna las responsabilidades de cada fase mediante una matriz RACI, en la que cada actividad tiene un único responsable de aprobación.
+La implementación involucra a los diez integrantes del equipo del proyecto y a dos actores de Franco's S.A.C.: la Gerencia, como patrocinador, y los usuarios clave de ventas e inventario, que validan los requisitos y participan en las pruebas de aceptación. La Tabla 3 asigna las responsabilidades de cada fase mediante una matriz RACI, en la que R identifica a quien ejecuta la actividad, A a quien la aprueba y rinde cuentas, C a quien se consulta e I a quien se informa; cada actividad tiene un único responsable de aprobación.
 
 **Tabla 3.** Matriz RACI de la implementación
 
@@ -62,8 +58,6 @@ La implementación involucra a los diez integrantes del equipo del proyecto y a 
 | Soporte post-implementación | A | C | C | C | C | I | C | R | I | C |
 | Control de cambios (transversal) | A | R | C | C | C | I | R | C | C | — |
 
-*R: responsable de ejecutar; A: aprueba y rinde cuentas; C: consultado; I: informado. Roles tomados de E2, Tablas 10 y 33.*
-
 En cuanto a los recursos, el proyecto dispone del presupuesto aprobado en el Entregable 2 y de un conjunto de recursos tecnológicos con responsables definidos. Los integrantes del equipo constituyen el recurso humano del desarrollo; los costos de recursos humanos presupuestados corresponden a los especialistas de apoyo (cloud, desarrollo y base de datos). La Tabla 4 resume los recursos y su control.
 
 **Tabla 4.** Recursos de la implementación
@@ -79,8 +73,6 @@ En cuanto a los recursos, el proyecto dispone del presupuesto aprobado en el Ent
 | Gestión | GitHub, Jira y Figma | Desarrolladores, Director y Diseñadora | Control de versiones, backlog y prototipos. | — |
 | | **Costo total del proyecto** | | | **45,970.00** |
 
-*Fuente: E2, Tablas 15 y 36. La reserva de contingencia de S/ 7,015.00 se gestiona aparte (E2, Tabla 46).*
-
 ## 4.3 Despliegue y reversión
 
 El despliegue se realiza de forma gradual para no interrumpir la operación de Franco's S.A.C. En lugar de reemplazar los registros actuales en un solo paso, el sistema convive durante un periodo controlado con el registro en papel y con SICO ERP, que se mantiene como emisor oficial de comprobantes hasta la futura integración con SUNAT, fuera del alcance del MVP. La estrategia se organiza en tres transiciones dentro de la fase F-06, como se presenta en la Tabla 5.
@@ -92,8 +84,6 @@ El despliegue se realiza de forma gradual para no interrumpir la operación de F
 | A. Preparación | 02/11 – 06/11 | Ambiente en servidor H3 y AWS, pipeline de despliegue, carga de datos maestros (productos, clientes, usuarios y roles) y primer respaldo verificado. | Respaldo restaurado con éxito y pruebas de acceso por rol aprobadas al 100 %. |
 | B. Piloto interno | 09/11 – 20/11 | Portal A con ventas e inventario en operación paralela: el personal registra en el ERP y mantiene el formato físico como respaldo. | Disponibilidad ≥ 95 % en horario operativo y conformidad de los usuarios clave. |
 | C. Puesta en producción | 23/11 – 27/11 | Portal A completo (BSC, reportes, solicitudes) y apertura del Portal B a clientes; retiro del registro en papel. | ≥ 80 % de satisfacción en UAT y acta de aceptación firmada. |
-
-*Las condiciones de avance provienen de los criterios de éxito de E2 (Tabla 20). Los datos históricos en papel, Excel y Word no se migran; el sistema inicia con los datos maestros vigentes.*
 
 La operación en paralelo durante el piloto es la decisión que hace viable la reversión: mientras el formato físico y SICO ERP siguen en uso, cualquier falla del sistema puede contenerse sin pérdida de ventas ni de comprobantes. La Tabla 6 define cuándo se activa la reversión y cómo se ejecuta.
 
@@ -125,8 +115,6 @@ La gestión del cambio comprende tres frentes: el control de los riesgos de la i
 | R-07 | Incumplimiento de la Ley N.° 29733 | 30 % | Alto | Protección de datos desde el diseño y verificación en UAT. | Analista / desarrollador |
 | R-08 | Fallas en la infraestructura cloud (AWS) | 25 % | Medio | Respaldos, monitoreo y plan de recuperación. | Especialistas de despliegue |
 
-*Fuente: E2, Tablas 18 y 46.*
-
 **Gobernanza de la implementación.** Ningún cambio en el alcance, el cronograma o el presupuesto se incorpora sin seguir el proceso formal del Entregable 2: solicitud, evaluación de impacto, aprobación del Director y del asesor, implementación y cierre con actualización de la línea base. El Director revisa semanalmente el avance de cada rol e informa al asesor académico de forma quincenal, y cada transición del despliegue funciona como una puerta de control que solo se supera al cumplir su condición de avance.
 
 **Adopción del sistema.** Para reducir la resistencia al cambio (R-05), la capacitación se organiza por rol y se realiza antes del piloto, de modo que cada usuario aprenda únicamente las funciones que utilizará. La Tabla 8 resume el plan.
@@ -141,8 +129,6 @@ La gestión del cambio comprende tres frentes: el control de los riesgos de la i
 | Analista estratégico | Registro de objetivos, KPI e iniciativas del BSC. | Transición C |
 | Administrador | Usuarios, roles, parámetros y configuración del sistema. | Transición A |
 | Cliente | Guía breve en el Portal B para registro, compra y seguimiento de pedidos. | Transición C |
-
-*Roles tomados de E2, Tabla 12. El manual de usuario es un entregable del proyecto (E2, Tabla 8).*
 
 Esta capacitación inicial cubre el uso del sistema en el arranque. La formación digital más amplia del personal queda a cargo del programa de transformación y capacitación digital (TI-005) previsto en el Roadmap Tecnológico del Entregable 1 para 2027.
 
