@@ -1,6 +1,6 @@
 # CAPÍTULO 4 — CE0144 Plan de Implementación y Gestión del Sistema de Información
 
-El plan de implementación define cómo Franco's ERP pasará del diseño conceptual a la operación diaria de Franco's S.A.C. Para ello, organiza el trabajo en fases con hitos verificables, asigna responsables y recursos, establece una estrategia de despliegue gradual con un plan de reversión y define los mecanismos de gestión del cambio y soporte que acompañarán la adopción del sistema. El plan se construye sobre la línea base aprobada en el Entregable 2 (Project Charter, WBS, cronograma, presupuesto y matriz de riesgos) y sobre la secuencia de iniciativas de mejora priorizadas en el Entregable 3, de modo que lo planificado en la gestión del proyecto coincida con lo que se implementa en el sistema de información.
+El plan de implementación define cómo Franco's ERP pasará del diseño conceptual a la operación diaria de Franco's S.A.C. Para ello, organiza el trabajo en fases con hitos verificables, asigna responsables y recursos, define la estrategia de despliegue y reversión y define los mecanismos de gestión del cambio y soporte que acompañarán la adopción del sistema. El plan se construye sobre la línea base aprobada en el Entregable 2 (Project Charter, WBS, cronograma, presupuesto y matriz de riesgos) y sobre la secuencia de iniciativas de mejora priorizadas en el Entregable 3, de modo que lo planificado en la gestión del proyecto coincida con lo que se implementa en el sistema de información.
 
 ## 4.1 Fases y cronograma
 
@@ -17,7 +17,7 @@ El trabajo se organiza en siete fases comunes a ambos proyectos y una fase trans
 | F-03 Diseño | 25/05 – 25/06/2026 | Arquitectura C4, modelo de base de datos y prototipos. | Diseño del ambiente híbrido (servidor H3 en sede y AWS), de la red segmentada y del esquema de respaldo y recuperación. | Arquitectura, modelo de datos y prototipos aprobados. |
 | F-04 Construcción | 06/07 – 23/10/2026 | Ocho sprints que desarrollan los once módulos (detalle en la Tabla 2). | Instalación del servidor H3 con VMware ESXi, configuración de servicios AWS, red y seguridad, y ambiente de pruebas en contenedores Docker. | Once módulos funcionales con pruebas unitarias aprobadas. |
 | F-05 Calidad y pruebas | 12/10 – 04/11/2026 | Pruebas unitarias, de integración y de aceptación (UAT). | Pruebas de respaldo y restauración, de conmutación ante fallas y de seguridad; pipeline CI/CD. | ≥ 90 % de casos de prueba aprobados y pipeline CI/CD configurado. |
-| F-06 Despliegue | 02/11 – 27/11/2026 | Puesta en producción gradual de los Portales A y B (sección 4.3). | Ambiente de producción operativo, con monitoreo y alertas activos. | Sistema en producción con disponibilidad ≥ 95 %. |
+| F-06 Despliegue | 02/11 – 27/11/2026 | Puesta en producción de los Portales A y B. | Ambiente de producción operativo, con monitoreo y alertas activos. | Sistema en producción con disponibilidad ≥ 95 %. |
 | F-07 Cierre | 27/11 – 30/11/2026 | Acta de aceptación, manuales e informe de cierre. | Manual técnico de infraestructura y reporte de disponibilidad. | Acta de aceptación firmada; hito H1 del roadmap alcanzado. |
 | F-08 Monitoreo y control | 05/05 – 27/11/2026 | Seguimiento semanal del avance de los sprints. | Seguimiento de consumo, disponibilidad y costos de la infraestructura. | Informes semanales y reporte quincenal al asesor. |
 | Soporte | 01/12/2026 – 31/07/2027 | Corrección de incidencias y mejoras menores. | Mantenimiento, monitoreo y respaldos del ambiente. | Disponibilidad ≥ 95 % durante el soporte. |
@@ -53,7 +53,7 @@ La implementación involucra a los diez integrantes del equipo del proyecto y a 
 | Construcción | A | C | R | R | R | C | I | C | I | I |
 | Calidad y pruebas | A | C | C | C | C | R | R | C | I | C |
 | Despliegue | A | I | C | R | C | C | I | R | C | I |
-| Capacitación y piloto | A | R | I | I | I | C | R | C | C | C |
+| Capacitación de usuarios | A | R | I | I | I | C | R | C | C | C |
 | Cierre | A/R | I | I | I | I | I | R | I | C | — |
 | Soporte post-implementación | A | C | C | C | C | I | C | R | I | C |
 | Control de cambios (transversal) | A | R | C | C | C | I | R | C | C | — |
@@ -75,35 +75,13 @@ En cuanto a los recursos, el proyecto dispone del presupuesto aprobado en el Ent
 
 ## 4.3 Despliegue y reversión
 
-El despliegue se realiza de forma gradual para no interrumpir la operación de Franco's S.A.C. En lugar de reemplazar los registros actuales en un solo paso, el sistema convive durante un periodo controlado con el registro en papel y con SICO ERP, que se mantiene como emisor oficial de comprobantes hasta la futura integración con SUNAT, fuera del alcance del MVP. La estrategia se organiza en tres transiciones dentro de la fase F-06, como se presenta en la Tabla 5.
-
-**Tabla 5.** Estrategia de despliegue gradual
-
-| Transición | Periodo | Qué se habilita | Condición para avanzar |
-|---|---|---|---|
-| A. Preparación | 02/11 – 06/11 | Ambiente en servidor H3 y AWS, pipeline de despliegue, carga de datos maestros (productos, clientes, usuarios y roles) y primer respaldo verificado. | Respaldo restaurado con éxito y pruebas de acceso por rol aprobadas al 100 %. |
-| B. Piloto interno | 09/11 – 20/11 | Portal A con ventas e inventario en operación paralela: el personal registra en el ERP y mantiene el formato físico como respaldo. | Disponibilidad ≥ 95 % en horario operativo y conformidad de los usuarios clave. |
-| C. Puesta en producción | 23/11 – 27/11 | Portal A completo (BSC, reportes, solicitudes) y apertura del Portal B a clientes; retiro del registro en papel. | ≥ 80 % de satisfacción en UAT y acta de aceptación firmada. |
-
-La operación en paralelo durante el piloto es la decisión que hace viable la reversión: mientras el formato físico y SICO ERP siguen en uso, cualquier falla del sistema puede contenerse sin pérdida de ventas ni de comprobantes. La Tabla 6 define cuándo se activa la reversión y cómo se ejecuta.
-
-**Tabla 6.** Plan de reversión
-
-| Elemento | Definición |
-|---|---|
-| Condiciones de activación | Falla que impide registrar ventas o movimientos de inventario durante el horario operativo sin solución inmediata; pérdida o corrupción de datos; disponibilidad inferior al 95 % durante el piloto; o incidente de seguridad que exponga datos personales. |
-| Quién decide | El Director del proyecto, previa consulta con la Gerencia de Franco's S.A.C. |
-| Quién ejecuta | Especialistas de despliegue (aplicación e infraestructura) y DBA (datos). |
-| Pasos | 1) Comunicar a los usuarios que se retoma el registro en formato físico. 2) Restaurar la versión estable anterior desde el repositorio y la instantánea del servidor. 3) Restaurar la base de datos desde el último respaldo verificado. 4) Registrar en el sistema las operaciones anotadas en papel durante la contingencia. 5) Analizar la causa y reprogramar el despliegue mediante control de cambios. |
-| Continuidad | La emisión de comprobantes no se ve afectada, porque continúa en SICO ERP durante todo el despliegue. |
-
 ## 4.4 Gestión del cambio y soporte
 
 La gestión del cambio comprende tres frentes: el control de los riesgos de la implementación, la gobernanza que asegura que lo construido corresponda a lo aprobado y la adopción del sistema por parte del personal. A ellos se suma el soporte post-implementación, que sostiene la operación una vez cerrado el proyecto.
 
-**Riesgos de la implementación.** De la matriz de riesgos del Entregable 2 se seleccionaron los que afectan directamente al despliegue y la adopción del sistema. La Tabla 7 los presenta con su respuesta.
+**Riesgos de la implementación.** De la matriz de riesgos del Entregable 2 se seleccionaron los que afectan directamente al despliegue y la adopción del sistema. La Tabla 5 los presenta con su respuesta.
 
-**Tabla 7.** Riesgos de la implementación y respuesta
+**Tabla 5.** Riesgos de la implementación y respuesta
 
 | ID | Riesgo | Prob. | Impacto | Respuesta | Responsable |
 |---|---|---|---|---|---|
@@ -111,34 +89,34 @@ La gestión del cambio comprende tres frentes: el control de los riesgos de la i
 | R-02 | Retrasos en el desarrollo de los sprints | 50 % | Alto | Seguimiento semanal, priorización del backlog y reasignación de recursos. | Director / desarrolladores |
 | R-03 | Incremento de ciberamenazas | 50 % | Alto | Control de acceso por rol, actualizaciones, respaldos y monitoreo de incidentes. | Equipo de infraestructura |
 | R-04 | Problemas de integración entre Software e Infraestructura | 45 % | Medio | Plan de integración y pruebas técnicas anticipadas. | Director del proyecto |
-| R-05 | Resistencia al cambio de los usuarios | 45 % | Medio | Capacitación por rol y acompañamiento durante el piloto. | QA y Documentadora |
+| R-05 | Resistencia al cambio de los usuarios | 45 % | Medio | Capacitación por rol y acompañamiento durante el despliegue. | QA y Documentadora |
 | R-07 | Incumplimiento de la Ley N.° 29733 | 30 % | Alto | Protección de datos desde el diseño y verificación en UAT. | Analista / desarrollador |
 | R-08 | Fallas en la infraestructura cloud (AWS) | 25 % | Medio | Respaldos, monitoreo y plan de recuperación. | Especialistas de despliegue |
 
-**Gobernanza de la implementación.** Ningún cambio en el alcance, el cronograma o el presupuesto se incorpora sin seguir el proceso formal del Entregable 2: solicitud, evaluación de impacto, aprobación del Director y del asesor, implementación y cierre con actualización de la línea base. El Director revisa semanalmente el avance de cada rol e informa al asesor académico de forma quincenal, y cada transición del despliegue funciona como una puerta de control que solo se supera al cumplir su condición de avance.
+**Gobernanza de la implementación.** Ningún cambio en el alcance, el cronograma o el presupuesto se incorpora sin seguir el proceso formal del Entregable 2: solicitud, evaluación de impacto, aprobación del Director y del asesor, implementación y cierre con actualización de la línea base. El Director revisa semanalmente el avance de cada rol e informa al asesor académico de forma quincenal.
 
-**Adopción del sistema.** Para reducir la resistencia al cambio (R-05), la capacitación se organiza por rol y se realiza antes del piloto, de modo que cada usuario aprenda únicamente las funciones que utilizará. La Tabla 8 resume el plan.
+**Adopción del sistema.** Para reducir la resistencia al cambio (R-05), la capacitación se organiza por rol y se realiza antes de la puesta en producción, de modo que cada usuario aprenda únicamente las funciones que utilizará. La Tabla 6 resume el plan.
 
-**Tabla 8.** Capacitación por rol
+**Tabla 6.** Capacitación por rol
 
 | Rol del sistema | Contenido | Momento |
 |---|---|---|
-| Operador de ventas | Registro de pedidos, clientes, catálogo y estados de venta. | Transición A, antes del piloto |
-| Operador de inventario | Movimientos de stock, almacenes, alertas de stock mínimo y solicitudes. | Transición A, antes del piloto |
-| Gerente | Consulta de reportes, pedidos y tablero BSC. | Transición C |
-| Analista estratégico | Registro de objetivos, KPI e iniciativas del BSC. | Transición C |
-| Administrador | Usuarios, roles, parámetros y configuración del sistema. | Transición A |
-| Cliente | Guía breve en el Portal B para registro, compra y seguimiento de pedidos. | Transición C |
+| Operador de ventas | Registro de pedidos, clientes, catálogo y estados de venta. | Antes de la puesta en producción (F-06) |
+| Operador de inventario | Movimientos de stock, almacenes, alertas de stock mínimo y solicitudes. | Antes de la puesta en producción (F-06) |
+| Gerente | Consulta de reportes, pedidos y tablero BSC. | Durante la puesta en producción (F-06) |
+| Analista estratégico | Registro de objetivos, KPI e iniciativas del BSC. | Durante la puesta en producción (F-06) |
+| Administrador | Usuarios, roles, parámetros y configuración del sistema. | Antes de la puesta en producción (F-06) |
+| Cliente | Guía breve en el Portal B para registro, compra y seguimiento de pedidos. | Durante la puesta en producción (F-06) |
 
 Esta capacitación inicial cubre el uso del sistema en el arranque. La formación digital más amplia del personal queda a cargo del programa de transformación y capacitación digital (TI-005) previsto en el Roadmap Tecnológico del Entregable 1 para 2027.
 
-**Soporte post-implementación.** Tras el cierre, el sistema cuenta con ocho meses de soporte técnico a cargo de los especialistas de despliegue, con un costo de S/ 2,000 mensuales. El soporte se organiza según las prácticas de ITIL 4: los usuarios reportan las incidencias por un canal único, estas se registran y clasifican por prioridad, y se atienden en el orden que muestra la Tabla 9. Los tiempos son una propuesta del equipo y se validarán con la Gerencia.
+**Soporte post-implementación.** Tras el cierre, el sistema cuenta con ocho meses de soporte técnico a cargo de los especialistas de despliegue, con un costo de S/ 2,000 mensuales. El soporte se organiza según las prácticas de ITIL 4: los usuarios reportan las incidencias por un canal único, estas se registran y clasifican por prioridad, y se atienden en el orden que muestra la Tabla 7. Los tiempos son una propuesta del equipo y se validarán con la Gerencia.
 
-**Tabla 9.** Prioridades de atención en el soporte (propuesta)
+**Tabla 7.** Prioridades de atención en el soporte (propuesta)
 
 | Prioridad | Ejemplo | Atención propuesta |
 |---|---|---|
-| Crítica | El sistema no permite registrar ventas o inventario. | Inicio inmediato; solución o reversión en el mismo día. |
+| Crítica | El sistema no permite registrar ventas o inventario. | Inicio inmediato; solución en el mismo día. |
 | Alta | Falla en un módulo con alternativa temporal. | Dentro de las 24 horas. |
 | Media | Error que no detiene la operación. | Dentro de las 72 horas. |
 | Baja | Consulta de uso o mejora menor. | Se programa en el siguiente mantenimiento. |

@@ -1,5 +1,5 @@
 
-El plan de implementación define cómo Franco's ERP pasará del diseño conceptual a la operación diaria de Franco's S.A.C. Para ello, organiza el trabajo en fases con hitos verificables, asigna responsables y recursos, establece una estrategia de despliegue gradual con un plan de reversión y define los mecanismos de gestión del cambio y soporte que acompañarán la adopción del sistema. El plan se construye sobre la línea base aprobada en el Entregable 2 (Project Charter, WBS, cronograma, presupuesto y matriz de riesgos) y sobre la secuencia de iniciativas de mejora priorizadas en el Entregable 3, de modo que lo planificado en la gestión del proyecto coincida con lo que se implementa en el sistema de información.
+El plan de implementación define cómo Franco's ERP pasará del diseño conceptual a la operación diaria de Franco's S.A.C. Para ello, organiza el trabajo en fases con hitos verificables, asigna responsables y recursos, define la estrategia de despliegue y reversión y define los mecanismos de gestión del cambio y soporte que acompañarán la adopción del sistema. El plan se construye sobre la línea base aprobada en el Entregable 2 (Project Charter, WBS, cronograma, presupuesto y matriz de riesgos) y sobre la secuencia de iniciativas de mejora priorizadas en el Entregable 3, de modo que lo planificado en la gestión del proyecto coincida con lo que se implementa en el sistema de información.
 
 \section{Fases y cronograma}
 
@@ -31,7 +31,7 @@ F-04 Construcción & 06/07 – 23/10/2026 & Ocho sprints que desarrollan los onc
 \hline
 F-05 Calidad y pruebas & 12/10 – 04/11/2026 & Pruebas unitarias, de integración y de aceptación (UAT). & Pruebas de respaldo y restauración, de conmutación ante fallas y de seguridad; pipeline CI/CD. & $\geq$ 90 \% de casos de prueba aprobados y pipeline CI/CD configurado. \\
 \hline
-F-06 Despliegue & 02/11 – 27/11/2026 & Puesta en producción gradual de los Portales A y B (sección 4.3). & Ambiente de producción operativo, con monitoreo y alertas activos. & Sistema en producción con disponibilidad $\geq$ 95 \%. \\
+F-06 Despliegue & 02/11 – 27/11/2026 & Puesta en producción de los Portales A y B. & Ambiente de producción operativo, con monitoreo y alertas activos. & Sistema en producción con disponibilidad $\geq$ 95 \%. \\
 \hline
 F-07 Cierre & 27/11 – 30/11/2026 & Acta de aceptación, manuales e informe de cierre. & Manual técnico de infraestructura y reporte de disponibilidad. & Acta de aceptación firmada; hito H1 del roadmap alcanzado. \\
 \hline
@@ -110,7 +110,7 @@ Calidad y pruebas & A & C & C & C & C & R & R & C & I & C \\
 \hline
 Despliegue & A & I & C & R & C & C & I & R & C & I \\
 \hline
-Capacitación y piloto & A & R & I & I & I & C & R & C & C & C \\
+Capacitación de usuarios & A & R & I & I & I & C & R & C & C & C \\
 \hline
 Cierre & A/R & I & I & I & I & I & R & I & C & — \\
 \hline
@@ -160,72 +160,18 @@ Gestión & GitHub, Jira y Figma & Desarrolladores, Director y Diseñadora & Cont
 \section{Despliegue y reversión}
 
 
-El despliegue se realiza de forma gradual para no interrumpir la operación de Franco's S.A.C. En lugar de reemplazar los registros actuales en un solo paso, el sistema convive durante un periodo controlado con el registro en papel y con SICO ERP, que se mantiene como emisor oficial de comprobantes hasta la futura integración con SUNAT, fuera del alcance del MVP. La estrategia se organiza en tres transiciones dentro de la fase F-06, como se presenta en la Tabla~\ref{tab:cap4-5}.
-
-
-{\small
-\renewcommand{\arraystretch}{1.3}
-\begin{longtable}{|>{\raggedright\arraybackslash}p{2.18cm}|>{\raggedright\arraybackslash}p{1.23cm}|>{\raggedright\arraybackslash}p{5.69cm}|>{\raggedright\arraybackslash}p{5.69cm}|}
-\caption{Estrategia de despliegue gradual}\label{tab:cap4-5}\\
-\hline
-\textbf{Transición} & \textbf{Periodo} & \textbf{Qué se habilita} & \textbf{Condición para avanzar} \\
-\hline
-\endfirsthead
-\hline
-\textbf{Transición} & \textbf{Periodo} & \textbf{Qué se habilita} & \textbf{Condición para avanzar} \\
-\hline
-\endhead
-A. Preparación & 02/11 – 06/11 & Ambiente en servidor H3 y AWS, pipeline de despliegue, carga de datos maestros (productos, clientes, usuarios y roles) y primer respaldo verificado. & Respaldo restaurado con éxito y pruebas de acceso por rol aprobadas al 100 \%. \\
-\hline
-B. Piloto interno & 09/11 – 20/11 & Portal A con ventas e inventario en operación paralela: el personal registra en el ERP y mantiene el formato físico como respaldo. & Disponibilidad $\geq$ 95 \% en horario operativo y conformidad de los usuarios clave. \\
-\hline
-C. Puesta en producción & 23/11 – 27/11 & Portal A completo (BSC, reportes, solicitudes) y apertura del Portal B a clientes; retiro del registro en papel. & $\geq$ 80 \% de satisfacción en UAT y acta de aceptación firmada. \\
-\hline
-\end{longtable}
-}
-
-
-La operación en paralelo durante el piloto es la decisión que hace viable la reversión: mientras el formato físico y SICO ERP siguen en uso, cualquier falla del sistema puede contenerse sin pérdida de ventas ni de comprobantes. La Tabla~\ref{tab:cap4-6} define cuándo se activa la reversión y cómo se ejecuta.
-
-
-{\small
-\renewcommand{\arraystretch}{1.3}
-\begin{longtable}{|>{\raggedright\arraybackslash}p{4.47cm}|>{\raggedright\arraybackslash}p{10.73cm}|}
-\caption{Plan de reversión}\label{tab:cap4-6}\\
-\hline
-\textbf{Elemento} & \textbf{Definición} \\
-\hline
-\endfirsthead
-\hline
-\textbf{Elemento} & \textbf{Definición} \\
-\hline
-\endhead
-Condiciones de activación & Falla que impide registrar ventas o movimientos de inventario durante el horario operativo sin solución inmediata; pérdida o corrupción de datos; disponibilidad inferior al 95 \% durante el piloto; o incidente de seguridad que exponga datos personales. \\
-\hline
-Quién decide & El Director del proyecto, previa consulta con la Gerencia de Franco's S.A.C. \\
-\hline
-Quién ejecuta & Especialistas de despliegue (aplicación e infraestructura) y DBA (datos). \\
-\hline
-Pasos & 1) Comunicar a los usuarios que se retoma el registro en formato físico. 2) Restaurar la versión estable anterior desde el repositorio y la instantánea del servidor. 3) Restaurar la base de datos desde el último respaldo verificado. 4) Registrar en el sistema las operaciones anotadas en papel durante la contingencia. 5) Analizar la causa y reprogramar el despliegue mediante control de cambios. \\
-\hline
-Continuidad & La emisión de comprobantes no se ve afectada, porque continúa en SICO ERP durante todo el despliegue. \\
-\hline
-\end{longtable}
-}
-
-
 \section{Gestión del cambio y soporte}
 
 
 La gestión del cambio comprende tres frentes: el control de los riesgos de la implementación, la gobernanza que asegura que lo construido corresponda a lo aprobado y la adopción del sistema por parte del personal. A ellos se suma el soporte post-implementación, que sostiene la operación una vez cerrado el proyecto.
 
-\textbf{Riesgos de la implementación.} De la matriz de riesgos del Entregable 2 se seleccionaron los que afectan directamente al despliegue y la adopción del sistema. La Tabla~\ref{tab:cap4-7} los presenta con su respuesta.
+\textbf{Riesgos de la implementación.} De la matriz de riesgos del Entregable 2 se seleccionaron los que afectan directamente al despliegue y la adopción del sistema. La Tabla~\ref{tab:cap4-5} los presenta con su respuesta.
 
 
 {\small
 \renewcommand{\arraystretch}{1.3}
 \begin{longtable}{|>{\raggedright\arraybackslash}p{0.53cm}|>{\raggedright\arraybackslash}p{5.04cm}|>{\raggedright\arraybackslash}p{0.53cm}|>{\raggedright\arraybackslash}p{0.62cm}|>{\raggedright\arraybackslash}p{5.30cm}|>{\raggedright\arraybackslash}p{2.39cm}|}
-\caption{Riesgos de la implementación y respuesta}\label{tab:cap4-7}\\
+\caption{Riesgos de la implementación y respuesta}\label{tab:cap4-5}\\
 \hline
 \textbf{ID} & \textbf{Riesgo} & \textbf{Prob.} & \textbf{Impacto} & \textbf{Respuesta} & \textbf{Responsable} \\
 \hline
@@ -242,7 +188,7 @@ R-03 & Incremento de ciberamenazas & 50 \% & Alto & Control de acceso por rol, a
 \hline
 R-04 & Problemas de integración entre Software e Infraestructura & 45 \% & Medio & Plan de integración y pruebas técnicas anticipadas. & Director del proyecto \\
 \hline
-R-05 & Resistencia al cambio de los usuarios & 45 \% & Medio & Capacitación por rol y acompañamiento durante el piloto. & QA y Documentadora \\
+R-05 & Resistencia al cambio de los usuarios & 45 \% & Medio & Capacitación por rol y acompañamiento durante el despliegue. & QA y Documentadora \\
 \hline
 R-07 & Incumplimiento de la Ley N.° 29733 & 30 \% & Alto & Protección de datos desde el diseño y verificación en UAT. & Analista / desarrollador \\
 \hline
@@ -252,15 +198,15 @@ R-08 & Fallas en la infraestructura cloud (AWS) & 25 \% & Medio & Respaldos, mon
 }
 
 
-\textbf{Gobernanza de la implementación.} Ningún cambio en el alcance, el cronograma o el presupuesto se incorpora sin seguir el proceso formal del Entregable 2: solicitud, evaluación de impacto, aprobación del Director y del asesor, implementación y cierre con actualización de la línea base. El Director revisa semanalmente el avance de cada rol e informa al asesor académico de forma quincenal, y cada transición del despliegue funciona como una puerta de control que solo se supera al cumplir su condición de avance.
+\textbf{Gobernanza de la implementación.} Ningún cambio en el alcance, el cronograma o el presupuesto se incorpora sin seguir el proceso formal del Entregable 2: solicitud, evaluación de impacto, aprobación del Director y del asesor, implementación y cierre con actualización de la línea base. El Director revisa semanalmente el avance de cada rol e informa al asesor académico de forma quincenal.
 
-\textbf{Adopción del sistema.} Para reducir la resistencia al cambio (R-05), la capacitación se organiza por rol y se realiza antes del piloto, de modo que cada usuario aprenda únicamente las funciones que utilizará. La Tabla~\ref{tab:cap4-8} resume el plan.
+\textbf{Adopción del sistema.} Para reducir la resistencia al cambio (R-05), la capacitación se organiza por rol y se realiza antes de la puesta en producción, de modo que cada usuario aprenda únicamente las funciones que utilizará. La Tabla~\ref{tab:cap4-6} resume el plan.
 
 
 {\small
 \renewcommand{\arraystretch}{1.3}
-\begin{longtable}{|>{\raggedright\arraybackslash}p{2.95cm}|>{\raggedright\arraybackslash}p{8.04cm}|>{\raggedright\arraybackslash}p{4.02cm}|}
-\caption{Capacitación por rol}\label{tab:cap4-8}\\
+\begin{longtable}{|>{\raggedright\arraybackslash}p{2.73cm}|>{\raggedright\arraybackslash}p{7.44cm}|>{\raggedright\arraybackslash}p{4.83cm}|}
+\caption{Capacitación por rol}\label{tab:cap4-6}\\
 \hline
 \textbf{Rol del sistema} & \textbf{Contenido} & \textbf{Momento} \\
 \hline
@@ -269,17 +215,17 @@ R-08 & Fallas en la infraestructura cloud (AWS) & 25 \% & Medio & Respaldos, mon
 \textbf{Rol del sistema} & \textbf{Contenido} & \textbf{Momento} \\
 \hline
 \endhead
-Operador de ventas & Registro de pedidos, clientes, catálogo y estados de venta. & Transición A, antes del piloto \\
+Operador de ventas & Registro de pedidos, clientes, catálogo y estados de venta. & Antes de la puesta en producción (F-06) \\
 \hline
-Operador de inventario & Movimientos de stock, almacenes, alertas de stock mínimo y solicitudes. & Transición A, antes del piloto \\
+Operador de inventario & Movimientos de stock, almacenes, alertas de stock mínimo y solicitudes. & Antes de la puesta en producción (F-06) \\
 \hline
-Gerente & Consulta de reportes, pedidos y tablero BSC. & Transición C \\
+Gerente & Consulta de reportes, pedidos y tablero BSC. & Durante la puesta en producción (F-06) \\
 \hline
-Analista estratégico & Registro de objetivos, KPI e iniciativas del BSC. & Transición C \\
+Analista estratégico & Registro de objetivos, KPI e iniciativas del BSC. & Durante la puesta en producción (F-06) \\
 \hline
-Administrador & Usuarios, roles, parámetros y configuración del sistema. & Transición A \\
+Administrador & Usuarios, roles, parámetros y configuración del sistema. & Antes de la puesta en producción (F-06) \\
 \hline
-Cliente & Guía breve en el Portal B para registro, compra y seguimiento de pedidos. & Transición C \\
+Cliente & Guía breve en el Portal B para registro, compra y seguimiento de pedidos. & Durante la puesta en producción (F-06) \\
 \hline
 \end{longtable}
 }
@@ -287,13 +233,13 @@ Cliente & Guía breve en el Portal B para registro, compra y seguimiento de pedi
 
 Esta capacitación inicial cubre el uso del sistema en el arranque. La formación digital más amplia del personal queda a cargo del programa de transformación y capacitación digital (TI-005) previsto en el Roadmap Tecnológico del Entregable 1 para 2027.
 
-\textbf{Soporte post-implementación.} Tras el cierre, el sistema cuenta con ocho meses de soporte técnico a cargo de los especialistas de despliegue, con un costo de S/ 2,000 mensuales. El soporte se organiza según las prácticas de ITIL 4: los usuarios reportan las incidencias por un canal único, estas se registran y clasifican por prioridad, y se atienden en el orden que muestra la Tabla~\ref{tab:cap4-9}. Los tiempos son una propuesta del equipo y se validarán con la Gerencia.
+\textbf{Soporte post-implementación.} Tras el cierre, el sistema cuenta con ocho meses de soporte técnico a cargo de los especialistas de despliegue, con un costo de S/ 2,000 mensuales. El soporte se organiza según las prácticas de ITIL 4: los usuarios reportan las incidencias por un canal único, estas se registran y clasifican por prioridad, y se atienden en el orden que muestra la Tabla~\ref{tab:cap4-7}. Los tiempos son una propuesta del equipo y se validarán con la Gerencia.
 
 
 {\small
 \renewcommand{\arraystretch}{1.3}
-\begin{longtable}{|>{\raggedright\arraybackslash}p{1.16cm}|>{\raggedright\arraybackslash}p{6.72cm}|>{\raggedright\arraybackslash}p{7.11cm}|}
-\caption{Prioridades de atención en el soporte (propuesta)}\label{tab:cap4-9}\\
+\begin{longtable}{|>{\raggedright\arraybackslash}p{1.30cm}|>{\raggedright\arraybackslash}p{7.50cm}|>{\raggedright\arraybackslash}p{6.20cm}|}
+\caption{Prioridades de atención en el soporte (propuesta)}\label{tab:cap4-7}\\
 \hline
 \textbf{Prioridad} & \textbf{Ejemplo} & \textbf{Atención propuesta} \\
 \hline
@@ -302,7 +248,7 @@ Esta capacitación inicial cubre el uso del sistema en el arranque. La formació
 \textbf{Prioridad} & \textbf{Ejemplo} & \textbf{Atención propuesta} \\
 \hline
 \endhead
-Crítica & El sistema no permite registrar ventas o inventario. & Inicio inmediato; solución o reversión en el mismo día. \\
+Crítica & El sistema no permite registrar ventas o inventario. & Inicio inmediato; solución en el mismo día. \\
 \hline
 Alta & Falla en un módulo con alternativa temporal. & Dentro de las 24 horas. \\
 \hline
