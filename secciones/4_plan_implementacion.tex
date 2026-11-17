@@ -1,0 +1,336 @@
+
+El plan de implementación define cómo Franco's ERP pasará del diseño conceptual a la operación diaria de Franco's S.A.C. Para ello, organiza el trabajo en fases con hitos verificables, asigna responsables y recursos, establece una estrategia de despliegue gradual con un plan de reversión y define los mecanismos de gestión del cambio y soporte que acompañarán la adopción del sistema. El plan se construye sobre la línea base aprobada en el Entregable 2 (Project Charter, WBS, cronograma, presupuesto y matriz de riesgos) y sobre la secuencia de iniciativas de mejora priorizadas en el Entregable 3, de modo que lo planificado en la gestión del proyecto coincida con lo que se implementa en el sistema de información.
+
+\section{Fases y cronograma}
+
+
+La implementación se enmarca en el Roadmap Tecnológico del Entregable 1, donde el sistema ERP (TI-002) y la infraestructura tecnológica organizacional (TI-003) se ejecutan en paralelo entre el 06/04/2026 y el 30/11/2026: TI-003 provee el ambiente sobre el cual se despliega TI-002. Las iniciativas posteriores del roadmap, como la estandarización de procesos con BPM (TI-004, 2027) y el programa de capacitación digital (TI-005, 2027), dan continuidad a la adopción del sistema una vez concluido el proyecto. El proyecto TI-002 dura ocho meses y continúa con ocho meses de soporte post-implementación, lo que completa el horizonte de dieciséis meses considerado en la evaluación económica. El trabajo se organiza en siete fases secuenciales y una fase transversal de monitoreo y control. Cada fase concluye con un hito cuyo criterio de cierre debe aprobarse antes de avanzar a la siguiente, como se muestra en la Tabla~\ref{tab:cap4-1}.
+
+
+{\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.74cm}|>{\raggedright\arraybackslash}p{4.05cm}|>{\raggedright\arraybackslash}p{1.23cm}|>{\raggedright\arraybackslash}p{1.23cm}|>{\raggedright\arraybackslash}p{7.36cm}|}
+\caption{Fases, fechas e hitos de la implementación}\label{tab:cap4-1}\\
+\hline
+\textbf{Fase} & \textbf{Descripción} & \textbf{Inicio} & \textbf{Fin} & \textbf{Hito / criterio de cierre} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Fase} & \textbf{Descripción} & \textbf{Inicio} & \textbf{Fin} & \textbf{Hito / criterio de cierre} \\
+\hline
+\endhead
+F-01 & Inicio y planificación & 06/04/2026 & 05/05/2026 & Project Charter y Plan de Gestión aprobados. \\
+\hline
+F-02 & Análisis & 06/05/2026 & 25/06/2026 & SRS validado con Franco's S.A.C. y backlog priorizado. \\
+\hline
+F-03 & Diseño & 25/05/2026 & 25/06/2026 & Arquitectura C4, modelo de base de datos y prototipos aprobados. \\
+\hline
+F-04 & Construcción de software & 06/07/2026 & 23/10/2026 & Once módulos funcionales con pruebas unitarias aprobadas. \\
+\hline
+F-05 & Calidad y pruebas & 12/10/2026 & 04/11/2026 & $\geq$ 90 \% de casos de prueba aprobados y pipeline CI/CD configurado. \\
+\hline
+F-06 & Despliegue & 02/11/2026 & 27/11/2026 & Sistema en servidor H3 (sede) y AWS con disponibilidad $\geq$ 95 \%. \\
+\hline
+F-07 & Cierre del proyecto & 27/11/2026 & 30/11/2026 & Acta de aceptación y documentación técnica firmadas. \\
+\hline
+F-08 & Monitoreo y control (transversal) & 05/05/2026 & 27/11/2026 & Informes de avance semanales y quincenales al asesor. \\
+\hline
+— & Soporte post-implementación & 01/12/2026 & 31/07/2027 & Ocho meses de soporte técnico con disponibilidad $\geq$ 95 \%. \\
+\hline
+\end{longtable}
+}
+
+
+{\footnotesize \textit{Fuente: E2, Tablas 14 y 38. El periodo de soporte se calcula a partir de los ocho meses definidos en el presupuesto.}}
+
+
+La fase de construcción se desarrolla bajo Scrum adaptado, en ocho sprints de dos semanas. Cada sprint entrega un incremento funcional vinculado a las iniciativas de mejora del Entregable 3, lo que permite que el sistema crezca en el mismo orden de prioridad con que se rediseñaron los procesos. La Tabla~\ref{tab:cap4-2} presenta la secuencia.
+
+
+{\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.88cm}|>{\raggedright\arraybackslash}p{1.90cm}|>{\raggedright\arraybackslash}p{8.79cm}|>{\raggedright\arraybackslash}p{3.22cm}|}
+\caption{Secuencia de sprints de la fase de construcción}\label{tab:cap4-2}\\
+\hline
+\textbf{Sprint} & \textbf{Fechas} & \textbf{Incremento funcional} & \textbf{Iniciativas (E3)} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Sprint} & \textbf{Fechas} & \textbf{Incremento funcional} & \textbf{Iniciativas (E3)} \\
+\hline
+\endhead
+1 & 06/07 – 17/07 & Núcleo transaccional del Portal A: autenticación interna, clientes, productos, ciclo de pedidos y pagos, y control de stock de insumos y productos terminados. & IM-02, IM-05 \\
+\hline
+2 & 20/07 – 31/07 & Gestión estratégica del negocio (BSC): plan y mapa estratégico, KPI e iniciativas con tablero de control. & Gestión estratégica \\
+\hline
+3 & 03/08 – 14/08 & Gestión estratégica de TI: mapa estratégico, KPI e iniciativas alineados al negocio. & Gestión estratégica TI \\
+\hline
+4 & 17/08 – 28/08 & Portal B (cliente): autenticación, catálogo, carrito, creación de pedido y pago en línea; configuración base. & IM-01 \\
+\hline
+5 & 31/08 – 11/09 & Cierre del ciclo de venta con emisión de comprobantes internos y operación de almacén: descuento de inventario y registro de entregas. & IM-01, IM-06 \\
+\hline
+6 & 14/09 – 25/09 & Trazabilidad entre almacén y producción: solicitudes de insumos y de producción, pedidos en backoffice y notificaciones al cliente. & IM-02, IM-03 \\
+\hline
+7 & 28/09 – 09/10 & Configuración y backoffice: parámetros del sistema, usuarios internos y flujo pendiente de carrito y pedido del Portal B. & IM-04, IM-05 \\
+\hline
+8 & 12/10 – 23/10 & Perfil y seguridad de cuenta en ambos portales: datos personales, cambio de contraseña y recuperación de acceso. & Transversal \\
+\hline
+\end{longtable}
+}
+
+
+{\footnotesize \textit{Fuente: E3, Tabla 4. Las fechas se obtienen de dividir la fase F-04 en sprints consecutivos de dos semanas.}}
+
+
+La secuencia prioriza primero el núcleo transaccional, porque sobre él se apoyan los demás módulos: no es posible tramitar solicitudes de producción ni medir indicadores sin ventas e inventario registrados en una sola base. Los módulos orientados al cliente se habilitan a partir del sprint 4, cuando el registro interno ya es estable, y los aspectos de seguridad de cuenta se consolidan al final, antes de las pruebas de aceptación.
+
+\section{Responsables y recursos}
+
+
+La implementación involucra a los diez integrantes del equipo del proyecto y a dos actores de Franco's S.A.C.: la Gerencia, como patrocinador, y los usuarios clave de ventas e inventario, que validan los requisitos y participan en las pruebas de aceptación. La Tabla~\ref{tab:cap4-3} asigna las responsabilidades de cada fase mediante una matriz RACI, en la que cada actividad tiene un único responsable de aprobación.
+
+
+{\scriptsize
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{3.00cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|}
+\caption{Matriz RACI de la implementación}\label{tab:cap4-3}\\
+\hline
+\textbf{Fase / actividad} & \textbf{Director} & \textbf{Analista} & \textbf{Backend ($\times$2)} & \textbf{DBA y Frontend} & \textbf{Frontend} & \textbf{Diseño y QA} & \textbf{QA y Doc.} & \textbf{Despliegue ($\times$2)} & \textbf{Gerencia} & \textbf{Usuarios clave} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Fase / actividad} & \textbf{Director} & \textbf{Analista} & \textbf{Backend ($\times$2)} & \textbf{DBA y Frontend} & \textbf{Frontend} & \textbf{Diseño y QA} & \textbf{QA y Doc.} & \textbf{Despliegue ($\times$2)} & \textbf{Gerencia} & \textbf{Usuarios clave} \\
+\hline
+\endhead
+Inicio y planificación & A/R & C & I & I & I & I & R & I & C & — \\
+\hline
+Análisis & A & R & C & C & I & C & C & I & C & C \\
+\hline
+Diseño & A & C & R & R & C & R & I & C & I & C \\
+\hline
+Construcción & A & C & R & R & R & C & I & C & I & I \\
+\hline
+Calidad y pruebas & A & C & C & C & C & R & R & C & I & C \\
+\hline
+Despliegue & A & I & C & R & C & C & I & R & C & I \\
+\hline
+Capacitación y piloto & A & R & I & I & I & C & R & C & C & C \\
+\hline
+Cierre & A/R & I & I & I & I & I & R & I & C & — \\
+\hline
+Soporte post-implementación & A & C & C & C & C & I & C & R & I & C \\
+\hline
+Control de cambios (transversal) & A & R & C & C & C & I & R & C & C & — \\
+\hline
+\end{longtable}
+}
+
+
+{\footnotesize \textit{R: responsable de ejecutar; A: aprueba y rinde cuentas; C: consultado; I: informado. Roles tomados de E2, Tablas 10 y 33.}}
+
+
+En cuanto a los recursos, el proyecto dispone del presupuesto aprobado en el Entregable 2 y de un conjunto de recursos tecnológicos con responsables definidos. Los integrantes del equipo constituyen el recurso humano del desarrollo; los costos de recursos humanos presupuestados corresponden a los especialistas de apoyo (cloud, desarrollo y base de datos). La Tabla~\ref{tab:cap4-4} resume los recursos y su control.
+
+
+{\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{1.20cm}|>{\raggedright\arraybackslash}p{4.81cm}|>{\raggedright\arraybackslash}p{3.05cm}|>{\raggedright\arraybackslash}p{4.49cm}|>{\raggedright\arraybackslash}p{1.04cm}|}
+\caption{Recursos de la implementación}\label{tab:cap4-4}\\
+\hline
+\textbf{Tipo} & \textbf{Recurso} & \textbf{Responsable} & \textbf{Uso / control} & \textbf{Costo (S/)} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Tipo} & \textbf{Recurso} & \textbf{Responsable} & \textbf{Uso / control} & \textbf{Costo (S/)} \\
+\hline
+\endhead
+Infraestructura & Servidor H3 en sede (backend del ERP) & Especialistas de despliegue & Disponibilidad, configuración, respaldos y capacidad. & 6,750.00 \\
+\hline
+Infraestructura & VMware ESXi (servidor H3) y servicios AWS (frontend y recuperación) & Especialistas de despliegue & Consumo, disponibilidad, alertas y costos mensuales. & 20,670.00 \\
+\hline
+Humano & Especialista cloud, desarrollador y DBA de apoyo & Director del proyecto & Asignación por fase y seguimiento en el tablero. & 2,550.00 \\
+\hline
+Servicio & Soporte técnico (8 meses $\times$ S/ 2,000) & Especialistas de despliegue & Atención de incidencias y mantenimiento. & 16,000.00 \\
+\hline
+Software & PostgreSQL & DBA & Accesos, integridad, copias de seguridad y recuperación. & — \\
+\hline
+Software & NATS y API Gateway & Backend y despliegue & Configuración, pruebas de integración y monitoreo. & — \\
+\hline
+Gestión & GitHub, Jira y Figma & Desarrolladores, Director y Diseñadora & Control de versiones, backlog y prototipos. & — \\
+\hline
+ & \textbf{Costo total del proyecto} &  &  & \textbf{45,970.00} \\
+\hline
+\end{longtable}
+}
+
+
+{\footnotesize \textit{Fuente: E2, Tablas 15 y 36. La reserva de contingencia de S/ 7,015.00 se gestiona aparte (E2, Tabla 46).}}
+
+
+\section{Despliegue y reversión}
+
+
+El despliegue se realiza de forma gradual para no interrumpir la operación de Franco's S.A.C. En lugar de reemplazar los registros actuales en un solo paso, el sistema convive durante un periodo controlado con el registro en papel y con SICO ERP, que se mantiene como emisor oficial de comprobantes hasta la futura integración con SUNAT, fuera del alcance del MVP. La estrategia se organiza en tres transiciones dentro de la fase F-06, como se presenta en la Tabla~\ref{tab:cap4-5}.
+
+
+{\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{2.18cm}|>{\raggedright\arraybackslash}p{1.23cm}|>{\raggedright\arraybackslash}p{5.69cm}|>{\raggedright\arraybackslash}p{5.69cm}|}
+\caption{Estrategia de despliegue gradual}\label{tab:cap4-5}\\
+\hline
+\textbf{Transición} & \textbf{Periodo} & \textbf{Qué se habilita} & \textbf{Condición para avanzar} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Transición} & \textbf{Periodo} & \textbf{Qué se habilita} & \textbf{Condición para avanzar} \\
+\hline
+\endhead
+A. Preparación & 02/11 – 06/11 & Ambiente en servidor H3 y AWS, pipeline de despliegue, carga de datos maestros (productos, clientes, usuarios y roles) y primer respaldo verificado. & Respaldo restaurado con éxito y pruebas de acceso por rol aprobadas al 100 \%. \\
+\hline
+B. Piloto interno & 09/11 – 20/11 & Portal A con ventas e inventario en operación paralela: el personal registra en el ERP y mantiene el formato físico como respaldo. & Disponibilidad $\geq$ 95 \% en horario operativo y conformidad de los usuarios clave. \\
+\hline
+C. Puesta en producción & 23/11 – 27/11 & Portal A completo (BSC, reportes, solicitudes) y apertura del Portal B a clientes; retiro del registro en papel. & $\geq$ 80 \% de satisfacción en UAT y acta de aceptación firmada. \\
+\hline
+\end{longtable}
+}
+
+
+{\footnotesize \textit{Las condiciones de avance provienen de los criterios de éxito de E2 (Tabla 20). Los datos históricos en papel, Excel y Word no se migran; el sistema inicia con los datos maestros vigentes.}}
+
+
+La operación en paralelo durante el piloto es la decisión que hace viable la reversión: mientras el formato físico y SICO ERP siguen en uso, cualquier falla del sistema puede contenerse sin pérdida de ventas ni de comprobantes. La Tabla~\ref{tab:cap4-6} define cuándo se activa la reversión y cómo se ejecuta.
+
+
+{\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{4.47cm}|>{\raggedright\arraybackslash}p{10.73cm}|}
+\caption{Plan de reversión}\label{tab:cap4-6}\\
+\hline
+\textbf{Elemento} & \textbf{Definición} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Elemento} & \textbf{Definición} \\
+\hline
+\endhead
+Condiciones de activación & Falla que impide registrar ventas o movimientos de inventario durante el horario operativo sin solución inmediata; pérdida o corrupción de datos; disponibilidad inferior al 95 \% durante el piloto; o incidente de seguridad que exponga datos personales. \\
+\hline
+Quién decide & El Director del proyecto, previa consulta con la Gerencia de Franco's S.A.C. \\
+\hline
+Quién ejecuta & Especialistas de despliegue (aplicación e infraestructura) y DBA (datos). \\
+\hline
+Pasos & 1) Comunicar a los usuarios que se retoma el registro en formato físico. 2) Restaurar la versión estable anterior desde el repositorio y la instantánea del servidor. 3) Restaurar la base de datos desde el último respaldo verificado. 4) Registrar en el sistema las operaciones anotadas en papel durante la contingencia. 5) Analizar la causa y reprogramar el despliegue mediante control de cambios. \\
+\hline
+Continuidad & La emisión de comprobantes no se ve afectada, porque continúa en SICO ERP durante todo el despliegue. \\
+\hline
+\end{longtable}
+}
+
+
+\section{Gestión del cambio y soporte}
+
+
+La gestión del cambio comprende tres frentes: el control de los riesgos de la implementación, la gobernanza que asegura que lo construido corresponda a lo aprobado y la adopción del sistema por parte del personal. A ellos se suma el soporte post-implementación, que sostiene la operación una vez cerrado el proyecto.
+
+\textbf{Riesgos de la implementación.} De la matriz de riesgos del Entregable 2 se seleccionaron los que afectan directamente al despliegue y la adopción del sistema. La Tabla~\ref{tab:cap4-7} los presenta con su respuesta.
+
+
+{\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.53cm}|>{\raggedright\arraybackslash}p{5.04cm}|>{\raggedright\arraybackslash}p{0.53cm}|>{\raggedright\arraybackslash}p{0.62cm}|>{\raggedright\arraybackslash}p{5.30cm}|>{\raggedright\arraybackslash}p{2.39cm}|}
+\caption{Riesgos de la implementación y respuesta}\label{tab:cap4-7}\\
+\hline
+\textbf{ID} & \textbf{Riesgo} & \textbf{Prob.} & \textbf{Impacto} & \textbf{Respuesta} & \textbf{Responsable} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Riesgo} & \textbf{Prob.} & \textbf{Impacto} & \textbf{Respuesta} & \textbf{Responsable} \\
+\hline
+\endhead
+R-01 & Cambios frecuentes de requisitos & 70 \% & Alto & Procedimiento formal de control y aprobación de cambios. & Director del proyecto \\
+\hline
+R-02 & Retrasos en el desarrollo de los sprints & 50 \% & Alto & Seguimiento semanal, priorización del backlog y reasignación de recursos. & Director / desarrolladores \\
+\hline
+R-03 & Incremento de ciberamenazas & 50 \% & Alto & Control de acceso por rol, actualizaciones, respaldos y monitoreo de incidentes. & Equipo de infraestructura \\
+\hline
+R-04 & Problemas de integración entre Software e Infraestructura & 45 \% & Medio & Plan de integración y pruebas técnicas anticipadas. & Director del proyecto \\
+\hline
+R-05 & Resistencia al cambio de los usuarios & 45 \% & Medio & Capacitación por rol y acompañamiento durante el piloto. & QA y Documentadora \\
+\hline
+R-07 & Incumplimiento de la Ley N.° 29733 & 30 \% & Alto & Protección de datos desde el diseño y verificación en UAT. & Analista / desarrollador \\
+\hline
+R-08 & Fallas en la infraestructura cloud (AWS) & 25 \% & Medio & Respaldos, monitoreo y plan de recuperación. & Especialistas de despliegue \\
+\hline
+\end{longtable}
+}
+
+
+{\footnotesize \textit{Fuente: E2, Tablas 18 y 46.}}
+
+
+\textbf{Gobernanza de la implementación.} Ningún cambio en el alcance, el cronograma o el presupuesto se incorpora sin seguir el proceso formal del Entregable 2: solicitud, evaluación de impacto, aprobación del Director y del asesor, implementación y cierre con actualización de la línea base. El Director revisa semanalmente el avance de cada rol e informa al asesor académico de forma quincenal, y cada transición del despliegue funciona como una puerta de control que solo se supera al cumplir su condición de avance.
+
+\textbf{Adopción del sistema.} Para reducir la resistencia al cambio (R-05), la capacitación se organiza por rol y se realiza antes del piloto, de modo que cada usuario aprenda únicamente las funciones que utilizará. La Tabla~\ref{tab:cap4-8} resume el plan.
+
+
+{\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{2.95cm}|>{\raggedright\arraybackslash}p{8.04cm}|>{\raggedright\arraybackslash}p{4.02cm}|}
+\caption{Capacitación por rol}\label{tab:cap4-8}\\
+\hline
+\textbf{Rol del sistema} & \textbf{Contenido} & \textbf{Momento} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Rol del sistema} & \textbf{Contenido} & \textbf{Momento} \\
+\hline
+\endhead
+Operador de ventas & Registro de pedidos, clientes, catálogo y estados de venta. & Transición A, antes del piloto \\
+\hline
+Operador de inventario & Movimientos de stock, almacenes, alertas de stock mínimo y solicitudes. & Transición A, antes del piloto \\
+\hline
+Gerente & Consulta de reportes, pedidos y tablero BSC. & Transición C \\
+\hline
+Analista estratégico & Registro de objetivos, KPI e iniciativas del BSC. & Transición C \\
+\hline
+Administrador & Usuarios, roles, parámetros y configuración del sistema. & Transición A \\
+\hline
+Cliente & Guía breve en el Portal B para registro, compra y seguimiento de pedidos. & Transición C \\
+\hline
+\end{longtable}
+}
+
+
+{\footnotesize \textit{Roles tomados de E2, Tabla 12. El manual de usuario es un entregable del proyecto (E2, Tabla 8).}}
+
+
+Esta capacitación inicial cubre el uso del sistema en el arranque. La formación digital más amplia del personal queda a cargo del programa de transformación y capacitación digital (TI-005) previsto en el Roadmap Tecnológico del Entregable 1 para 2027.
+
+\textbf{Soporte post-implementación.} Tras el cierre, el sistema cuenta con ocho meses de soporte técnico a cargo de los especialistas de despliegue, con un costo de S/ 2,000 mensuales. El soporte se organiza según las prácticas de ITIL 4: los usuarios reportan las incidencias por un canal único, estas se registran y clasifican por prioridad, y se atienden en el orden que muestra la Tabla~\ref{tab:cap4-9}. Los tiempos son una propuesta del equipo y se validarán con la Gerencia.
+
+
+{\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{1.16cm}|>{\raggedright\arraybackslash}p{6.72cm}|>{\raggedright\arraybackslash}p{7.11cm}|}
+\caption{Prioridades de atención en el soporte (propuesta)}\label{tab:cap4-9}\\
+\hline
+\textbf{Prioridad} & \textbf{Ejemplo} & \textbf{Atención propuesta} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Prioridad} & \textbf{Ejemplo} & \textbf{Atención propuesta} \\
+\hline
+\endhead
+Crítica & El sistema no permite registrar ventas o inventario. & Inicio inmediato; solución o reversión en el mismo día. \\
+\hline
+Alta & Falla en un módulo con alternativa temporal. & Dentro de las 24 horas. \\
+\hline
+Media & Error que no detiene la operación. & Dentro de las 72 horas. \\
+\hline
+Baja & Consulta de uso o mejora menor. & Se programa en el siguiente mantenimiento. \\
+\hline
+\end{longtable}
+}
+
+
+Durante este periodo se mantienen el monitoreo de disponibilidad y los respaldos periódicos, y se registra la disponibilidad mensual para verificar la meta del 95 \%. Las incidencias recurrentes y las mejoras solicitadas se canalizan mediante el proceso de control de cambios, lo que conecta el soporte con el seguimiento de indicadores que se desarrolla en el capítulo 5.
