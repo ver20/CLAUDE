@@ -1,120 +1,98 @@
-# Guion para explicar la vista motivacional (CE0142)
+# Guion de exposición: Vista motivacional de Franco's ERP (CE0142)
 
-**Versión del diagrama:** v6
-**Duración aproximada:** 5 minutos
-**Cómo leerla:** de arriba hacia abajo. Arriba está el **por qué** (quién necesita el cambio, qué lo impulsa y qué problemas hay), en el medio el **para qué** (objetivos, metas, resultados y medidas) y abajo el **cómo** (principios, requerimientos, restricciones y procesos).
+*Duración aproximada: 4 minutos. El texto en cursiva entre corchetes indica qué señalar en el diagrama; todo lo demás es lo que se dice.*
 
 ---
 
-## 1. Introducción (20 s)
+## 1. Apertura
 
-> "Esta es la vista motivacional de Franco's ERP, construida en la Fase A de TOGAF. Sirve para mostrar por qué hacemos el sistema y cómo cada requerimiento responde a un objetivo de la organización. Se lee de arriba hacia abajo: primero quién necesita el cambio y qué problemas tiene, luego qué queremos lograr y cómo lo vamos a medir, y al final cómo lo vamos a construir. Cada color representa un tipo de elemento, como se ve en la leyenda."
+Presentamos la vista motivacional de Franco's ERP. En ella mostramos por qué la organización necesita este sistema, qué objetivos persigue y cómo esos objetivos se traducen en los requerimientos que guían el diseño de las iniciativas TI-002, el ERP, y TI-003, la infraestructura.
 
-## 2. Interesados (30 s)
+## 2. Interesados e impulsores
 
-*[Señalar el grupo azul de arriba.]*
+*[Señalar el grupo de interesados y el de impulsores.]*
 
-> "Arriba están los ocho interesados, que son los actores del sistema. Siete son internos: el Operador de Ventas, de Inventarios, de Insumos, de Producción y de Despacho, el Analista Estratégico y el Administrador. El octavo es el Cliente, el único actor externo, que compra en la tienda en línea.
->
-> Cada interesado está encima de la meta que le interesa, y una línea lo une con ella: los cinco operadores con MT-01, el Analista con MT-02, el Administrador con MT-03 y el Cliente con MT-05."
+El sistema tiene ocho interesados. Siete son internos: los operadores de Ventas, Inventarios, Insumos, Producción y Despacho, el Analista Estratégico y el Administrador. El octavo es el Cliente, que se incorpora como actor externo a través de la tienda en línea.
 
-## 3. Impulsores del cambio (25 s)
+El cambio responde a cinco impulsores: la digitalización de la gestión operativa, estratégica y comercial; la integración de la información entre las áreas; la continuidad de la operación; la protección de datos personales que exige la Ley 29733; y la trazabilidad de lotes y conservación de registros que exigen el D.L. 1062 y el Código Tributario.
 
-*[Señalar el grupo naranja de la izquierda.]*
+## 3. Objetivos estratégicos
 
-> "A la izquierda están los cinco impulsores, las fuerzas que obligan a Franco's a cambiar: la digitalización de su gestión, la integración de la información entre áreas, la continuidad de la operación, la protección de datos personales que exige la Ley 29733 y la trazabilidad de lotes y conservación de registros. Todos influyen en el objetivo organizacional, por eso sus flechas llegan a la barra verde."
+*[Señalar OEN-03, OET-03 y RS-03.]*
 
-## 4. Objetivos estratégicos y plazo (30 s)
+Estos impulsores influyen en el objetivo organizacional OEN-03, optimizar la gestión operativa y estratégica mediante el uso de tecnologías digitales e información, que está soportado por el objetivo de TI OET-03, implementar soluciones empresariales integradas para la digitalización de procesos operativos y comerciales. Ambos objetivos provienen de los mapas estratégicos que definimos en el Entregable 1.
 
-*[Señalar la barra verde grande, la caja verde de la derecha y la caja marrón RS-03.]*
+Para cumplirlos tenemos una restricción de plazo: TI-002 y TI-003 deben ejecutarse entre el 6 de abril y el 30 de noviembre de 2026.
 
-> "La barra verde es el objetivo organizacional OEN-03: optimizar la gestión operativa y estratégica mediante el uso de tecnologías digitales e información. A su derecha está el objetivo de TI que lo soporta, OET-03: implementar soluciones empresariales integradas para digitalizar los procesos operativos y comerciales. Ambos vienen de los mapas estratégicos del Entregable 1.
->
-> La caja marrón es la restricción RS-03: las iniciativas TI-002, el ERP, y TI-003, la infraestructura, deben ejecutarse entre el 6 de abril y el 30 de noviembre de 2026."
+## 4. Evaluaciones
 
-## 5. Evaluaciones: los problemas actuales (40 s)
+*[Señalar la fila de evaluaciones.]*
 
-*[Señalar la fila amarilla.]*
+Las nueve evaluaciones resumen los problemas que encontramos en el diagnóstico del CE0141. Hoy las ventas, el inventario y la distribución se anotan en papel y en Excel; Producción e Insumos manejan sus solicitudes en papel; no existe una base de datos donde se junte la información de las áreas ni copia de respaldo; el correo no se conecta con ningún sistema; no hay servidor ni nube; la red no tiene redundancia ni detecta fallas; la organización no da seguimiento a su estrategia; y no existe un canal de venta en línea.
 
-> "En amarillo están las nueve evaluaciones, que son los problemas encontrados en el diagnóstico del CE0141. Por ejemplo:
-> - EV-01: las ventas, el inventario y la distribución se anotan en papel y en Excel, y no pasan a ningún sistema.
-> - EV-04: no hay una base de datos donde se junte la información de las áreas.
-> - EV-07 y EV-08: no hay servidor ni nube, y la red no tiene redundancia ni detecta fallas.
-> - EV-09: no existe un canal de venta en línea.
->
-> Cada evaluación apunta a la meta que la resuelve."
+## 5. Metas
 
-## 6. Metas (40 s)
+*[Señalar las cinco metas y la agregación con los objetivos.]*
 
-*[Señalar la fila verde claro y los rombos debajo de la barra verde.]*
+Para resolver estos problemas, descompusimos los objetivos en cinco metas. Las cuatro primeras forman parte de OEN-03:
 
-> "Los objetivos estratégicos son amplios, así que los descomponemos en cinco metas concretas:
-> - MT-01: registrar las ventas, los despachos, el inventario y las solicitudes de producción en el ERP.
-> - MT-02: dar seguimiento a la estrategia de negocio y de TI en el ERP.
-> - MT-03: reunir los datos operativos en una sola base, con copia restaurable y acceso por rol.
-> - MT-04: sostener el ERP en una infraestructura propia y en la nube, redundante, segmentada y monitoreada.
-> - MT-05: abrir un canal de venta en línea para el cliente.
->
-> Las cuatro primeras forman parte de OEN-03 y la quinta de OET-03. Por eso se unen con una relación de agregación, que se reconoce por el rombo del lado del objetivo: el objetivo se compone de sus metas."
+- **MT-01**, registrar las ventas, los despachos, el inventario y las solicitudes de producción en el ERP;
+- **MT-02**, dar seguimiento a la estrategia de negocio y de TI en el ERP;
+- **MT-03**, reunir los datos operativos en una sola base, con copia restaurable y acceso por rol;
+- **MT-04**, sostener el ERP en una infraestructura propia y en la nube, redundante, segmentada y monitoreada.
 
-## 7. Resultados y medidas (40 s)
+La quinta, **MT-05**, abrir un canal de venta en línea para el cliente, forma parte de OET-03, porque responde a la digitalización de los procesos comerciales. Cada interesado está asociado a la meta que le corresponde: los cinco operadores a MT-01, el Analista Estratégico a MT-02, el Administrador a MT-03 y el Cliente a MT-05.
 
-*[Señalar la fila turquesa y la fila lila.]*
+## 6. Resultados y medidas
 
-> "Debajo de cada meta están los resultados esperados, en turquesa, que describen cómo se verá la empresa cuando la meta se cumpla. Por ejemplo, RE-02: el inventario de insumos y de producto terminado llevado en el ERP, con cada producto rastreable hasta su lote.
->
-> En lila están las diez medidas con las que comprobamos cada resultado, como MD-03, productos terminados rastreables hasta su lote, o MD-08, disponibilidad del ERP. Cada medida tiene su indicador en el CE0145, con fórmula, línea base, meta y frecuencia. Por ejemplo, la disponibilidad tiene una meta de 95 % o más en horario de trabajo."
+*[Señalar las filas de resultados y medidas.]*
 
-## 8. Principios de arquitectura (30 s)
+Cada meta se realiza mediante resultados concretos, y cada resultado se comprueba con una medida. Definimos nueve resultados y diez medidas. Por ejemplo, la meta MT-04 se realiza cuando el ERP sigue en servicio aunque falle un equipo, un enlace o un proveedor, y eso se comprueba con la disponibilidad del ERP, cuya meta es de 95 % o más en horario de trabajo. Todas las medidas de esta vista tienen su indicador en el CE0145, con su fórmula, línea base, meta y frecuencia.
 
-*[Señalar el grupo rosado.]*
+## 7. Principios y requerimientos
 
-> "En rosado están los trece principios de arquitectura: las reglas que guían todas las decisiones de diseño. Por ejemplo, P1 Registro único: cada dato se registra una sola vez. P9 Acceso por rol: cada usuario ve solo lo que le corresponde. P11 Sin punto único de falla. Y P13 Detección y aviso: toda falla se detecta y se avisa a un responsable."
+*[Señalar los principios y los requerimientos.]*
 
-## 9. Requerimientos, restricciones y procesos (50 s)
+El diseño se rige por trece principios de arquitectura. Los más importantes para este sistema son el registro único, que cada dato se registre una sola vez; la trazabilidad de lotes; el acceso por rol; la nube para lo expuesto y la sede para los datos; y que no exista un punto único de falla.
 
-*[Señalar la fila ocre, las cajas marrones y la fila amarilla de abajo.]*
+Estos principios se cumplen mediante trece requerimientos. Por ejemplo, el respaldo diario fuera de la sede con restauración probada cumple el principio de copia restaurable, y la red y la conexión a internet redundantes y segmentadas cumplen los principios de no tener un punto único de falla y de separar la red por función.
 
-> "En ocre están los trece requerimientos, que es lo que el sistema debe cumplir. Cada uno realiza uno o más principios. Por ejemplo, RQ-07, respaldo diario fuera de la sede con restauración probada, cumple P2, copia restaurable; y RQ-12, red y conexión a internet redundantes y segmentadas, cumple P11 y P12.
->
-> Las cajas marrones son restricciones que condicionan a esos requerimientos:
-> - RS-01: SICO ERP sigue como emisor oficial de comprobantes hasta la integración con SUNAT.
-> - RS-02: los datos históricos en papel, Excel y Word no se migran.
-> - RS-04: los datos se procesan fuera del país, en AWS us-east-1, por eso la demostración usa datos ficticios.
->
-> Abajo están los ocho procesos de negocio rediseñados en el Entregable 3, como la validación y formalización de la venta o la recepción de la solicitud de insumos. Estos procesos son los que hacen realidad los requerimientos en la operación diaria."
+## 8. Restricciones y procesos
 
-## 10. Recorrido de ejemplo (40 s)
+*[Señalar las restricciones y la fila de procesos.]*
 
-*[Recorrer con el dedo una columna completa, de arriba hacia abajo.]*
+Los requerimientos están condicionados por tres restricciones de alcance: SICO ERP sigue como emisor oficial de comprobantes hasta la integración con SUNAT; los datos históricos en papel, Excel y Word no se migran; y los datos se procesan fuera del país, en AWS us-east-1, por lo que la demostración utiliza datos ficticios.
 
-> "Para ver cómo se conecta todo, sigamos una columna. El Operador de Inventarios tiene el problema EV-01: el inventario se lleva en papel y en Excel. Eso motiva la meta MT-01, registrar el inventario en el ERP, que forma parte del objetivo OEN-03. Su resultado es RE-02, cada producto rastreable hasta su lote, y se comprueba con la medida MD-03, cuya meta en el CE0145 es el 100 %. Para lograrlo, el requerimiento RQ-03, registro de lotes y movimientos de inventario rastreables, cumple los principios P1 Registro único y P5 Trazabilidad de lotes, y lo hacen realidad procesos como la actualización y gestión de inventario."
+Finalmente, los requerimientos se hacen realidad en los ocho procesos de negocio que rediseñamos en el Entregable 3, desde la validación y formalización de la venta hasta la recepción de la solicitud de insumos.
 
-## 11. Cierre (20 s)
+## 9. Recorrido de ejemplo
 
-> "En resumen, la vista asegura que nada en el sistema esté de más: cada requerimiento cumple un principio, cada meta resuelve un problema real del diagnóstico y se comprueba con una medida, y todo apunta a los objetivos estratégicos OEN-03 y OET-03 de Franco's."
+*[Recorrer la columna de MT-01 de arriba hacia abajo.]*
+
+Para mostrar la trazabilidad completa, tomemos el caso del Operador de Inventarios. Su problema es que el inventario se lleva en papel y en Excel. Esto se atiende con la meta MT-01, que forma parte de OEN-03. El resultado esperado es que cada producto terminado sea rastreable hasta su lote, y lo comprobamos con la medida de productos terminados rastreables, cuya meta es el 100 %. Para lograrlo, el requerimiento de registro de lotes y movimientos de inventario cumple los principios de registro único y de trazabilidad de lotes, y se ejecuta en procesos como la actualización y gestión de inventario.
+
+## 10. Cierre
+
+En conclusión, la vista motivacional garantiza que cada elemento del sistema tenga una razón de ser: cada requerimiento cumple un principio, cada meta resuelve un problema real del diagnóstico y se verifica con una medida, y todo el diseño apunta a los objetivos estratégicos OEN-03 y OET-03 de Franco's S.A.C.
 
 ---
 
-## Preguntas que podría hacer el jurado
+## Respuestas preparadas para el jurado
 
-**¿Por qué las metas se unen a los objetivos con un rombo?**
-> "Porque es una relación de agregación: el objetivo se compone de sus metas. MT-01 no es un tipo de OEN-03, sino una parte de él."
+**¿Por qué las metas se relacionan con los objetivos mediante agregación?**
+Porque cada meta es una parte del objetivo, no un tipo de objetivo. OEN-03 se compone de MT-01 a MT-04, y OET-03 de MT-05.
 
-**¿Por qué los requerimientos no tienen flechas hacia las metas?**
-> "Esas relaciones están en el modelo, pero no se dibujan para que la vista se pueda leer. En el diagrama se muestra la relación de cada requerimiento con sus principios."
+**¿Por qué no se dibujan las relaciones de los requerimientos con las metas?**
+Están registradas en el modelo, pero no las mostramos en la vista para mantenerla legible. En el diagrama se muestra la relación de cada requerimiento con los principios que cumple.
 
 **¿Dónde están las metas numéricas de las medidas?**
-> "En el CE0145. Cada medida de la vista tiene allí su indicador, con fórmula, línea base, meta y frecuencia. Por ejemplo, MD-08 Disponibilidad tiene una meta de 95 % o más."
+En el CE0145. Cada una de las diez medidas tiene allí su indicador, con fórmula, línea base, meta y frecuencia.
 
 **¿Por qué no aparece la gerencia como interesado?**
-> "Porque la vista muestra a los actores que usan el sistema, y el ERP no tiene un rol de gerencia: la información estratégica la registra y le da seguimiento el Analista Estratégico."
+Porque la vista representa a los actores que usan el sistema, y el ERP no tiene un rol de gerencia. La información estratégica la registra y le da seguimiento el Analista Estratégico.
 
-**¿Qué diferencia hay entre un impulsor y una evaluación?**
-> "El impulsor es una fuerza general que empuja el cambio, como la necesidad de digitalizarse. La evaluación es un problema concreto encontrado en el diagnóstico, como que el inventario se lleve en papel."
+**¿Por qué SICO ERP sigue en operación?**
+Porque esta versión del ERP no emite comprobantes electrónicos válidos ante SUNAT. Mientras no se integre, SICO ERP sigue como emisor oficial, y lo registramos como restricción y como riesgo en el CE0144.
 
-**¿Qué diferencia hay entre una meta, un resultado y una medida?**
-> "La meta es lo que nos proponemos hacer, como registrar el inventario en el ERP. El resultado es el estado final que esperamos, como que cada producto sea rastreable hasta su lote. La medida es cómo comprobamos que ese resultado se logró."
-
-**¿Qué diferencia hay entre un principio y un requerimiento?**
-> "El principio es una regla general de diseño, como 'cada dato se registra una sola vez'. El requerimiento es algo concreto que el sistema debe cumplir para respetar esa regla, como 'una base de datos central con un esquema por dominio'."
+**¿Por qué los datos están en la sede y no en la nube?**
+Por el principio de nube para lo expuesto y sede para los datos: los portales y el backend corren en AWS, mientras la base de datos de producción se mantiene en la sede, con una base en espera y un respaldo diario en la nube.
