@@ -43,22 +43,22 @@ La secuencia prioriza primero el núcleo transaccional, porque sobre él se apoy
 
 ## 4.2 Responsables y recursos
 
-La implementación involucra a los integrantes de los equipos de Software e Infraestructura y a dos actores de Franco's S.A.C.: la Gerencia, como patrocinador, y los usuarios clave de las áreas de ventas, inventarios, insumos, producción y despacho, que validan los requisitos y participan en las pruebas de aceptación. La Tabla 3 asigna las responsabilidades de cada fase mediante una matriz RACI, en la que R identifica a quien ejecuta la actividad, A a quien la aprueba y rinde cuentas, C a quien se consulta e I a quien se informa; cada actividad tiene un único responsable de aprobación.
+La implementación involucra a los integrantes de los equipos de Software e Infraestructura y a los usuarios clave de Franco's S.A.C. de las áreas de ventas, inventarios, insumos, producción y despacho, que validan los requisitos y participan en las pruebas de aceptación. La Tabla 3 asigna las responsabilidades de cada fase mediante una matriz RACI, en la que R identifica a quien ejecuta la actividad, A a quien la aprueba y rinde cuentas, C a quien se consulta e I a quien se informa; cada actividad tiene un único responsable de aprobación.
 
 **Tabla 3.** Matriz RACI de la implementación
 
-| Fase / actividad | Director | Analista | Backend (×2) | DBA y Frontend | Frontend | Diseño y QA | QA y Doc. | Infraestructura (×2) | Gerencia | Usuarios clave |
-|---|---|---|---|---|---|---|---|---|---|---|
-| Inicio y planificación | A/R | C | I | I | I | I | R | I | C | — |
-| Análisis | A | R | C | C | I | C | C | C | C | C |
-| Diseño | A | C | R | R | C | R | I | R | I | C |
-| Construcción | A | C | R | R | R | C | I | R | I | I |
-| Calidad y pruebas | A | C | C | C | C | R | R | R | I | C |
-| Despliegue | A | I | C | R | C | C | I | R | C | I |
-| Capacitación de usuarios | A | R | I | I | I | C | R | I | C | C |
-| Cierre | A/R | I | I | I | I | I | R | C | C | — |
-| Soporte post-implementación | A | C | C | C | C | I | C | R | I | C |
-| Control de cambios (transversal) | A | R | C | C | C | I | R | C | C | — |
+| Fase / actividad | Director | Analista | Backend (×2) | DBA y Frontend | Frontend | Diseño y QA | QA y Doc. | Infraestructura (×2) | Usuarios clave |
+|---|---|---|---|---|---|---|---|---|---|
+| Inicio y planificación | A/R | C | I | I | I | I | R | I | — |
+| Análisis | A | R | C | C | I | C | C | C | C |
+| Diseño | A | C | R | R | C | R | I | R | C |
+| Construcción | A | C | R | R | R | C | I | R | I |
+| Calidad y pruebas | A | C | C | C | C | R | R | R | C |
+| Despliegue | A | I | C | R | C | C | I | R | I |
+| Capacitación de usuarios | A | R | I | I | I | C | R | I | C |
+| Cierre | A/R | I | I | I | I | I | R | C | C |
+| Soporte post-implementación | A | C | C | C | C | I | C | R | C |
+| Control de cambios (transversal) | A | R | C | C | C | I | R | C | — |
 
 En cuanto a los recursos, el proyecto dispone del presupuesto aprobado en el Entregable 2 y de los componentes tecnológicos definidos en el CE0142, cada uno con un responsable. Los componentes de la sede aprovechan los equipos disponibles en el laboratorio de la universidad, y los servicios de AWS se controlan con un presupuesto mensual de 80 USD, con avisos al 50, 80 y 100 % del gasto. La Tabla 4 resume los recursos y su control.
 
@@ -83,7 +83,9 @@ En cuanto a los recursos, el proyecto dispone del presupuesto aprobado en el Ent
 
 La gestión del cambio comprende tres frentes: el control de los riesgos de la implementación, la gobernanza que asegura que lo construido corresponda a lo aprobado y la adopción del sistema por parte del personal. A ellos se suma el soporte post-implementación, que sostiene la operación una vez cerrado el proyecto.
 
-**Riesgos de la implementación.** De la matriz de riesgos del Entregable 2 se seleccionaron los que afectan directamente al despliegue y la adopción del sistema, y se incorporaron dos riesgos que surgen del diseño del CE0142: la dependencia de SICO ERP, que se mantiene como emisor de comprobantes, y el procesamiento de datos en una región de AWS fuera del país. La Tabla 5 los presenta con su respuesta.
+### 4.4.1 Riesgos de la implementación
+
+De la matriz de riesgos del Entregable 2 se seleccionaron los que afectan directamente al despliegue y la adopción del sistema, y se incorporaron dos riesgos que surgen del diseño del CE0142: la dependencia de SICO ERP, que se mantiene como emisor de comprobantes, y el procesamiento de datos en una región de AWS fuera del país. La Tabla 5 los presenta con su respuesta.
 
 **Tabla 5.** Riesgos de la implementación y respuesta
 
@@ -96,10 +98,12 @@ La gestión del cambio comprende tres frentes: el control de los riesgos de la i
 | R-05 | Resistencia al cambio de los usuarios | 45 % | Medio | Capacitación por rol y acompañamiento durante el despliegue. | QA y Documentadora |
 | R-07 | Incumplimiento de la Ley N.° 29733 | 30 % | Alto | Protección de datos desde el diseño, cifrado en tránsito y verificación en UAT; consideración del procesamiento en us-east-1. | Analista / desarrollador |
 | R-08 | Fallas en la infraestructura cloud o en la conexión con la sede | 25 % | Medio | Volcado diario a S3, base temporal en RDS restaurable de forma automática y monitoreo con aviso al equipo. | Equipo de infraestructura |
-| R-09 | Incremento de costos tecnológicos | 25 % | Bajo | Presupuesto mensual de 80 USD con avisos al 50, 80 y 100 % y revisión mensual del consumo. | Gerencia / Director |
-| R-10 | Falla de la PC que ejecuta SICO ERP, que no tiene respaldo y sigue emitiendo los comprobantes | — | Alto | Respaldo periódico de la base de SICO ERP y procedimiento alterno de emisión hasta la integración del ERP con SUNAT. | Equipo de infraestructura / Gerencia |
+| R-09 | Incremento de costos tecnológicos | 25 % | Bajo | Presupuesto mensual de 80 USD con avisos al 50, 80 y 100 % y revisión mensual del consumo. | Jefatura de Finanzas / Director |
+| R-10 | Falla de la PC que ejecuta SICO ERP, que no tiene respaldo y sigue emitiendo los comprobantes | — | Alto | Respaldo periódico de la base de SICO ERP y procedimiento alterno de emisión hasta la integración del ERP con SUNAT. | Equipo de infraestructura / Jefatura de Finanzas |
 
-**Alcance que queda pendiente.** Algunas brechas del CE0141 se atienden solo en parte en esta versión. La Tabla 6 registra lo que queda fuera, para que se gestione en las siguientes versiones del sistema.
+### 4.4.2 Alcance que queda pendiente
+
+Algunas brechas del CE0141 se atienden solo en parte en esta versión. La Tabla 6 registra lo que queda fuera, para que se gestione en las siguientes versiones del sistema.
 
 **Tabla 6.** Pendientes de las brechas atendidas en parte
 
@@ -111,9 +115,13 @@ La gestión del cambio comprende tres frentes: el control de los riesgos de la i
 | B-14 | Insumos y Producción pasan al ERP. | Compras, Calidad y RR. HH. siguen registrando fuera del sistema. |
 | B-02, B-06, B-07 y B-13 | SICO ERP sigue como emisor oficial de comprobantes. | Integración del ERP con SUNAT y retiro de SICO ERP. |
 
-**Gobernanza de la implementación.** Ningún cambio en el alcance, el cronograma o el presupuesto se incorpora sin seguir el proceso formal del Entregable 2: solicitud, evaluación de impacto, aprobación del Director y del asesor, implementación y cierre con actualización de la línea base. El Director revisa semanalmente el avance de cada rol e informa al asesor académico de forma quincenal. En el plano técnico, la integración continua impide incorporar cambios al código si fallan la compilación, el lint o las pruebas, y el despliegue hacia AWS se realiza con credenciales temporales, sin claves permanentes en el repositorio.
+### 4.4.3 Gobernanza de la implementación
 
-**Adopción del sistema.** Para reducir la resistencia al cambio (R-05), la capacitación se organiza por actor del sistema y se realiza en torno a la puesta en producción, de modo que cada usuario aprenda únicamente las funciones que utilizará. La Tabla 7 resume el plan.
+Ningún cambio en el alcance, el cronograma o el presupuesto se incorpora sin seguir el proceso formal del Entregable 2: solicitud, evaluación de impacto, aprobación del Director y del asesor, implementación y cierre con actualización de la línea base. El Director revisa semanalmente el avance de cada rol e informa al asesor académico de forma quincenal. En el plano técnico, la integración continua impide incorporar cambios al código si fallan la compilación, el lint o las pruebas, y el despliegue hacia AWS se realiza con credenciales temporales, sin claves permanentes en el repositorio.
+
+### 4.4.4 Adopción del sistema
+
+Para reducir la resistencia al cambio (R-05), la capacitación se organiza por actor del sistema y se realiza en torno a la puesta en producción, de modo que cada usuario aprenda únicamente las funciones que utilizará. La Tabla 7 resume el plan.
 
 **Tabla 7.** Capacitación por actor
 
@@ -130,7 +138,9 @@ La gestión del cambio comprende tres frentes: el control de los riesgos de la i
 
 Esta capacitación inicial cubre el uso del sistema en el arranque. La formación digital más amplia del personal queda a cargo del programa de transformación y capacitación digital (TI-005) previsto en el Roadmap Tecnológico del Entregable 1 para 2027.
 
-**Soporte post-implementación.** Tras el cierre, el sistema cuenta con ocho meses de soporte técnico a cargo del equipo de infraestructura, con un costo de S/ 2,000 mensuales. El soporte se organiza según las prácticas de ITIL 4: los usuarios reportan las incidencias por un canal único, estas se registran y clasifican por prioridad, y se atienden en el orden que muestra la Tabla 8. Los tiempos son una propuesta del equipo y se validarán con la Gerencia.
+### 4.4.5 Soporte post-implementación
+
+Tras el cierre, el sistema cuenta con ocho meses de soporte técnico a cargo del equipo de infraestructura, con un costo de S/ 2,000 mensuales. El soporte se organiza según las prácticas de ITIL 4: los usuarios reportan las incidencias por un canal único, estas se registran y clasifican por prioridad, y se atienden en el orden que muestra la Tabla 8. Los tiempos son una propuesta del equipo y se validarán con los usuarios clave de Franco's S.A.C.
 
 **Tabla 8.** Prioridades de atención en el soporte (propuesta)
 

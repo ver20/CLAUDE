@@ -85,40 +85,40 @@ La secuencia prioriza primero el núcleo transaccional, porque sobre él se apoy
 \section{Responsables y recursos}
 
 
-La implementación involucra a los integrantes de los equipos de Software e Infraestructura y a dos actores de Franco's S.A.C.: la Gerencia, como patrocinador, y los usuarios clave de las áreas de ventas, inventarios, insumos, producción y despacho, que validan los requisitos y participan en las pruebas de aceptación. La Tabla~\ref{tab:cap4-3} asigna las responsabilidades de cada fase mediante una matriz RACI, en la que R identifica a quien ejecuta la actividad, A a quien la aprueba y rinde cuentas, C a quien se consulta e I a quien se informa; cada actividad tiene un único responsable de aprobación.
+La implementación involucra a los integrantes de los equipos de Software e Infraestructura y a los usuarios clave de Franco's S.A.C. de las áreas de ventas, inventarios, insumos, producción y despacho, que validan los requisitos y participan en las pruebas de aceptación. La Tabla~\ref{tab:cap4-3} asigna las responsabilidades de cada fase mediante una matriz RACI, en la que R identifica a quien ejecuta la actividad, A a quien la aprueba y rinde cuentas, C a quien se consulta e I a quien se informa; cada actividad tiene un único responsable de aprobación.
 
 
 {\scriptsize
 \renewcommand{\arraystretch}{1.3}
-\begin{longtable}{|>{\raggedright\arraybackslash}p{3.00cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|>{\centering\arraybackslash}p{1.04cm}|}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{3.00cm}|>{\centering\arraybackslash}p{1.18cm}|>{\centering\arraybackslash}p{1.18cm}|>{\centering\arraybackslash}p{1.18cm}|>{\centering\arraybackslash}p{1.18cm}|>{\centering\arraybackslash}p{1.18cm}|>{\centering\arraybackslash}p{1.18cm}|>{\centering\arraybackslash}p{1.18cm}|>{\centering\arraybackslash}p{1.18cm}|>{\centering\arraybackslash}p{1.18cm}|}
 \caption{Matriz RACI de la implementación}\label{tab:cap4-3}\\
 \hline
-\textbf{Fase / actividad} & \textbf{Director} & \textbf{Analista} & \textbf{Backend ($\times$2)} & \textbf{DBA y Frontend} & \textbf{Frontend} & \textbf{Diseño y QA} & \textbf{QA y Doc.} & \textbf{Infraestructura ($\times$2)} & \textbf{Gerencia} & \textbf{Usuarios clave} \\
+\textbf{Fase / actividad} & \textbf{Director} & \textbf{Analista} & \textbf{Backend ($\times$2)} & \textbf{DBA y Frontend} & \textbf{Frontend} & \textbf{Diseño y QA} & \textbf{QA y Doc.} & \textbf{Infraestructura ($\times$2)} & \textbf{Usuarios clave} \\
 \hline
 \endfirsthead
 \hline
-\textbf{Fase / actividad} & \textbf{Director} & \textbf{Analista} & \textbf{Backend ($\times$2)} & \textbf{DBA y Frontend} & \textbf{Frontend} & \textbf{Diseño y QA} & \textbf{QA y Doc.} & \textbf{Infraestructura ($\times$2)} & \textbf{Gerencia} & \textbf{Usuarios clave} \\
+\textbf{Fase / actividad} & \textbf{Director} & \textbf{Analista} & \textbf{Backend ($\times$2)} & \textbf{DBA y Frontend} & \textbf{Frontend} & \textbf{Diseño y QA} & \textbf{QA y Doc.} & \textbf{Infraestructura ($\times$2)} & \textbf{Usuarios clave} \\
 \hline
 \endhead
-Inicio y planificación & A/R & C & I & I & I & I & R & I & C & — \\
+Inicio y planificación & A/R & C & I & I & I & I & R & I & — \\
 \hline
-Análisis & A & R & C & C & I & C & C & C & C & C \\
+Análisis & A & R & C & C & I & C & C & C & C \\
 \hline
-Diseño & A & C & R & R & C & R & I & R & I & C \\
+Diseño & A & C & R & R & C & R & I & R & C \\
 \hline
-Construcción & A & C & R & R & R & C & I & R & I & I \\
+Construcción & A & C & R & R & R & C & I & R & I \\
 \hline
-Calidad y pruebas & A & C & C & C & C & R & R & R & I & C \\
+Calidad y pruebas & A & C & C & C & C & R & R & R & C \\
 \hline
-Despliegue & A & I & C & R & C & C & I & R & C & I \\
+Despliegue & A & I & C & R & C & C & I & R & I \\
 \hline
-Capacitación de usuarios & A & R & I & I & I & C & R & I & C & C \\
+Capacitación de usuarios & A & R & I & I & I & C & R & I & C \\
 \hline
-Cierre & A/R & I & I & I & I & I & R & C & C & — \\
+Cierre & A/R & I & I & I & I & I & R & C & C \\
 \hline
-Soporte post-implementación & A & C & C & C & C & I & C & R & I & C \\
+Soporte post-implementación & A & C & C & C & C & I & C & R & C \\
 \hline
-Control de cambios (transversal) & A & R & C & C & C & I & R & C & C & — \\
+Control de cambios (transversal) & A & R & C & C & C & I & R & C & — \\
 \hline
 \end{longtable}
 }
@@ -171,12 +171,15 @@ Gestión & Jira y Figma & Director y Diseñadora & Backlog, avance y prototipos.
 
 La gestión del cambio comprende tres frentes: el control de los riesgos de la implementación, la gobernanza que asegura que lo construido corresponda a lo aprobado y la adopción del sistema por parte del personal. A ellos se suma el soporte post-implementación, que sostiene la operación una vez cerrado el proyecto.
 
-\textbf{Riesgos de la implementación.} De la matriz de riesgos del Entregable 2 se seleccionaron los que afectan directamente al despliegue y la adopción del sistema, y se incorporaron dos riesgos que surgen del diseño del CE0142: la dependencia de SICO ERP, que se mantiene como emisor de comprobantes, y el procesamiento de datos en una región de AWS fuera del país. La Tabla~\ref{tab:cap4-5} los presenta con su respuesta.
+\subsection{Riesgos de la implementación}
+
+
+De la matriz de riesgos del Entregable 2 se seleccionaron los que afectan directamente al despliegue y la adopción del sistema, y se incorporaron dos riesgos que surgen del diseño del CE0142: la dependencia de SICO ERP, que se mantiene como emisor de comprobantes, y el procesamiento de datos en una región de AWS fuera del país. La Tabla~\ref{tab:cap4-5} los presenta con su respuesta.
 
 
 {\small
 \renewcommand{\arraystretch}{1.3}
-\begin{longtable}{|>{\raggedright\arraybackslash}p{0.49cm}|>{\raggedright\arraybackslash}p{4.94cm}|>{\raggedright\arraybackslash}p{0.49cm}|>{\raggedright\arraybackslash}p{0.58cm}|>{\raggedright\arraybackslash}p{4.94cm}|>{\raggedright\arraybackslash}p{2.96cm}|}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.46cm}|>{\raggedright\arraybackslash}p{4.62cm}|>{\raggedright\arraybackslash}p{0.46cm}|>{\raggedright\arraybackslash}p{0.54cm}|>{\raggedright\arraybackslash}p{4.62cm}|>{\raggedright\arraybackslash}p{3.70cm}|}
 \caption{Riesgos de la implementación y respuesta}\label{tab:cap4-5}\\
 \hline
 \textbf{ID} & \textbf{Riesgo} & \textbf{Prob.} & \textbf{Impacto} & \textbf{Respuesta} & \textbf{Responsable} \\
@@ -200,15 +203,18 @@ R-07 & Incumplimiento de la Ley N.° 29733 & 30 \% & Alto & Protección de datos
 \hline
 R-08 & Fallas en la infraestructura cloud o en la conexión con la sede & 25 \% & Medio & Volcado diario a S3, base temporal en RDS restaurable de forma automática y monitoreo con aviso al equipo. & Equipo de infraestructura \\
 \hline
-R-09 & Incremento de costos tecnológicos & 25 \% & Bajo & Presupuesto mensual de 80 USD con avisos al 50, 80 y 100 \% y revisión mensual del consumo. & Gerencia / Director \\
+R-09 & Incremento de costos tecnológicos & 25 \% & Bajo & Presupuesto mensual de 80 USD con avisos al 50, 80 y 100 \% y revisión mensual del consumo. & Jefatura de Finanzas / Director \\
 \hline
-R-10 & Falla de la PC que ejecuta SICO ERP, que no tiene respaldo y sigue emitiendo los comprobantes & — & Alto & Respaldo periódico de la base de SICO ERP y procedimiento alterno de emisión hasta la integración del ERP con SUNAT. & Equipo de infraestructura / Gerencia \\
+R-10 & Falla de la PC que ejecuta SICO ERP, que no tiene respaldo y sigue emitiendo los comprobantes & — & Alto & Respaldo periódico de la base de SICO ERP y procedimiento alterno de emisión hasta la integración del ERP con SUNAT. & Equipo de infraestructura / Jefatura de Finanzas \\
 \hline
 \end{longtable}
 }
 
 
-\textbf{Alcance que queda pendiente.} Algunas brechas del CE0141 se atienden solo en parte en esta versión. La Tabla~\ref{tab:cap4-6} registra lo que queda fuera, para que se gestione en las siguientes versiones del sistema.
+\subsection{Alcance que queda pendiente}
+
+
+Algunas brechas del CE0141 se atienden solo en parte en esta versión. La Tabla~\ref{tab:cap4-6} registra lo que queda fuera, para que se gestione en las siguientes versiones del sistema.
 
 
 {\small
@@ -237,9 +243,15 @@ B-02, B-06, B-07 y B-13 & SICO ERP sigue como emisor oficial de comprobantes. & 
 }
 
 
-\textbf{Gobernanza de la implementación.} Ningún cambio en el alcance, el cronograma o el presupuesto se incorpora sin seguir el proceso formal del Entregable 2: solicitud, evaluación de impacto, aprobación del Director y del asesor, implementación y cierre con actualización de la línea base. El Director revisa semanalmente el avance de cada rol e informa al asesor académico de forma quincenal. En el plano técnico, la integración continua impide incorporar cambios al código si fallan la compilación, el lint o las pruebas, y el despliegue hacia AWS se realiza con credenciales temporales, sin claves permanentes en el repositorio.
+\subsection{Gobernanza de la implementación}
 
-\textbf{Adopción del sistema.} Para reducir la resistencia al cambio (R-05), la capacitación se organiza por actor del sistema y se realiza en torno a la puesta en producción, de modo que cada usuario aprenda únicamente las funciones que utilizará. La Tabla~\ref{tab:cap4-7} resume el plan.
+
+Ningún cambio en el alcance, el cronograma o el presupuesto se incorpora sin seguir el proceso formal del Entregable 2: solicitud, evaluación de impacto, aprobación del Director y del asesor, implementación y cierre con actualización de la línea base. El Director revisa semanalmente el avance de cada rol e informa al asesor académico de forma quincenal. En el plano técnico, la integración continua impide incorporar cambios al código si fallan la compilación, el lint o las pruebas, y el despliegue hacia AWS se realiza con credenciales temporales, sin claves permanentes en el repositorio.
+
+\subsection{Adopción del sistema}
+
+
+Para reducir la resistencia al cambio (R-05), la capacitación se organiza por actor del sistema y se realiza en torno a la puesta en producción, de modo que cada usuario aprenda únicamente las funciones que utilizará. La Tabla~\ref{tab:cap4-7} resume el plan.
 
 
 {\small
@@ -276,7 +288,10 @@ A8 Cliente & Registro, verificación de correo, catálogo y cuenta en el Portal 
 
 Esta capacitación inicial cubre el uso del sistema en el arranque. La formación digital más amplia del personal queda a cargo del programa de transformación y capacitación digital (TI-005) previsto en el Roadmap Tecnológico del Entregable 1 para 2027.
 
-\textbf{Soporte post-implementación.} Tras el cierre, el sistema cuenta con ocho meses de soporte técnico a cargo del equipo de infraestructura, con un costo de S/ 2,000 mensuales. El soporte se organiza según las prácticas de ITIL 4: los usuarios reportan las incidencias por un canal único, estas se registran y clasifican por prioridad, y se atienden en el orden que muestra la Tabla~\ref{tab:cap4-8}. Los tiempos son una propuesta del equipo y se validarán con la Gerencia.
+\subsection{Soporte post-implementación}
+
+
+Tras el cierre, el sistema cuenta con ocho meses de soporte técnico a cargo del equipo de infraestructura, con un costo de S/ 2,000 mensuales. El soporte se organiza según las prácticas de ITIL 4: los usuarios reportan las incidencias por un canal único, estas se registran y clasifican por prioridad, y se atienden en el orden que muestra la Tabla~\ref{tab:cap4-8}. Los tiempos son una propuesta del equipo y se validarán con los usuarios clave de Franco's S.A.C.
 
 
 {\small
