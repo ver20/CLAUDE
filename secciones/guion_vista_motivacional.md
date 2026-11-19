@@ -35,7 +35,7 @@
 > - EV-07 y EV-08: no hay servidor ni nube, y la red no tiene redundancia ni detecta fallas.
 > - EV-09: no existe un canal de venta en línea.
 >
-> Cada evaluación apunta a la meta que la resuelve."
+> Cada evaluación se une, con una línea gris, al impulsor del que forma parte, y apunta con una flecha a la meta que la resuelve. Por ejemplo, EV-04 se relaciona con el impulsor DR-02, integración de la información, y la resuelve la meta MT-03."
 
 ## 5. Metas: el desglose de los objetivos (40 s)
 
@@ -48,7 +48,7 @@
 > - MT-04: sostener el ERP en una infraestructura propia y en la nube, redundante, segmentada y monitoreada.
 > - MT-05: abrir un canal de venta en línea para el cliente.
 >
-> Las cuatro primeras se especializan de OEN-03 y la quinta de OET-03. Cada interesado se conecta con la meta que le interesa: por ejemplo, los operadores con MT-01, el Analista con MT-02 y el Cliente con MT-05."
+> Las cuatro primeras forman parte de OEN-03 y la quinta de OET-03; por eso se unen con una relación de agregación, que se reconoce por el rombo en el lado del objetivo. Cada interesado se conecta con la meta que le interesa: por ejemplo, los operadores con MT-01, el Analista con MT-02 y el Cliente con MT-05."
 
 ## 6. Resultados y medidas (40 s)
 
