@@ -35,7 +35,7 @@
 > - EV-07 y EV-08: no hay servidor ni nube, y la red no tiene redundancia ni detecta fallas.
 > - EV-09: no existe un canal de venta en línea.
 >
-> Cada evaluación se une, con una línea gris, al impulsor del que forma parte, y apunta con una flecha a la meta que la resuelve. Por ejemplo, EV-04 se relaciona con el impulsor DR-02, integración de la información, y la resuelve la meta MT-03."
+> Cada evaluación apunta a la meta que la resuelve."
 
 ## 5. Metas: el desglose de los objetivos (40 s)
 
