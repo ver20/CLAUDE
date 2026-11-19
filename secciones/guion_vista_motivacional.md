@@ -96,3 +96,28 @@ Porque esta versión del ERP no emite comprobantes electrónicos válidos ante S
 
 **¿Por qué los datos están en la sede y no en la nube?**
 Por el principio de nube para lo expuesto y sede para los datos: los portales y el backend corren en AWS, mientras la base de datos de producción se mantiene en la sede, con una base en espera y un respaldo diario en la nube.
+
+---
+
+## Diapositiva: «Cinco metas llevan OEN-03 a la práctica»
+
+*Duración aproximada: 1 minuto y medio.*
+
+En la vista motivacional vimos que el objetivo OEN-03 es amplio. En esta diapositiva mostramos cómo lo bajamos a cinco metas concretas, y debajo de cada una indicamos qué brecha del diagnóstico cierra o, si no viene de una brecha, a qué mejora responde.
+
+*[Señalar MT-01.]*
+La primera meta, MT-01, es registrar las ventas, los despachos, el inventario y las solicitudes de producción en el ERP. Cierra tres brechas: la B-01, porque hoy las ventas, el inventario y la distribución no se registran en ningún sistema; la B-03, porque Excel y Word se usan sin integración; y la B-14, porque Producción e Insumos también registran en papel.
+
+*[Señalar MT-02.]*
+La segunda, MT-02, es dar seguimiento a la estrategia de negocio y de TI en el ERP. No nace de una brecha, porque hoy no existe ningún registro de la estrategia que reemplazar: es una mejora que responde directamente a la parte estratégica de OEN-03.
+
+*[Señalar MT-03.]*
+La tercera, MT-03, es reunir los datos en una sola base, con copia restaurable y acceso por rol. Cierra la B-05, porque no existe una base de datos central, y la B-09, porque la información no tiene copia de respaldo.
+
+*[Señalar MT-04.]*
+La cuarta, MT-04, es sostener el ERP en la sede y en la nube, con una infraestructura redundante, segmentada y monitoreada. Es la meta de la iniciativa TI-003 y cierra cuatro brechas tecnológicas: la B-08, red e internet sin redundancia; la B-10, red sin segmentar; la B-11, sin servidor ni nube; y la B-12, sin monitoreo.
+
+*[Señalar MT-05.]*
+La quinta, MT-05, es abrir un canal de venta en línea para el cliente. Tampoco nace de una brecha, porque hoy ese canal no existe: es una mejora que responde al objetivo de TI OET-03, que soporta a OEN-03 en la digitalización de los procesos comerciales.
+
+En resumen, las cinco metas cubren las dos caras del objetivo: la gestión operativa, con MT-01, MT-03 y MT-04, y la gestión estratégica y comercial, con MT-02 y MT-05. Cada una tiene sus resultados y sus indicadores, que presentamos en el CE0145.
