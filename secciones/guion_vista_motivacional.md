@@ -1,34 +1,10 @@
-# Guion de exposición: Vista motivacional de Franco's ERP
+# Guion de exposición: Vista motivacional, metas, planificación y riesgos
 
-*Diapositivas 24, 25 y 26 · duración aproximada: 5 minutos. El texto en cursiva entre corchetes indica qué señalar; todo lo demás es lo que se dice. Entre paréntesis va cómo se pronuncia cada código.*
-
----
-
-## Diapositiva 24 · «Ocho actores que usan el ERP»
-
-*Aproximadamente 1 minuto.*
-
-Para explicar por qué construimos Franco's ERP, empezamos por quiénes lo van a usar. Son ocho actores.
-
-*[Señalar las cinco primeras tarjetas.]*
-Cinco son operadores de las áreas que hoy registran su información en papel y en Excel:
-- el **Operador de Ventas**, que gestiona clientes, catálogo, pedidos y reembolsos;
-- el **Operador de Inventario**, que lleva el producto terminado, sus lotes y sus movimientos;
-- el **Operador de Insumos**, que maneja los insumos y atiende las solicitudes de insumos;
-- el **Operador de Producción**, que recibe las solicitudes de producción y registra los lotes;
-- y el **Operador de Despacho**, que prepara y entrega los pedidos.
-
-*[Señalar A6 y A7.]*
-A ellos se suman el **Analista Estratégico**, que lleva el cuadro de mando integral y pertenece a una nueva jefatura de Gestión Estratégica, y el **Administrador**, que gestiona los usuarios, los roles y la configuración del sistema.
-
-*[Señalar la tarjeta naranja.]*
-Finalmente está el **Cliente**, el único actor externo, que se registra, consulta el catálogo y gestiona su cuenta en la tienda en línea.
-
-Estos ocho actores son los interesados de la vista motivacional que presentamos a continuación.
+*Duración aproximada: 7 minutos. El texto en cursiva entre corchetes indica qué señalar; todo lo demás es lo que se dice. Entre paréntesis va cómo se pronuncia cada código.*
 
 ---
 
-## Diapositiva 25 · «Vista motivacional»
+## 1. Vista motivacional
 
 *Aproximadamente 2 minutos y medio.*
 
@@ -37,7 +13,7 @@ En la vista motivacional mostramos por qué Franco's necesita este sistema, qué
 
 **Interesados e impulsores**
 *[Señalar la fila azul y el grupo naranja de la izquierda.]*
-Arriba están los ocho actores que acabamos de ver. A la izquierda, los cinco impulsores del cambio: la digitalización de la gestión operativa, estratégica y comercial; la integración de la información entre las áreas; la continuidad de la operación; la protección de datos personales que exige la Ley 29733 (veintinueve mil setecientos treinta y tres); y la trazabilidad de lotes y conservación de registros.
+Arriba están los ocho actores que usan el ERP: los operadores de Ventas, Inventario, Insumos, Producción y Despacho, el Analista Estratégico, el Administrador y el Cliente. A la izquierda, los cinco impulsores del cambio: la digitalización de la gestión operativa, estratégica y comercial; la integración de la información entre las áreas; la continuidad de la operación; la protección de datos personales que exige la Ley 29733 (veintinueve mil setecientos treinta y tres); y la trazabilidad de lotes y conservación de registros.
 
 **Objetivos**
 *[Señalar la barra verde, la caja verde de la derecha y la caja marrón.]*
@@ -49,22 +25,19 @@ En la fila amarilla están las nueve evaluaciones, que son los problemas que enc
 
 **Metas, resultados y medidas**
 *[Señalar la fila verde claro, la turquesa y la lila.]*
-Para resolverlos, el objetivo se descompone en cinco metas, que explicaremos en la siguiente diapositiva. Cada meta se cumple mediante resultados concretos, en turquesa, y cada resultado se comprueba con una medida, en lila. Por ejemplo, el resultado de que el ERP siga en servicio aunque falle un equipo se comprueba con la disponibilidad del sistema, cuya meta es de 95 % o más en horario de trabajo.
+Para resolverlos, el objetivo se descompone en cinco metas, que veremos en la siguiente lámina. Cada meta se cumple mediante resultados concretos, en turquesa, y cada resultado se comprueba con una medida, en lila. Por ejemplo, el resultado de que el ERP siga en servicio aunque falle un equipo se comprueba con la disponibilidad del sistema, cuya meta es de 95 % o más en horario de trabajo.
 
 **Principios, requerimientos y procesos**
 *[Señalar el grupo rosado, la fila ocre y la fila amarilla de abajo.]*
 El diseño se rige por trece principios de arquitectura, como el registro único, la trazabilidad de lotes, el acceso por rol y que no exista un punto único de falla. Estos principios se cumplen mediante trece requerimientos, que se hacen realidad en los ocho procesos de negocio que rediseñamos en el Entregable 3. Las cajas marrones son las restricciones del alcance: SICO ERP sigue emitiendo los comprobantes oficiales, los datos históricos no se migran y los datos se procesan en la nube de AWS.
 
-**Ejemplo**
+**Ejemplo y cierre**
 *[Recorrer con el dedo la columna del Operador de Inventario.]*
-Por ejemplo: el Operador de Inventario lleva hoy su inventario en papel y en Excel. Eso se atiende con la meta de registrar el inventario en el ERP; el resultado es que cada producto sea rastreable hasta su lote; y se cumple con el requerimiento de registro de lotes y movimientos, que respeta los principios de registro único y de trazabilidad.
-
-**Cierre**
-Así, cada elemento del sistema tiene una razón de ser: cada requerimiento cumple un principio, cada meta resuelve un problema real y se verifica con una medida, y todo apunta a los objetivos estratégicos de Franco's.
+Por ejemplo: el Operador de Inventario lleva hoy su inventario en papel y en Excel. Eso se atiende con la meta de registrar el inventario en el ERP; el resultado es que cada producto sea rastreable hasta su lote; y se cumple con el requerimiento de registro de lotes y movimientos, que respeta los principios de registro único y de trazabilidad. Así, cada elemento del sistema tiene una razón de ser y todo apunta a los objetivos estratégicos de Franco's.
 
 ---
 
-## Diapositiva 26 · «Cinco metas llevan OEN-03 a la práctica»
+## 2. «Cinco metas llevan OEN-03 a la práctica»
 
 *Aproximadamente 1 minuto y medio.*
 
@@ -85,7 +58,48 @@ La cuarta, MT-04 (eme te cero cuatro), es sostener el ERP en la sede y en la nub
 *[Señalar MT-05.]*
 La quinta, MT-05 (eme te cero cinco), es abrir un canal de venta en línea para el cliente. Tampoco nace de una brecha, porque hoy ese canal no existe: es una mejora que responde al objetivo de TI OET-03 (o e te cero tres), que soporta a OEN-03 en la digitalización de los procesos comerciales.
 
-En resumen, las cinco metas cubren las dos caras del objetivo: la gestión operativa, con MT-01, MT-03 y MT-04, y la gestión estratégica y comercial, con MT-02 y MT-05. Cada una tiene sus resultados e indicadores, que se miden con el plan de indicadores del entregable.
+En resumen, las cinco metas cubren las dos caras del objetivo: la gestión operativa, con MT-01, MT-03 y MT-04, y la gestión estratégica y comercial, con MT-02 y MT-05.
+
+---
+
+## 3. «Planificación» · Cronograma de implementación
+
+*Aproximadamente 1 minuto y medio.*
+
+Estas metas se cumplen con dos iniciativas que se ejecutan en paralelo: TI-002 (te i cero cero dos), que es el ERP, y TI-003 (te i cero cero tres), que es la infraestructura. El proyecto va del 6 de abril al 30 de noviembre de 2026, y luego tiene ocho meses de soporte hasta el 31 de julio de 2027.
+
+*[Señalar las barras azules.]*
+Las primeras fases son de planificación, análisis y diseño. La fase F-01 (efe cero uno) cerró con el charter y el plan aprobados; el análisis continuó con el refinamiento y la planificación de los sprints; y el diseño cerró con la arquitectura y los prototipos aprobados.
+
+*[Señalar las barras verdes de los sprints.]*
+La construcción, F-04 (efe cero cuatro), se organizó en seis sprints registrados en Jira, del 14 de septiembre al 6 de noviembre. Empieza por el núcleo del Portal A y la estrategia, sigue con el Portal B, el comprobante y la entrega, luego almacén y producción, la configuración y el carrito, y termina con el perfil, la seguridad y las pruebas de extremo a extremo.
+
+*[Señalar las barras de pruebas y despliegue.]*
+Las pruebas, F-05 (efe cero cinco), empiezan el 12 de octubre, en paralelo con la construcción, e incluyen la integración y el despliegue continuos. Por eso los sprints 3 a 6 duran una semana: así se mantiene la fecha de despliegue y de cierre que comprometimos en el Entregable 2.
+
+El despliegue, F-06 (efe cero seis), se hace en tres etapas: primero la infraestructura; luego la operación interna, en paralelo con el registro actual; y al final la estrategia y la tienda en línea. Su hito es una disponibilidad de 95 % o más.
+
+*[Señalar el último rombo.]*
+El proyecto cierra el 30 de noviembre con el acta de aceptación, que es también el hito H1 (hache uno) del roadmap: la base tecnológica de Franco's operativa.
+
+---
+
+## 4. «Riesgos de la implementación»
+
+*Aproximadamente 1 minuto y medio.*
+
+Para cumplir este cronograma identificamos los riesgos que pueden afectar la implementación, con su probabilidad, su impacto y la respuesta que aplicamos.
+
+*[Señalar R-10 y R-01.]*
+Los dos riesgos más probables son estos. El R-10 (erre diez), con 80 %: que falle la PC que ejecuta SICO ERP, porque SICO sigue emitiendo los comprobantes oficiales y no tiene respaldo. Lo atendemos con un respaldo periódico de SICO y un procedimiento alterno de emisión. Y el R-01 (erre cero uno), con 70 %: los cambios frecuentes de requerimientos, que controlamos con un proceso formal de cambios aprobado por el Director.
+
+*[Señalar R-02, R-03 y R-07.]*
+Con impacto alto también están los retrasos en los sprints, que seguimos semanalmente priorizando el backlog; las ciberamenazas, que mitigamos con acceso por rol, el WAF, secretos fuera del código y registro de actividad; y el incumplimiento de la Ley de Protección de Datos, que prevenimos con protección desde el diseño y cifrado en tránsito.
+
+*[Señalar R-04, R-05, R-08 y R-09.]*
+Con impacto medio o bajo están la integración entre Software e Infraestructura, que probamos de forma anticipada; la resistencia al cambio, que atendemos con capacitación por rol; las fallas de la nube o de la sede, cubiertas con el volcado diario, una base temporal restaurable y monitoreo; y el aumento de costos, controlado con un presupuesto de 80 dólares al mes y avisos al 50, 80 y 100 %.
+
+Así, cada riesgo tiene una respuesta concreta y un responsable, y se revisa dentro del control del proyecto.
 
 ---
 
@@ -94,14 +108,14 @@ En resumen, las cinco metas cubren las dos caras del objetivo: la gestión opera
 **¿Por qué las metas se relacionan con los objetivos mediante agregación?**
 Porque cada meta es una parte del objetivo, no un tipo de objetivo. OEN-03 se compone de las cuatro primeras metas, y OET-03 de la quinta.
 
-**¿Dónde están las metas numéricas de las medidas?**
-En el plan de indicadores del entregable. Cada una de las diez medidas de la vista tiene allí su fórmula, línea base, meta y frecuencia.
-
 **¿Por qué no aparece la gerencia como actor?**
 Porque la vista representa a los actores que usan el sistema, y el ERP no tiene un rol de gerencia. La información estratégica la registra y le da seguimiento el Analista Estratégico.
 
-**¿Por qué SICO ERP sigue en operación?**
-Porque esta versión del ERP no emite comprobantes electrónicos válidos ante SUNAT. Mientras no se integre, SICO ERP sigue como emisor oficial, y lo registramos como restricción y como riesgo del plan de implementación.
+**¿Por qué los sprints 3 a 6 duran una semana?**
+Porque la construcción empezó más tarde de lo previsto y, para no mover el despliegue del 27 de noviembre ni el cierre del 30 de noviembre comprometidos en el Entregable 2, acortamos esos sprints y adelantamos las pruebas en paralelo.
 
-**¿Qué normas sustentan la trazabilidad y la conservación de registros?**
-El Decreto Legislativo 1062, Ley de Inocuidad de los Alimentos, que exige rastrear cada producto hasta su lote, y el Código Tributario, que obliga a conservar los registros y comprobantes mientras el tributo no prescriba.
+**¿Por qué el riesgo de SICO tiene la mayor probabilidad?**
+Porque SICO ERP sigue siendo el emisor oficial de comprobantes hasta la integración con SUNAT, corre en una sola PC y no tiene respaldo. Una falla de esa PC detendría la facturación, por eso le damos respaldo periódico y un procedimiento alterno.
+
+**¿Por qué el despliegue es por etapas?**
+Para no detener la operación: primero se prepara la infraestructura, luego el personal trabaja en el ERP en paralelo con el registro actual, y solo al final se abren la estrategia y la tienda en línea.
