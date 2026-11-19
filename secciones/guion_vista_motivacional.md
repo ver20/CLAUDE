@@ -91,8 +91,8 @@
 
 ## Preguntas que podría hacer el jurado
 
-**¿Por qué el Gerente General dice "por evaluar"?**
-> "Porque el rol está diseñado pero todavía no tiene un módulo propio en el ERP. Hoy solo podría entrar con permisos de administrador o de analista, que no le corresponden según el principio P9."
+**¿Por qué el Gerente General está en la vista si no registra información?**
+> "Porque es el patrocinador del proyecto y el principal usuario de la información: necesita consultar en un solo lugar los reportes e indicadores de las áreas, que hoy están en papel y en archivos sueltos. Eso es lo que expresa el resultado RE-10."
 
 **¿Por qué los requerimientos no tienen flechas hacia las metas?**
 > "Esas relaciones están en el modelo, pero no se dibujan en la vista para que se pueda leer. En la vista se muestra la relación de cada requerimiento con sus principios."
