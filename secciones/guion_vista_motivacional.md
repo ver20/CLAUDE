@@ -1,6 +1,6 @@
 # Guion de exposición: Vista motivacional, planificación, riesgos y metas
 
-*Láminas 9, 24, 25 y 26 de la presentación «Franco's ERP: del papel a un sistema integrado». Duración aproximada: 7 minutos. El texto en cursiva entre corchetes indica qué señalar; todo lo demás es lo que se dice. Entre paréntesis va cómo se pronuncia cada código.*
+*Láminas 9, 24, 25 y 26 de la presentación «Franco's ERP: del papel a un sistema integrado». Duración aproximada: 6 minutos. El texto en cursiva entre corchetes indica qué señalar; todo lo demás es lo que se dice. Entre paréntesis va cómo se pronuncia cada código.*
 
 *La lámina 9 viene después de «El diseño responde a OEN-03 y brechas». Las láminas 24 a 26 vienen después de «Los datos viven en islas, a mano y sin respaldo», y después de ellas sigue «Ocho actores que usan el ERP».*
 
@@ -8,35 +8,25 @@
 
 ## Lámina 9 · «Vista motivacional»
 
-*Aproximadamente 2 minutos y medio.*
+*Aproximadamente 1 minuto y medio.*
 
 **Apertura**
-Como acabamos de ver, el diseño responde al objetivo OEN-03 (o e ene cero tres), que se lleva a cabo con dos iniciativas: el ERP y su infraestructura. En la vista motivacional mostramos por qué Franco's necesita este sistema, qué objetivos persigue y cómo esos objetivos se convierten en los requerimientos que guían el diseño del ERP y de su infraestructura.
+Como acabamos de ver, el diseño responde al objetivo OEN-03 (o e ene cero tres). La vista motivacional explica, en una sola imagen, por qué hacemos el sistema y cómo eso se convierte en lo que vamos a construir. Se lee de arriba hacia abajo, en tres partes.
 
-**Interesados e impulsores**
-*[Señalar la fila azul y el grupo naranja de la izquierda.]*
-Arriba están los ocho actores que usan el ERP: los operadores de Ventas, Inventario, Insumos, Producción y Despacho, el Analista Estratégico, el Administrador y el Cliente. A la izquierda, los cinco impulsores del cambio: la digitalización de la gestión operativa, estratégica y comercial; la integración de la información entre las áreas; la continuidad de la operación; la protección de datos personales que exige la Ley 29733 (veintinueve mil setecientos treinta y tres); y la trazabilidad de lotes y conservación de registros.
+**El porqué**
+*[Señalar la parte de arriba: interesados, impulsores y objetivos.]*
+Arriba está el porqué: las personas que usarán el ERP, las razones que obligan a Franco's a cambiar, como digitalizar su gestión y proteger sus datos, y los objetivos estratégicos de negocio y de TI que definimos en el Entregable 1.
 
-**Objetivos**
-*[Señalar la barra verde, la caja verde de la derecha y la caja marrón.]*
-Estos impulsores influyen en el objetivo de negocio OEN-03 (o e ene cero tres): optimizar la gestión operativa y estratégica mediante tecnologías digitales e información. Lo soporta el objetivo de TI OET-03 (o e te cero tres): implementar soluciones empresariales integradas para digitalizar los procesos operativos y comerciales. Ambos vienen de los mapas estratégicos del Entregable 1. Y tenemos una restricción de plazo: el ERP y su infraestructura deben implementarse entre el 6 de abril y el 30 de noviembre de 2026.
+**El para qué**
+*[Señalar la parte del medio: evaluaciones, metas, resultados y medidas.]*
+En el medio está el para qué. Partimos de los problemas que encontramos en el diagnóstico, como que la información está en papel y en Excel, sin respaldo y sin una base común. Para resolverlos definimos cinco metas, cada una con resultados concretos y una forma de medirlos.
 
-**Evaluaciones**
-*[Señalar la fila amarilla.]*
-En la fila amarilla están las nueve evaluaciones, que son los problemas que encontramos en el diagnóstico: las ventas, el inventario y la distribución se anotan en papel y en Excel; no hay una base de datos donde se junte la información ni copia de respaldo; no hay servidor ni nube; la red no tiene redundancia ni detecta fallas; y no existe un canal de venta en línea.
+**El cómo**
+*[Señalar la parte de abajo: principios, requerimientos y procesos.]*
+Abajo está el cómo: los principios de arquitectura que guían el diseño, los requerimientos que el sistema debe cumplir y los procesos de negocio donde esos requerimientos se aplican en el día a día.
 
-**Metas, resultados y medidas**
-*[Señalar la fila verde claro, la turquesa y la lila.]*
-Para resolverlos, el objetivo se descompone en cinco metas, que detallaremos más adelante, en la sección de oportunidades y soluciones. Cada meta se cumple mediante resultados concretos, en turquesa, y cada resultado se comprueba con una medida, en lila. Por ejemplo, el resultado de que el ERP siga en servicio aunque falle un equipo se comprueba con la disponibilidad del sistema, cuya meta es de 95 % o más en horario de trabajo.
-
-**Principios, requerimientos y procesos**
-*[Señalar el grupo rosado, la fila ocre y la fila amarilla de abajo.]*
-El diseño se rige por trece principios de arquitectura, como el registro único, la trazabilidad de lotes, el acceso por rol y que no exista un punto único de falla. Estos principios se cumplen mediante trece requerimientos, que se hacen realidad en los ocho procesos de negocio que rediseñamos en el Entregable 3. Las cajas marrones son las restricciones del alcance: SICO ERP sigue emitiendo los comprobantes oficiales, los datos históricos no se migran y los datos se procesan en la nube de AWS.
-
-**Ejemplo y cierre**
-*[Recorrer con el dedo la columna del Operador de Inventario.]*
-Por ejemplo: el Operador de Inventario lleva hoy su inventario en papel y en Excel. Eso se atiende con la meta de registrar el inventario en el ERP; el resultado es que cada producto sea rastreable hasta su lote; y se cumple con el requerimiento de registro de lotes y movimientos, que respeta los principios de registro único y de trazabilidad. Así, cada elemento del sistema tiene una razón de ser y todo apunta a los objetivos estratégicos de Franco's.
-
+**Cierre**
+En resumen, la vista nos asegura que todo lo que construimos responde a un problema real y a un objetivo de la empresa. Las cinco metas las detallaremos más adelante, en la sección de oportunidades y soluciones.
 ---
 
 ## Lámina 24 · «Planificación» (E. Oportunidades y soluciones)
