@@ -13,7 +13,7 @@
 
 *[Señalar el grupo superior "Interesados" y el grupo de la izquierda "Impulsores del cambio".]*
 
-> "Arriba están los nueve interesados del sistema. Siete son operativos: el Operador de Ventas, de Inventarios, de Insumos, de Producción y de Despacho, el Analista Estratégico y el Administrador. También están el Gerente General, que consulta reportes e indicadores, y el Cliente, que es el único actor externo y compra en la tienda en línea.
+> "Arriba están los ocho interesados del sistema. Siete son internos: el Operador de Ventas, de Inventarios, de Insumos, de Producción y de Despacho, el Analista Estratégico y el Administrador. El octavo es el Cliente, que es el único actor externo y compra en la tienda en línea.
 >
 > A la izquierda están los cinco impulsores del cambio, es decir, las fuerzas que obligan a la empresa a transformarse: la digitalización de su gestión, la integración de la información entre áreas, la continuidad de la operación, la protección de datos personales que exige la Ley 29733 y la trazabilidad de lotes."
 
@@ -90,9 +90,6 @@
 ---
 
 ## Preguntas que podría hacer el jurado
-
-**¿Por qué el Gerente General está en la vista si no registra información?**
-> "Porque es el patrocinador del proyecto y el principal usuario de la información: necesita consultar en un solo lugar los reportes e indicadores de las áreas, que hoy están en papel y en archivos sueltos. Eso es lo que expresa el resultado RE-10."
 
 **¿Por qué los requerimientos no tienen flechas hacia las metas?**
 > "Esas relaciones están en el modelo, pero no se dibujan en la vista para que se pueda leer. En la vista se muestra la relación de cada requerimiento con sus principios."

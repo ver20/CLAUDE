@@ -119,15 +119,14 @@ La gestión del cambio comprende tres frentes: el control de los riesgos de la i
 
 | Actor | Contenido | Momento |
 |---|---|---|
-| A2 Operador de Ventas | Clientes, catálogo, registro de pedidos y reembolsos. | Antes de la puesta en producción (F-06) |
-| A3 Operador de Inventarios | Stock de producto terminado, lotes, movimientos y solicitudes de producción. | Antes de la puesta en producción (F-06) |
-| A4 Operador de Insumos | Insumos, sus lotes y movimientos, y atención de solicitudes de insumos. | Antes de la puesta en producción (F-06) |
-| A5 Operador de Producción | Recepción de solicitudes de producción, registro de lotes y envío de solicitudes de insumos. | Antes de la puesta en producción (F-06) |
-| A6 Operador de Despacho | Preparación y entrega de pedidos con sus estados. | Antes de la puesta en producción (F-06) |
-| A7 Analista Estratégico | Objetivos, KPI, iniciativas y tablero del cuadro de mando integral. | Durante la puesta en producción (F-06) |
-| A8 Administrador | Usuarios, roles, empresa emisora y configuración del sistema. | Antes de la puesta en producción (F-06) |
-| A1 Gerente General | Consulta de reportes e indicadores. | Al habilitarse su rol en el sistema |
-| A9 Cliente | Registro, verificación de correo, catálogo y cuenta en el Portal B. | Durante la puesta en producción (F-06) |
+| A1 Operador de Ventas | Clientes, catálogo, registro de pedidos y reembolsos. | Antes de la puesta en producción (F-06) |
+| A2 Operador de Inventarios | Stock de producto terminado, lotes, movimientos y solicitudes de producción. | Antes de la puesta en producción (F-06) |
+| A3 Operador de Insumos | Insumos, sus lotes y movimientos, y atención de solicitudes de insumos. | Antes de la puesta en producción (F-06) |
+| A4 Operador de Producción | Recepción de solicitudes de producción, registro de lotes y envío de solicitudes de insumos. | Antes de la puesta en producción (F-06) |
+| A5 Operador de Despacho | Preparación y entrega de pedidos con sus estados. | Antes de la puesta en producción (F-06) |
+| A6 Analista Estratégico | Objetivos, KPI, iniciativas y tablero del cuadro de mando integral. | Durante la puesta en producción (F-06) |
+| A7 Administrador | Usuarios, roles, empresa emisora y configuración del sistema. | Antes de la puesta en producción (F-06) |
+| A8 Cliente | Registro, verificación de correo, catálogo y cuenta en el Portal B. | Durante la puesta en producción (F-06) |
 
 Esta capacitación inicial cubre el uso del sistema en el arranque. La formación digital más amplia del personal queda a cargo del programa de transformación y capacitación digital (TI-005) previsto en el Roadmap Tecnológico del Entregable 1 para 2027.
 
