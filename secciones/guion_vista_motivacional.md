@@ -1,6 +1,6 @@
 # Guion de exposición: Vista motivacional, planificación, riesgos y metas
 
-*Láminas 9, 24, 25 y 26 de la presentación «Franco's ERP: del papel a un sistema integrado». Duración aproximada: 6 minutos. El texto en cursiva entre corchetes indica qué señalar; todo lo demás es lo que se dice. Entre paréntesis va cómo se pronuncia cada código.*
+*Láminas 9, 24, 25 y 26 de la presentación «Franco's ERP: del papel a un sistema integrado». Duración aproximada: 4 minutos y medio. El texto en cursiva entre corchetes indica qué señalar; todo lo demás es lo que se dice. Entre paréntesis va cómo se pronuncia cada código.*
 
 *La lámina 9 viene después de «El diseño responde a OEN-03 y brechas». Las láminas 24 a 26 vienen después de «Los datos viven en islas, a mano y sin respaldo», y después de ellas sigue «Ocho actores que usan el ERP».*
 
@@ -31,67 +31,48 @@ En resumen, la vista nos asegura que todo lo que construimos responde a un probl
 
 ## Lámina 24 · «Planificación» (E. Oportunidades y soluciones)
 
-*Aproximadamente 1 minuto y medio.*
+*Aproximadamente 1 minuto.*
 
-Para cerrar las brechas que acabamos de ver, en la fase de oportunidades y soluciones planificamos la implementación. Se ejecutan dos iniciativas en paralelo: TI-002 (te i cero cero dos), que es el ERP, y TI-003 (te i cero cero tres), que es la infraestructura. El proyecto va del 6 de abril al 30 de noviembre de 2026, y luego tiene ocho meses de soporte hasta el 31 de julio de 2027.
+Para cerrar las brechas que acabamos de ver, planificamos la implementación del ERP y de su infraestructura, que se ejecutan en paralelo entre abril y noviembre de 2026.
 
-*[Señalar las barras azules.]*
-Las primeras fases son de planificación, análisis y diseño. La fase F-01 (efe cero uno) cerró con el charter y el plan aprobados; el análisis continuó con el refinamiento y la planificación de los sprints; y el diseño cerró con la arquitectura y los prototipos aprobados.
+*[Señalar las barras de arriba.]*
+Primero vienen la planificación, el análisis y el diseño, donde definimos qué construir y cómo.
 
-*[Señalar las barras verdes de los sprints.]*
-La construcción, F-04 (efe cero cuatro), se organizó en seis sprints registrados en Jira, del 14 de septiembre al 6 de noviembre. Empieza por el núcleo del Portal A y la estrategia, sigue con el Portal B, el comprobante y la entrega, luego almacén y producción, la configuración y el carrito, y termina con el perfil, la seguridad y las pruebas de extremo a extremo.
+*[Señalar las barras verdes y las de pruebas.]*
+Luego viene la construcción, organizada en seis sprints, y en paralelo las pruebas, para no mover las fechas comprometidas.
 
-*[Señalar las barras de pruebas y despliegue.]*
-Las pruebas, F-05 (efe cero cinco), empiezan el 12 de octubre, en paralelo con la construcción, e incluyen la integración y el despliegue continuos. Por eso los sprints 3 a 6 duran una semana: así se mantiene la fecha de despliegue y de cierre que comprometimos en el Entregable 2.
-
-El despliegue, F-06 (efe cero seis), se hace en tres etapas: primero la infraestructura; luego la operación interna, en paralelo con el registro actual; y al final la estrategia y la tienda en línea. Su hito es una disponibilidad de 95 % o más.
-
-*[Señalar el último rombo.]*
-El proyecto cierra el 30 de noviembre con el acta de aceptación, que es también el hito H1 (hache uno) del roadmap: la base tecnológica de Franco's operativa.
+*[Señalar las barras moradas y el último rombo.]*
+Después, el despliegue se hace por etapas, para no detener la operación de la empresa. El proyecto cierra el 30 de noviembre con el acta de aceptación, y continúa con ocho meses de soporte.
 
 ---
 
 ## Lámina 25 · «Riesgos de la implementación»
 
-*Aproximadamente 1 minuto y medio.*
+*Aproximadamente 1 minuto.*
 
-Para cumplir este cronograma identificamos los riesgos que pueden afectar la implementación, con su probabilidad, su impacto y la respuesta que aplicamos.
+Para cumplir este plan, identificamos los riesgos que podrían afectarlo, cada uno con su probabilidad, su impacto y una respuesta.
 
 *[Señalar R-10 y R-01.]*
-Los dos riesgos más probables son estos. El R-10 (erre diez), con 80 %: que falle la PC que ejecuta SICO ERP, porque SICO sigue emitiendo los comprobantes oficiales y no tiene respaldo. Lo atendemos con un respaldo periódico de SICO y un procedimiento alterno de emisión. Y el R-01 (erre cero uno), con 70 %: los cambios frecuentes de requerimientos, que controlamos con un proceso formal de cambios aprobado por el Director.
+Los más probables son dos: que falle la computadora donde corre el sistema actual de facturación, que no tiene respaldo, y que los requerimientos cambien con frecuencia. Para el primero tenemos respaldos y un procedimiento alterno; para el segundo, un control formal de cambios.
 
-*[Señalar R-02, R-03 y R-07.]*
-Con impacto alto también están los retrasos en los sprints, que seguimos semanalmente priorizando el backlog; las ciberamenazas, que mitigamos con acceso por rol, el WAF, secretos fuera del código y registro de actividad; y el incumplimiento de la Ley de Protección de Datos, que prevenimos con protección desde el diseño y cifrado en tránsito.
-
-*[Señalar R-04, R-05, R-08 y R-09.]*
-Con impacto medio o bajo están la integración entre Software e Infraestructura, que probamos de forma anticipada; la resistencia al cambio, que atendemos con capacitación por rol; las fallas de la nube o de la sede, cubiertas con el volcado diario, una base temporal restaurable y monitoreo; y el aumento de costos, controlado con un presupuesto de 80 dólares al mes y avisos al 50, 80 y 100 %.
-
-Así, cada riesgo tiene una respuesta concreta y se revisa dentro del control del proyecto.
+*[Señalar el resto de la tabla.]*
+Los demás riesgos son de tiempo, de seguridad, de integración, de adopción por parte de los usuarios y de costos. Cada uno tiene una respuesta concreta, como el seguimiento semanal, la capacitación por rol o un presupuesto con alertas.
 
 ---
 
 ## Lámina 26 · «Cinco metas llevan OEN-03 a la práctica»
 
-*Aproximadamente 1 minuto y medio.*
+*Aproximadamente 1 minuto.*
 
-Con el plan y sus riesgos definidos, volvemos al objetivo que guía todo el proyecto. OEN-03 (o e ene cero tres) es amplio, así que lo bajamos a cinco metas concretas, que son las que vimos en la vista motivacional. Debajo de cada una indicamos qué brecha del diagnóstico cierra o, si no viene de una brecha, a qué mejora responde.
+Con el plan y sus riesgos definidos, volvemos al objetivo que guía todo el proyecto. OEN-03 (o e ene cero tres) lo bajamos a cinco metas concretas, que son las que vimos en la vista motivacional.
 
-*[Señalar MT-01.]*
-La primera, MT-01 (eme te cero uno), es registrar las ventas, los despachos, el inventario y las solicitudes de producción en el ERP. Cierra las brechas B-01 (be cero uno), porque hoy esa información no se registra en ningún sistema; B-03 (be cero tres), porque Excel y Word se usan sin integración; y B-14 (be catorce), porque Producción e Insumos también registran en papel.
+*[Recorrer las cinco tarjetas de izquierda a derecha.]*
+Las metas son: registrar la operación diaria en el ERP; dar seguimiento a la estrategia; reunir los datos en una sola base con respaldo; sostener el sistema sobre una infraestructura segura y redundante; y abrir un canal de venta en línea.
 
-*[Señalar MT-02.]*
-La segunda, MT-02 (eme te cero dos), es dar seguimiento a la estrategia de negocio y de TI en el ERP. No nace de una brecha, porque hoy no existe ningún registro de la estrategia: es una mejora que responde a la parte estratégica de OEN-03.
+*[Señalar los textos grises de abajo.]*
+Debajo de cada meta indicamos qué brechas del diagnóstico cierra. Las metas de estrategia y de venta en línea no vienen de un problema actual, sino que son mejoras que la empresa incorpora.
 
-*[Señalar MT-03.]*
-La tercera, MT-03 (eme te cero tres), es reunir los datos en una sola base, con copia restaurable y acceso por rol. Cierra la B-05 (be cero cinco), porque no hay una base de datos central, y la B-09 (be cero nueve), porque la información no tiene respaldo.
-
-*[Señalar MT-04.]*
-La cuarta, MT-04 (eme te cero cuatro), es sostener el ERP en la sede y en la nube, con una infraestructura redundante, segmentada y monitoreada. Cierra las brechas tecnológicas B-08 (be cero ocho), B-10 (be diez), B-11 (be once) y B-12 (be doce): red sin redundancia, red sin segmentar, sin servidor ni nube, y sin monitoreo.
-
-*[Señalar MT-05.]*
-La quinta, MT-05 (eme te cero cinco), es abrir un canal de venta en línea para el cliente. Tampoco nace de una brecha, porque hoy ese canal no existe: es una mejora que responde al objetivo de TI OET-03 (o e te cero tres), que soporta a OEN-03 en la digitalización de los procesos comerciales.
-
-En resumen, las cinco metas cubren las dos caras del objetivo: la gestión operativa, con MT-01, MT-03 y MT-04, y la gestión estratégica y comercial, con MT-02 y MT-05. A continuación, se presentan los ocho actores que usarán el ERP para cumplirlas.
+En resumen, las cinco metas cubren la gestión operativa, la estratégica y la comercial. A continuación, se presentan los ocho actores que usarán el ERP para cumplirlas.
 
 ---
 
